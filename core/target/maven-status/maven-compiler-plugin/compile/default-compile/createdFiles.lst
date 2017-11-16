@@ -1,0 +1,6 @@
+com\adobe\itc\poc\core\models\HelloWorldModel.class
+com\adobe\itc\poc\core\schedulers\SimpleScheduledTask.class
+com\adobe\itc\poc\core\servlets\SimpleServlet.class
+com\adobe\itc\poc\core\listeners\SimpleResourceListener.class
+com\adobe\itc\poc\core\package-info.class
+com\adobe\itc\poc\core\filters\LoggingFilter.class

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>itc-poc - UI apps</comment>
+<entry key="createdBy">25897</entry>
+<entry key="name">itc-poc.ui.apps</entry>
+<entry key="created">2017-11-16T13:11:33.800+0530</entry>
+<entry key="groupId">itc-poc</entry>
+<entry key="version">1.0-SNAPSHOT</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">itc-poc</entry>
+<entry key="description">UI apps package for itc-poc</entry>
+<entry key="artifactId">itc-poc.ui.apps</entry>
+<entry key="path">/etc/packages/itc-poc/itc-poc.ui.apps.zip</entry>
+</properties>
