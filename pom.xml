@@ -19,7 +19,7 @@
     <groupId>itc-poc</groupId>
     <artifactId>itc-poc</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version> 
     <description>itc-poc</description>
     
     <modules>
