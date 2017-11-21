@@ -36,7 +36,7 @@ public class ValidUrlGenerator extends WCMUsePojo {
 				}
 
 				else {
-					if ( path.contains("/content/uopx") || path.contains("/content/altcloud") ) {
+					if ( path.contains("/content/itc-poc") ) {
 						completePath = path+".html";
 					} else {
 						completePath = path;
