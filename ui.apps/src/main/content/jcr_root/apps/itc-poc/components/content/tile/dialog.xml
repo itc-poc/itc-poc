@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    helpPath="en/cq/current/wcm/default_components.html#Image"
+    title="Tile"
+    xtype="tabpanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <imagecollection
+            jcr:primaryType="cq:Widget"
+            title="Image Rendition"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <bigDesktopImage
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Drag image here from content finder"
+                    fieldLabel="Background Image LG"
+                    name="./imageReference"
+                    rootPath="/content/dam"
+                    title="Image"
+                    xtype="ddpathfield"/>
+                <isBigDesktopImage
+                    jcr:primaryType="nt:unstructured"
+                    fieldLabel="Don't display Background Image LG"
+                    name="./isBigDesktopImage"
+                    type="checkbox"
+                    xtype="selection"/>
+                <desktopImage
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Drag image here from content finder"
+                    fieldLabel="Background Image MD"
+                    name="./imageReferenceMD"
+                    rootPath="/content/dam"
+                    title="Image"
+                    xtype="ddpathfield"/>
+                <isDesktopImage
+                    jcr:primaryType="nt:unstructured"
+                    fieldLabel="Don't display Background Image MD"
+                    name="./isDesktopImage"
+                    type="checkbox"
+                    xtype="selection"/>
+                <tabletImage
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Drag image here from content finder"
+                    fieldLabel="Background Image SM"
+                    name="./imageReferenceSM"
+                    rootPath="/content/dam"
+                    title="Image"
+                    xtype="ddpathfield"/>
+                <isTabletImage
+                    jcr:primaryType="nt:unstructured"
+                    fieldLabel="Don't display Background Image SM"
+                    name="./isTabletImage"
+                    type="checkbox"
+                    xtype="selection"/>
+                <mobileImage
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Drag image here from content finder"
+                    fieldLabel="Background Image XS"
+                    name="./imageReferenceXS"
+                    rootPath="/content/dam"
+                    title="Image"
+                    xtype="ddpathfield"/>
+                <isMobileImage
+                    jcr:primaryType="nt:unstructured"
+                    fieldLabel="Don't display Background Image XS"
+                    name="./isMobileImage"
+                    type="checkbox"
+                    xtype="selection"/>
+            </items>
+        </imagecollection>
+        <generalSettings
+            jcr:primaryType="cq:Widget"
+            title="General"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <tileHeading
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Optional"
+                    fieldLabel="Title Heading:"
+                    name="./tileHeading"
+                    xtype="textfield"/>
+                <titleColor
+                    jcr:primaryType="cq:Widget"
+                    colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF]"
+                    fieldDescription="Choose a color for the item list"
+                    fieldLabel="Title Font Color"
+                    name="./titleColor"
+                    showHexValue="true"
+                    xtype="colorfield"/>
+                <tileBody
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Optional"
+                    fieldLabel="Tile Body:"
+                    name="./tileBody"
+                    xtype="textarea"/>
+                <linkText
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="learnMore"
+                    fieldDescription="Defaulted to &quot;Learn More&quot;."
+                    fieldLabel="Link Text"
+                    name="./linkText"
+                    type="combobox"
+                    typeAhead="{Boolean}true"
+                    value="none"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <none
+                            jcr:primaryType="nt:unstructured"
+                            text=""
+                            value="none"/>
+                        <learnMore
+                            jcr:primaryType="nt:unstructured"
+                            text="Learn More"
+                            value="learnMore"/>
+                    </options>
+                </linkText>
+                <tileURL
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Note: Use only if this tile does not contain a video.In case of external link please use http/https in start of link "
+                    fieldLabel="Tile URL"
+                    name="./tileURL"
+                    xtype="browsefield"/>
+                <newWindow
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Default internal link behavior opens link in same window."
+                    fieldLabel="Open link in a new window?"
+                    name="./newWindow"
+                    type="checkbox"
+                    xtype="selection"/>
+                <headingStyle
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="h3"
+                    fieldDescription="Heading defaults to H3."
+                    fieldLabel="Heading Style"
+                    name="./headingStyle"
+                    type="select"
+                    value="h3"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <h1
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 1 (h1)"
+                            value="h1"/>
+                        <h2
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 2 (h2)"
+                            value="h2"/>
+                        <h3
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 3 (h3) - Default"
+                            value="h3"/>
+                        <h4
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 4 (h4)"
+                            value="h4"/>
+                        <h5
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 5 (h5)"
+                            value="h5"/>
+                        <h6
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 6 (h6)"
+                            value="h6"/>
+                        <p
+                            jcr:primaryType="nt:unstructured"
+                            text="Paragraph (p)"
+                            value="p"/>
+                    </options>
+                </headingStyle>
+                <textBoxPosition
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="under"
+                    fieldDescription=""
+                    fieldLabel="Text Box Position"
+                    name="./textBoxPosition"
+                    type="select"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <under
+                            jcr:primaryType="nt:unstructured"
+                            text="Under"
+                            value="under"/>
+                        <overlayTitle
+                            jcr:primaryType="nt:unstructured"
+                            text="Overlay Title"
+                            value="overlayTitle"/>
+                        <overlayAll
+                            jcr:primaryType="nt:unstructured"
+                            text="Overlay All"
+                            value="overlayAll"/>
+                    </options>
+                </textBoxPosition>
+                <postalcode
+                    jcr:primaryType="cq:Widget"
+                    collapsed="false"
+                    collapsible="false"
+                    id="postalcode-group"
+                    title="Text box options"
+                    xtype="dialogfieldset">
+                    <items jcr:primaryType="cq:WidgetCollection">
+                        <color
+                            jcr:primaryType="cq:Widget"
+                            anchor="65%"
+                            fieldDescription="Change background style"
+                            fieldLabel="Color"
+                            name="./backgroundType"
+                            type="select"
+                            value="color-white"
+                            xtype="selection">
+                            <options jcr:primaryType="cq:WidgetCollection">
+                                <red
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#990000 (red)"
+                                    value="color-red"/>
+                                <coolgray
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#666666 (coolgray)"
+                                    value="color-coolgray"/>
+                                <gray
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#CBC3B7(gray)"
+                                    value="color-gray"/>
+                                <orange
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#FF6600 (orange)"
+                                    value="color-orange"/>
+                                <pink
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#D7234A (pink)"
+                                    value="color-pink"/>
+                                <purple
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#851782 (purple)"
+                                    value="color-purple"/>
+                                <blue
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#0099CC (blue)"
+                                    value="color-blue"/>
+                                <lightblue
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#A3DBE8 (lightblue)"
+                                    value="color-lightblue"/>
+                                <green
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#4FAC1C (green)"
+                                    value="color-green"/>
+                                <lightgreen
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#B7CD00 (lightgreen)"
+                                    value="color-lightgreen"/>
+                                <altorange
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#8B4E21 (altorange)"
+                                    value="color-altorange"/>
+                                <altpink
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#A50052 (altpink)"
+                                    value="color-altpink"/>
+                                <altpurple
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#4A0259 (altpurple)"
+                                    value="color-altpurple"/>
+                                <altblue
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#006697 (altblue)"
+                                    value="color-altblue"/>
+                                <altlightblue
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#36849F (altlightblue)"
+                                    value="color-altlightblue"/>
+                                <altgreen
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#464B18 (altgreen)"
+                                    value="color-altgreen"/>
+                                <altlightgreen
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#8D8035 (altlightgreen)"
+                                    value="color-altlightgreen"/>
+                                <darkyellow
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#FFB119 (darkyellow)"
+                                    value="color-darkyellow"/>
+                                <coolgray2
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#D5D6D2 (coolgray2)"
+                                    value="color-coolgray2"/>
+                                <skyblue
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#D3DEE4 (skyblue)"
+                                    value="color-skyblue"/>
+                                <mintgreen
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#D1DFD6 (mintgreen)"
+                                    value="color-mintgreen"/>
+                                <khaki
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#D7D3C7 (khaki)"
+                                    value="color-khaki"/>
+                                <greygreen
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#F1F5F3 (greygreen)"
+                                    value="color-greygreen"/>
+                                <white
+                                    jcr:primaryType="nt:unstructured"
+                                    text="#000000 (white)"
+                                    value="color-white"/>
+                            </options>
+                        </color>
+                        <opacity
+                            jcr:primaryType="cq:Widget"
+                            anchor="65%"
+                            fieldLabel="Opacity"
+                            name="./opacity"
+                            type="select"
+                            value="opacity100"
+                            xtype="selection">
+                            <options jcr:primaryType="cq:WidgetCollection">
+                                <_x0031_00
+                                    jcr:primaryType="nt:unstructured"
+                                    text="100%"
+                                    value="opacity100"/>
+                                <_x0039_0
+                                    jcr:primaryType="nt:unstructured"
+                                    text="90%"
+                                    value="opacity90"/>
+                                <_x0038_5
+                                    jcr:primaryType="nt:unstructured"
+                                    text="85%"
+                                    value="opacity85"/>
+                                <_x0038_0
+                                    jcr:primaryType="nt:unstructured"
+                                    text="80%"
+                                    value="opacity80"/>
+                                <_x0037_0
+                                    jcr:primaryType="nt:unstructured"
+                                    text="70%"
+                                    value="opacity70"/>
+                                <_x0036_0
+                                    jcr:primaryType="nt:unstructured"
+                                    text="60%"
+                                    value="opacity60"/>
+                                <_x0035_0
+                                    jcr:primaryType="nt:unstructured"
+                                    text="50%"
+                                    value="opacity50"/>
+                                <_x0034_0
+                                    jcr:primaryType="nt:unstructured"
+                                    text="40%"
+                                    value="opacity40"/>
+                                <_x0033_0
+                                    jcr:primaryType="nt:unstructured"
+                                    text="30%"
+                                    value="opacity30"/>
+                                <_x0032_0
+                                    jcr:primaryType="nt:unstructured"
+                                    text="20%"
+                                    value="opacity20"/>
+                                <_x0031_0
+                                    jcr:primaryType="nt:unstructured"
+                                    text="10%"
+                                    value="opacity10"/>
+                                <_x0030_
+                                    jcr:primaryType="nt:unstructured"
+                                    text="0%"
+                                    value="opacity0"/>
+                                <_x0039_5
+                                    jcr:primaryType="nt:unstructured"
+                                    text="95%"
+                                    value="opacity95"/>
+                                <_x0037_5
+                                    jcr:primaryType="nt:unstructured"
+                                    text="75%"
+                                    value="opacity75"/>
+                                <_x0036_5
+                                    jcr:primaryType="nt:unstructured"
+                                    text="65%"
+                                    value="opacity65"/>
+                                <_x0035_5
+                                    jcr:primaryType="nt:unstructured"
+                                    text="55%"
+                                    value="opacity55"/>
+                                <_x0034_5
+                                    jcr:primaryType="nt:unstructured"
+                                    text="45%"
+                                    value="opacity45"/>
+                                <_x0033_5
+                                    jcr:primaryType="nt:unstructured"
+                                    text="35%"
+                                    value="opacity35"/>
+                                <_x0032_5
+                                    jcr:primaryType="nt:unstructured"
+                                    text="25%"
+                                    value="opacity25"/>
+                                <_x0031_5
+                                    jcr:primaryType="nt:unstructured"
+                                    text="15%"
+                                    value="opacity15"/>
+                                <_x0035_
+                                    jcr:primaryType="nt:unstructured"
+                                    text="5%"
+                                    value="opacity5"/>
+                            </options>
+                        </opacity>
+                        <displayArrow
+                            jcr:primaryType="cq:Widget"
+                            anchor="50%"
+                            defaultValue="false"
+                            fieldLabel="Display Arrow"
+                            inputValue="true"
+                            name="./isDisplayArrow"
+                            type="checkbox"
+                            xtype="selection"/>
+                        <centerText
+                            jcr:primaryType="cq:Widget"
+                            defaultValue="false"
+                            fieldLabel="Center Text"
+                            inputValue="true"
+                            name="./isCenterText"
+                            type="checkbox"
+                            xtype="selection"/>
+                        <displayBorder
+                            jcr:primaryType="cq:Widget"
+                            defaultValue="false"
+                            fieldLabel="Display Border"
+                            inputValue="true"
+                            name="./isDisplayBorder"
+                            type="checkbox"
+                            xtype="selection"/>
+                        <fullWidth
+                            jcr:primaryType="cq:Widget"
+                            defaultValue="false"
+                            fieldLabel="Full width (Mobile)"
+                            inputValue="true"
+                            name="./isFullWidth"
+                            type="checkbox"
+                            xtype="selection"/>
+                    </items>
+                </postalcode>
+            </items>
+        </generalSettings>
+        <videoSettings
+            jcr:primaryType="cq:Widget"
+            title="Video"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <videoURL
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="URL of YouTube video"
+                    name="./videoURL"
+                    xtype="textfield"/>
+                <videoTitle
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Title of video"
+                    name="./videoTitle"
+                    xtype="textfield"/>
+                <videoCopy
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Copy under modal video"
+                    name="./videoCopy"
+                    xtype="textarea"/>
+                <videoTranscript
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Video transcript"
+                    name="./videoTranscript"
+                    xtype="textarea"/>
+            </items>
+        </videoSettings>
+    </items>
+</jcr:root>
