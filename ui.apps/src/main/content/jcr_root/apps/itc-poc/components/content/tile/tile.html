@@ -1,0 +1,281 @@
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+    <meta data-sly-call="${clientLib.css @ categories='designs.itc-poc.components.tile'}" data-sly-unwrap></meta>
+</div>
+ 
+<sly data-sly-use.tileModule="tile.js" />
+<!--/* 	Code to take input from Dialog for centerText,displayBorder and fullWidth.
+	and assign classes to variable if checkbox checked
+    CODE STARTS
+*/-->
+<div data-sly-use.tileObject="${'com.adobe.itc.poc.core.models.Tile'}" data-sly-unwrap></div>
+<div data-sly-test.clsCenterText="" data-sly-unwrap></div>
+<div data-sly-test.clsDisplayBorder="" data-sly-unwrap></div>
+<div data-sly-test.clsFullWidth="" data-sly-unwrap></div>
+<div data-sly-test.clsOverlayAll="" data-sly-unwrap></div>
+<div data-sly-test.clsOverlayTitle="" data-sly-unwrap></div>
+<div data-sly-test.clsBodyText="" data-sly-unwrap></div>
+<div data-sly-test.isNewWindow="${properties.newWindow == 'true'}" data-sly-unwrap></div>
+<div data-sly-test.isLinkandUrlPresent="${properties.linkText=='none' && (properties.tileURL==null||properties.tileURL=='')}"data-sly-unwrap></div>
+<div data-sly-test.isLinkandUnderPresent="${properties.linkText=='none' && properties.textBoxPosition=='under'}"data-sly-unwrap></div>
+<div data-sly-test.titleColor="${properties.titleColor}" data-sly-unwrap></div>
+
+
+<div data-sly-test="${properties.isCenterText}" data-sly-unwrap>
+    <div data-sly-test.clsCenterText="clsCenterText" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${properties.isDisplayBorder}" data-sly-unwrap>
+    <div data-sly-test.clsDisplayBorder="clsDisplayBorder" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${properties.isFullWidth}" data-sly-unwrap>
+    <div data-sly-test.clsFullWidth="clsFullWidth" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${properties.textBoxPosition== 'overlayAll'}" data-sly-unwrap>
+    <div data-sly-test.clsOverlayAll="clsOverlayAll" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${properties.textBoxPosition== 'overlayTitle'}" data-sly-unwrap>
+    <div data-sly-test.clsOverlayTitle="clsOverlayTitle" data-sly-unwrap></div>
+</div>
+<div data-sly-test.isnotTileBody="${properties.tileBody == 'none' || properties.tileBody == null || properties.tileBody == ''}" data-sly-unwrap>
+</div>
+<div data-sly-test.isBodyText="${properties.tileBody != 'none' && properties.tileBody != null && properties.tileBody != '' && properties.tileBody != '(none)'}" data-sly-unwrap>
+	<div data-sly-test.clsBodyText="clsBodyText" data-sly-unwrap></div>
+</div>
+
+
+<!--/* Code for Image randition  */-->
+
+<div data-sly-test.imageReferencePath="${properties.imageReference}" data-sly-unwrap></div>
+<div data-sly-test.imageReferenceMDPath="${properties.imageReferenceMD}" data-sly-unwrap></div>
+<div data-sly-test.imageReferenceSMPath="${properties.imageReferenceSM}" data-sly-unwrap></div>
+<div data-sly-test.imageReferenceXSPath="${properties.imageReferenceXS}" data-sly-unwrap></div>
+	
+<div data-sly-test.isBigDesktopImage="${!properties.isBigDesktopImage}" data-sly-unwrap>
+</div>
+<div data-sly-test.isDesktopImage="${!properties.isDesktopImage}" data-sly-unwrap>   
+</div>
+<div data-sly-test.isTabletImage="${!properties.isTabletImage}" data-sly-unwrap>
+</div>
+<div data-sly-test.isMobileImage="${!properties.isMobileImage}" data-sly-unwrap>   
+</div>
+
+
+<div data-sly-test="${imageReferenceMDPath =='none' || imageReferenceMDPath == null || imageReferenceMDPath == ''}" data-sly-unwrap>
+	<div data-sly-test.imageReferenceMDPath = "${imageReferencePath}" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${imageReferenceSMPath =='none' || imageReferenceSMPath == null || imageReferenceSMPath == ''}" data-sly-unwrap>
+	<div data-sly-test.imageReferenceSMPath = "${imageReferenceMDPath}" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${imageReferenceXSPath =='none' || imageReferenceXSPath == null || imageReferenceXSPath == ''}" data-sly-unwrap>
+	<div data-sly-test.imageReferenceXSPath = "${imageReferenceSMPath}" data-sly-unwrap></div>  
+</div>
+<!--/* Code to take input from Dialog - ENDS  */-->
+
+<sly data-sly-use.urlGen="${'com.adobe.itc.poc.core.utils.ValidUrlGenerator' @ path=properties.videoURL}" />
+<!--/* Code for Video tile */-->
+<div data-sly-test="${properties.videoURL != null}" data-sly-unwrap>
+    <div id="${tileModule.tileId}" class="tile-module tile-video ${clsFullWidth} ${clsDisplayBorder}" href="${urlGen.getCompletePath}" aria-labelledby="${tileModule.tileModuleTitleId}">
+	    <div data-sly-test.isTarget="${isNewWindow == true || (isNewWindow == false && tileObject.target == true)}" data-sly-unwrap>
+            <a href="${urlGen.getCompletePath}" target="_blank" class="modal-video" role="button">
+        </div>
+		<div data-sly-test.isNotTarget="${isNewWindow == false && tileObject.target == false}" data-sly-unwrap>
+            <a href="${urlGen.getCompletePath}" class="modal-video" role="button">
+        </div>
+        
+
+                <div class="tileImg img-responsive tile-block lazy-loader lazy-bg" 
+            		 style="background-image: url(${imageReferencePath @ context='uri'})"
+                     data-imageReferenceMDPath="${imageReferenceMDPath @ context='uri'}"
+                     data-imageReferenceSMPath="${imageReferenceSMPath @ context='uri'}"
+                     data-imageReferenceXSPath="${imageReferenceXSPath @ context='uri'}"
+                     data-isBigDesktopImage="${isBigDesktopImage @ context='uri'}"
+                     data-isDesktopImage="${isDesktopImage @ context='uri'}"
+                     data-isTabletImage="${isTabletImage @ context='uri'}"
+                     data-isMobileImage="${isMobileImage @ context='uri'}">
+                    <i class="fa fa-play-circle-o">Play video</i>
+                </div>
+
+
+            <div id="${tileModule.tileTitleId}" class="tileText-wrapper  ${properties.textBoxPosition}  ${clsCenterText}">
+                <div class='tile-title'>
+
+                    <div data-sly-test="${properties.headingStyle == 'h1'}" data-sly-unwrap>
+                        <h1>${properties.tileHeading}</h1>
+                    </div>
+                    <div data-sly-test="${properties.headingStyle == 'h2'}" data-sly-unwrap>
+                        <h2>${properties.tileHeading}</h2>
+                    </div>
+                    <div data-sly-test="${properties.headingStyle == 'h3'  || properties.headingStyle == null || properties.headingStyle == ''}" data-sly-unwrap>
+                        <h3>${properties.tileHeading}</h3>
+                    </div>
+                    <div data-sly-test="${properties.headingStyle == 'h4'}" data-sly-unwrap>
+                        <h4>${properties.tileHeading}</h4>
+                    </div>
+                    <div data-sly-test="${properties.headingStyle == 'h5'}" data-sly-unwrap>
+                        <h5>${properties.tileHeading}</h5>
+                    </div>
+                    <div data-sly-test="${properties.headingStyle == 'h6'}" data-sly-unwrap>
+                        <h6>${properties.tileHeading}</h6>
+                    </div>
+
+                    <div data-sly-test="${properties.headingStyle == 'p' }" data-sly-unwrap>
+                        <p>${properties.tileHeading}</p>
+                    </div>
+                    <div data-sly-test.isnotlinktext="${properties.linkText == 'none' || properties.linkText == null || properties.headingStyle == ''}" data-sly-unwrap>
+                        <div data-sly-test="${properties.isDisplayArrow}" data-sly-unwrap>
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="copy-block  ">
+                    <div data-sly-test="${properties.tileBody != 'none' && properties.tileBody != null && properties.tileBody != ''}" data-sly-unwrap>
+                        <span class="tileBody">${properties.tileBody}</span>
+                    </div>
+                    <span class="btn-text" id="${tileModule.tileModuleTitleId}">
+										<div data-sly-test="${!isnotlinktext}" data-sly-unwrap>
+						${properties['linkText']}
+					<div data-sly-test="${properties.isDisplayArrow}" data-sly-unwrap>
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+					</div>
+					</div>
+				</span>
+                </div>
+            </div>
+        </a>
+        <div class="tile-video-info">
+            <h3 class="tile-video-title">${properties.videoTitle}</h3>
+            <div class="tile-video-copy">${properties.videoCopy @ context='html'}</div>
+            <div class="tile-video-transcript">${properties.videoTranscript @ context='html'}</div>
+        </div>
+    </div>
+
+</div>
+
+<!--/* Code for Image tile */-->
+<sly data-sly-use.urlGen="${'com.adobe.itc.poc.core.utils.ValidUrlGenerator' @ path=properties.tileURL}" />
+
+<!--/* if no video then use a background image */-->
+<div data-sly-test="${properties.videoURL == null}" data-sly-unwrap>
+    <div id="${tileModule.tileId}" class="tile-module tile-image ${clsOverlayTitle} ${clsFullWidth} ${clsDisplayBorder}" href="${urlGen.getCompletePath}" data-linktarget="${properties.newWindow}" aria-labelledby="${tileModule.tileModuleTitleId}">
+
+
+		<div class="tileImg img-responsive tile-block lazy-loader lazy-bg ${properties.opacity} ${clsOverlayAll}"
+        	 style="background-image: url(${imageReferencePath @ context='uri'})"
+             data-imageReferenceMDPath="${imageReferenceMDPath @ context='uri'}"
+             data-imageReferenceSMPath="${imageReferenceSMPath @ context='uri'}"
+             data-imageReferenceXSPath="${imageReferenceXSPath @ context='uri'}"
+             data-isBigDesktopImage="${isBigDesktopImage @ context='uri'}"
+             data-isDesktopImage="${isDesktopImage @ context='uri'}"
+             data-isTabletImage="${isTabletImage @ context='uri'}"
+             data-isMobileImage="${isMobileImage @ context='uri'}">
+		</div>
+
+
+		<div id="${tileModule.tileTitleId}" class="tileText-wrapper  ${properties.textBoxPosition} ${clsBodyText} ${properties.backgroundType}  ${clsCenterText}">
+            <div class='tile-title' id="${tileModule.tileTitleId}" >
+            <div data-sly-test="${isLinkandUrlPresent==false}" data-sly-unwrap>
+
+                <div data-sly-test.isnotlinktext="${properties.linkText == 'none' || properties.linkText == null || properties.headingStyle == ''}" data-sly-unwrap>
+
+					<div data-sly-test.isTarget="${isNewWindow == true || (isNewWindow == false && tileObject.target == true)}" data-sly-unwrap>
+						<a href="${urlGen.getCompletePath}" target="_blank" class="title-anchor">
+					</div>
+                    <div data-sly-test.isNotTarget="${isNewWindow == false && tileObject.target == false}" data-sly-unwrap>
+						<a href="${urlGen.getCompletePath}" class="title-anchor">
+					</div>
+                </div>
+               
+
+                <div data-sly-test="${properties.headingStyle == 'h1'}" data-sly-unwrap>
+                    <h1 >${properties.tileHeading}</h1>
+                </div>
+                <div data-sly-test="${properties.headingStyle == 'h2'}" data-sly-unwrap>
+                    <h2>${properties.tileHeading}</h2>
+                </div>
+                <div data-sly-test="${properties.headingStyle == 'h3' || properties.headingStyle == null || properties.headingStyle == ''}" data-sly-unwrap>
+					 <h2 >${properties.tileHeading}</h2>
+                </div>
+                <div data-sly-test="${properties.headingStyle == 'h4'}" data-sly-unwrap>
+                    <h4 >${properties.tileHeading}</h4>
+                </div>
+                <div data-sly-test="${properties.headingStyle == 'h5'}" data-sly-unwrap>
+                    <h5>${properties.tileHeading}</h5>
+                </div>
+                <div data-sly-test="${properties.headingStyle == 'h6'}" data-sly-unwrap>
+                    <h6>${properties.tileHeading}</h6>
+                </div>
+                <div data-sly-test="${properties.headingStyle == 'p' }" data-sly-unwrap>
+                    <p>${properties.tileHeading}</p>
+                </div>
+                <div data-sly-test="${isnotlinktext}" data-sly-unwrap>
+                    <div data-sly-test="${properties.isDisplayArrow}" data-sly-unwrap>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
+                    </a>		                    
+                </div>
+				 </div>
+				 
+				 <div data-sly-test="${isLinkandUrlPresent==true}" data-sly-unwrap>             
+                <div data-sly-test="${properties.headingStyle == 'h1'}" data-sly-unwrap>
+                    <h1 style="color: #${titleColor @ context='styleToken'};" tabindex="0">${properties.tileHeading}</h1>
+                </div>
+                <div data-sly-test="${properties.headingStyle == 'h2'}" data-sly-unwrap>
+                    <h2 style="color: #${titleColor @ context='styleToken'};" tabindex="0">${properties.tileHeading}</h2>
+                </div>
+                <div data-sly-test="${properties.headingStyle == 'h3' || properties.headingStyle == null || properties.headingStyle == ''}" data-sly-unwrap>
+						<h3 style="color: #${titleColor @ context='styleToken'};" tabindex="0">${properties.tileHeading}</h3>
+                </div>
+                <div data-sly-test="${properties.headingStyle == 'h4'}" data-sly-unwrap>
+                    <h4 style="color: #${titleColor @ context='styleToken'};" tabindex="0">${properties.tileHeading}</h4>
+                </div>
+                <div data-sly-test="${properties.headingStyle == 'h5'}" data-sly-unwrap>
+                    <h5 style="color: #${titleColor @ context='styleToken'};" tabindex="0">${properties.tileHeading}</h5>
+                </div>
+                <div data-sly-test="${properties.headingStyle == 'h6'}" data-sly-unwrap>
+                    <h6 style="color: #${titleColor @ context='styleToken'};" tabindex="0">${properties.tileHeading}</h6>
+                </div>
+                <div data-sly-test="${properties.headingStyle == 'p' }" data-sly-unwrap>
+                    <p>${properties.tileHeading}</p>  
+                </div>
+				 </div>
+            </div>
+
+
+            <div data-sly-test="${!isnotTileBody || !isnotlinktext  ||(isLinkandUnderPresent)}" data-sly-unwrap>
+                <div class="copy-block ">
+                    <div data-sly-test="${isBodyText}" data-sly-unwrap>
+                        <p class="tileBody" id="${tileModule.tileBodyId}" tabindex="0">${properties.tileBody}</p>
+                    </div>
+                     <div data-sly-test="${isLinkandUrlPresent==false}" data-sly-unwrap>
+                    <div class="btn-text" >
+					<div data-sly-test="${!isnotlinktext}" data-sly-unwrap>
+					<div data-sly-test.isTarget="${isNewWindow == true || (isNewWindow == false && tileObject.target == true)}" data-sly-unwrap>
+						<a href="${urlGen.getCompletePath}" target="_blank">${properties.linkText}
+					</div>
+                    <div data-sly-test.isNotTarget="${isNewWindow == false && tileObject.target == false}" data-sly-unwrap>
+						<a href="${urlGen.getCompletePath}">${properties.linkText}
+					</div>						
+					<div data-sly-test="${properties.isDisplayArrow}" data-sly-unwrap>
+						<i class="fa fa-chevron-right" aria-hidden="true"></i>
+					</div>
+					</a>
+                    </div>
+					</div>
+			</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+    <meta data-sly-call="${clientLib.js @ categories='designs.itc-poc.components.tile'}" data-sly-unwrap></meta>
+</div>
+
+<script>
+
+	var tileDialogConfig = {};
+
+    tileDialogConfig.isTarget ="${ isTarget @ context='scriptString'}";
+    tileDialogConfig.isNotTarget ="${ isNotTarget @ context='scriptString'}";
+
+
+</script>
