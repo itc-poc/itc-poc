@@ -1,0 +1,390 @@
+@import (reference) "/etc/designs/uopx/clientlibs/global/global-head/css/mixins.less";
+@import (reference) "/etc/designs/uopx/clientlibs/global/global-head/css/colors.less";
+ 
+/* ----------------------- */
+/*  thumbnail tile styles */
+/* ----------------------- */
+
+.alternate-tile {  
+    margin:1.5715em 0px 0 0;
+    font-family:'Open Sans', arial, sans-serif;
+
+    	/*.alternate-tileImg{
+            width:500px;
+        	height:195px;
+        	//border: 2px solid;
+
+        }*/
+
+
+    	.a-tile-title {
+
+        	font-size: 1.3em;
+        	font-weight:600;
+        	/*line-height: 1.4;*/
+        	line-height: 0.9;
+        	margin: 0;
+        	text-transform: uppercase;
+        	position: relative;
+        	    text-align: left;
+        	//height:20% ;//!important;
+        	/*color:#0099cc;*/
+
+    	}     
+        .a-a-tile-title h1, .a-a-tile-title h2, .a-a-tile-title h3, .a-a-tile-title h4, .a-a-tile-title h5, .a-a-tile-title h6, .a-a-tile-title p {
+            //margin-bottom: 20px;
+            position: absolute;
+            top: 0;
+            font-weight:600;
+        	//line-height:1.3;
+        	/*color:#0099cc;*/
+
+        }
+    .copy-block-tile{
+        flex-flow: column nowrap;display:flex;
+        margin: 10px 0 0 0;
+        position:relative;
+        .tileBody{
+            flex: 1 0 auto;
+            color:#000;
+            font-size:1.4em;
+            //padding-top: 15px;
+    		line-height: normal;
+        }
+    }
+
+    		h1{
+                font-size:1.9em;
+        
+            }
+            h2{
+                font-size:1.6em;
+            }
+            h3{
+                font-size:1.3em;
+            }
+            h4{
+                font-size:0.8em;
+            }
+            h5{
+                font-size:0.6em;
+            }
+            h6{
+                font-size:0.5333em;
+            } 
+    	.title-anchor{
+            outline:none;
+            display: block;
+        	text-decoration:none;
+            outline:none;
+        	/*color:#0099cc !important;*/
+					//padding-left:2px;
+        	border-bottom: none !important;
+
+             h1,h2,h3,h4,h5,h6,.fa-angle-right{
+                position:relative;
+                display:inline;
+				font-weight:600;
+            	&:hover{
+                    color : #000;
+    				cursor: pointer;
+                }
+
+            }
+
+
+          }
+
+
+    	.overlayTitle{
+                background: rgba(255,255,255,0.85);
+                padding:15px 10px;
+    			position: absolute;
+    			bottom: 0;
+    			width: 100%;
+                .a-a-tile-title{
+                    .title-anchor();
+
+                }
+            }
+            .clsOverlayAll{
+                opacity:.15;
+            }
+            .overlayAll {
+                .a-tile-title{
+                    position: absolute;
+                   // bottom: 77%;
+                    width: 100%;
+                	z-index:1;
+                	padding:15px 10px;
+                	outline:none;
+                	display: block;
+                	text-decoration:none;
+                	outline:none;
+
+                    a{
+                        position:absolute;
+                        bottom:37px;
+                    }
+
+                }
+            	.copy-block{
+					padding:15px 10px;
+                }
+
+            }
+
+
+
+	/*till 766 in section class margin-bottom:15 is available*/
+    @media only screen and (max-width : 766px){
+		margin:0.5em 0px 0 0 !important;
+
+    } 
+    @media only screen and (min-width:861px) and (max-width : 1199px){
+		//padding-left: 3%;
+
+    }
+    /* starts min-width :860px   */
+	@media only screen and (min-width : 860px){
+
+        .alternate-tileImg{
+            width:500px;
+        	height:195px;
+        	//border: 2px solid;
+
+        }
+        .imgFloatRight{
+            float:right !important;
+        }
+        .imgFloatLeft{
+            float:left !important;
+        }
+        .alternate-tileText{
+        	width:360px;
+			height:195px;
+        	//border: 2px solid red; 
+        	background:#fff;
+        	//padding-left:40px;
+                padding: 5px 5px 5px 40px;
+            display:table;
+            .textDiv{
+    		  display:table-cell;
+              vertical-align:middle;
+            }
+    	}
+    	.alternate-tileBlock{ 
+        	height:195px;
+			//width:860px;
+        	//display: table-row-group;
+   			//border: 2px solid;
+            margin: auto;
+    	}
+    	.tile-block {
+            background-image: url(/content/dam/geometrixx/icons/office-building.png);
+            //background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        	cursor:pointer;
+         	//background-size: 100% 100% ;
+        	height: 195px;
+                margin-top: 0;
+                padding: 0;
+            .alternate-tileImg();            
+        }
+    }
+    /* end min-width :860px   */
+
+    /* starts min-width :660px and max-width:860   */
+	@media only screen and (min-width : 660px) and (max-width:860px){
+
+		.alternate-tileImg{
+            width:300px;
+        	height:195px;
+        	//border: 2px solid;
+
+        }
+        .imgFloatRight{
+            float:right !important;
+        }
+        .imgFloatLeft{
+            float:left !important;
+        }
+        .alternate-tileText{
+        	width:360px;
+			height:195px;
+        	//border: 2px solid red; 
+        	background:#fff;
+        	//padding-left:40px;
+                padding: 5px 5px 5px 40px;
+            display:table;
+            .textDiv{
+    		  display:table-cell;
+              vertical-align:middle;
+            }
+    	}
+    	.alternate-tileBlock{ 
+        	height:195px;
+			width:660px;
+        	//display: table-row-group;
+            margin: auto;
+   			//border: 2px solid;
+    	}
+    	.tile-block {
+            background-image: url(/etc/designs/uopx/images/tile-bg-default.gif);
+            //background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        	cursor:pointer;
+         	//background-size: 100% 100% ;
+        	height: 195px;
+                margin-top: 0;
+                padding: 0;
+            .alternate-tileImg();            
+        }
+
+    }
+    /* end min-width :660px and max-width:860   */
+	/* starts max-width :660px  */
+
+    @media only screen and (min-width : 351px) and (max-width : 660px){
+
+    	//margin:0.5em 0px 0 0 !important;
+
+        .alternate-tileImg{
+            width:300px;
+        	height:117px;
+        	//border: 2px solid;
+            display:table;
+
+        }
+        .alternate-tileText{
+        	width:300px;
+			height:142px;
+        	//border: 2px solid red; 
+        	background:#fff;
+        	//padding-left:20px;
+                padding: 5px 5px 5px 20px;
+            display:table;
+            margin: auto;
+            .textDiv{
+    		  display:table-cell;
+              vertical-align:middle;
+            }
+    	}
+    	.alternate-tileBlock{ 
+        	//height:142px;
+			width:300px;
+            //margin: 0 -31px;
+        	display: inline;
+            margin: auto;
+   			//border: 2px solid;
+    	}
+    	.tile-block {
+            background-image: url(/etc/designs/uopx/images/tile-bg-default.gif);
+            //background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        	cursor:pointer;
+         	//background-size: 100% 100% ;
+        	height: 117px;
+            margin-top: 0;
+            padding: 0;
+            margin: auto;
+            display:table;
+            .alternate-tileImg();  
+
+        }
+        .copy-block-tile{
+        flex-flow: column nowrap;display:flex;
+        margin: 10px 0 0 0;
+        position:relative;
+        .tileBody{
+            flex: 1 0 auto;
+            color:#000;
+            font-size:1.4em;
+            //padding-top: 15px;
+    		//line-height: normal;
+        }
+    }
+
+    }
+
+    /* end max-width :660px   */
+
+    /* starts max-width :350px  */
+
+    @media only screen and (min-width : 320px) and (max-width : 350px){
+
+        //margin:0.5em 0px 0 0 !important;
+
+		.alternate-tileImg{
+            width:300px;
+        	height:117px;
+        	//border: 2px solid;
+            display:table;
+
+        }
+        .alternate-tileText{
+        	width:300px;
+			height:142px;
+        	//border: 2px solid red; 
+        	background:#fff;
+        	padding: 5px 5px 5px 20px;
+            display:table;
+            margin: auto;
+            .textDiv{
+    		  display:table-cell;
+              vertical-align:middle;
+            }
+    	}
+    	.alternate-tileBlock{ 
+        	//height:142px;
+			width:300px;
+            margin: 0 -31px;
+        	//display: inline;
+            //margin: auto;
+   			//border: 2px solid;
+    	}
+    	.tile-block {
+            background-image: url(/etc/designs/uopx/images/tile-bg-default.gif);
+            //background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; 
+            position: relative;
+        	cursor:pointer;
+         	//background-size: 100% 100% ;
+        	height: 117px;
+            margin-top: 0;
+            padding: 0;
+            margin: auto;
+            display:table; 
+            .alternate-tileImg();  
+
+        }
+        .copy-block-tile{
+        flex-flow: column nowrap;display:flex;
+        margin: 10px 0 0 0;
+        position:relative;
+        .tileBody{
+            flex: 1 0 auto;
+            color:#000;
+            font-size:1.4em;
+            //padding-top: 15px;
+    		//line-height: normal;
+        }
+    }
+
+    }
+
+    /* end max-width :350px   */
+
+
+}
+
+
+
+
