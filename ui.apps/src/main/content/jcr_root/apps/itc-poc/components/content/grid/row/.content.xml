@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    cq:isContainer="{Boolean}true"
+    jcr:description="ITC_POC row Containers"
+    jcr:primaryType="cq:Component"
+    jcr:title="Row"
+    sling:resourceSuperType="/apps/itc-poc/components/content/grid/gridbase"
+    allowedChildren="[*]"
+    allowedParents="*"
+    componentGroup="ITC-POC"/>
