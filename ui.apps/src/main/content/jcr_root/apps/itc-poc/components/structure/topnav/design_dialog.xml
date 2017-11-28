@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    helpPath="en/cq/current/wcm/default_components.html#Image"
+    title="Top Navigation Settings"
+    xtype="tabpanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <generalSettings
+            jcr:primaryType="cq:Widget"
+            title="General"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <absParent
+                    jcr:primaryType="nt:unstructured"
+                    fieldDescription="(eg: 1 for /content/site)"
+                    fieldLabel="Parent Level (absolute)"
+                    name="./absParent"
+                    xtype="textfield"/>
+                <hideinnav
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Hide site title"
+                    inputValue="true"
+                    name="./hideSiteTitle"
+                    type="checkbox"
+                    xtype="selection"/>
+                <topNavBgColor
+                    jcr:primaryType="cq:Widget"
+                    colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF]"
+                    fieldDescription="Choose a color for the item list"
+                    fieldLabel="Top Nav Background Color"
+                    name="./topNavBackgroundColor"
+                    showHexValue="true"
+                    xtype="colorfield"/>
+                <fontColor
+                    jcr:primaryType="cq:Widget"
+                    colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF]"
+                    fieldDescription="Choose a color for the item list"
+                    fieldLabel="Title Font Color"
+                    name="./topNavFontColor"
+                    showHexValue="true"
+                    xtype="colorfield"/>
+                <hoverFontColor
+                    jcr:primaryType="cq:Widget"
+                    colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF]"
+                    fieldDescription="Choose a color for the item list"
+                    fieldLabel="Title Hover Font Color"
+                    name="./topNavHoverFontColor"
+                    showHexValue="true"
+                    xtype="colorfield"/>
+                <topNavHoverColor
+                    jcr:primaryType="cq:Widget"
+                    colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF]"
+                    fieldDescription="Choose a color for the item list"
+                    fieldLabel="Top Nav Hover Color"
+                    name="./topNavHoverColor"
+                    showHexValue="true"
+                    xtype="colorfield"/>
+                <headingStyle
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="h2"
+                    fieldDescription="Heading defaults to H2."
+                    fieldLabel="Main Nav Heading Style"
+                    name="./topMainHeadingStyle"
+                    type="select"
+                    value="h2"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <h1
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 1 (h1)"
+                            value="h1"/>
+                        <h2
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 2 (h2) - Default"
+                            value="h2"/>
+                        <h3
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 3 (h3)"
+                            value="h3"/>
+                        <h4
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 4 (h4)"
+                            value="h4"/>
+                        <h5
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 5 (h5)"
+                            value="h5"/>
+                        <h6
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 6 (h6)"
+                            value="h6"/>
+                        <p
+                            jcr:primaryType="nt:unstructured"
+                            text="Paragraph (p)"
+                            value="p"/>
+                    </options>
+                </headingStyle>
+                <subMenuheadingStyle
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="h3"
+                    fieldDescription="Heading defaults to H3."
+                    fieldLabel="Sub Nav Heading Style"
+                    name="./topSubHeadingStyle"
+                    type="select"
+                    value="h3"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <h1
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 1 (h1)"
+                            value="h1"/>
+                        <h2
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 2 (h2)"
+                            value="h2"/>
+                        <h3
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 3 (h3) - Default"
+                            value="h3"/>
+                        <h4
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 4 (h4)"
+                            value="h4"/>
+                        <h5
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 5 (h5)"
+                            value="h5"/>
+                        <h6
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 6 (h6)"
+                            value="h6"/>
+                    </options>
+                </subMenuheadingStyle>
+            </items>
+        </generalSettings>
+    </items>
+</jcr:root>
