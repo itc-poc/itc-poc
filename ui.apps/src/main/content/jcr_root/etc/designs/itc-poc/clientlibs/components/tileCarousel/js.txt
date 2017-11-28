@@ -1,0 +1,4 @@
+#base=js
+//slick.js
+slickCarousel.min.js
+tileCarousel.js
