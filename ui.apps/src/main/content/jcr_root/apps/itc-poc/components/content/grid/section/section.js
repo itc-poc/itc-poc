@@ -1,0 +1,1 @@
+"use strict";var global=this;use(function(){var a=function(){if(global.wcmmode&&global.wcmmode.isEdit()){if(!global.currentNode.hasNodes()){var b=global.currentNode.addNode("column");b.setProperty("lgNumCols","12");b.setProperty("sling:resourceType","itc-poc/components/content/grid/column");global.currentNode.getSession().save()}}return true};return{init:a()}});

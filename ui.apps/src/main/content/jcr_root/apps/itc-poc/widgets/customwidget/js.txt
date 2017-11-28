@@ -1,3 +1,4 @@
 #base=js
 
 DDPathField.js
+itcmultifieldpanel.js

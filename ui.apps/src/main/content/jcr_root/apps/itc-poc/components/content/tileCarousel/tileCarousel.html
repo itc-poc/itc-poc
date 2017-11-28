@@ -1,0 +1,98 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+    <meta data-sly-call="${clientLib.css @ categories='designs.itc.poc.components.tileCarousel'}" data-sly-unwrap></meta>
+</div>
+
+<!--/* 	Code to take input from Dialog  */-->
+<div data-sly-use.tileObject="${'com.adobe.itc.poc.core.models.TileCarousel'}" data-sly-unwrap></div>
+<div data-sly-test.mainHeadline="${properties.mainHeadline}" data-sly-unwrap></div>
+<div data-sly-test.mainHeadlineColor="${properties.mainHeadlineColor}" data-sly-unwrap></div>
+<div data-sly-test.subHeader="${properties.subHeader}" data-sly-unwrap></div>
+<div data-sly-test.subHeaderColor="${properties.subHeaderColor}" data-sly-unwrap></div>
+<div data-sly-test.primaryText="${properties.primaryText}" data-sly-unwrap></div>
+<div data-sly-test.primaryTextColor="${properties.primaryTextColor}" data-sly-unwrap></div>
+<div data-sly-test.secondaryText="${properties.secondaryText}" data-sly-unwrap></div>
+<div data-sly-test.secondaryTextColor="${properties.secondaryTextColor}" data-sly-unwrap></div>
+<div data-sly-test.tileTitleColor="${properties.tileTitleColor}" data-sly-unwrap></div>
+
+<div data-sly-test.tileBodyColor="${properties.tileBodyColor}" data-sly-unwrap></div>
+
+<div data-sly-test.mainHeadlineFontSize="${properties.mainHeadlineFontSize}px" data-sly-unwrap></div>
+<div data-sly-test.subHeaderFontSize="${properties.subHeaderFontSize}px" data-sly-unwrap></div>
+<div data-sly-test.primaryTextFontSize="${properties.primaryTextFontSize}px" data-sly-unwrap></div>
+<div data-sly-test.secondaryTextFontSize="${properties.secondaryTextFontSize}px" data-sly-unwrap></div>
+<div data-sly-test.tileTitleFontSize="${properties.tileTitleFontSize}px" data-sly-unwrap></div>
+<div data-sly-test.tileBodyFontSize="${properties.tileBodyFontSize}px" data-sly-unwrap></div>
+
+<div data-sly-test.clsTileClass="" data-sly-unwrap></div>
+
+<div data-sly-list.tileConfCount="${tileObject.tileConfigList}" data-sly-unwrap>
+    <div data-sly-test.tileCount="${tileConfCountList.count}" data-sly-unwrap></div>
+</div>
+
+<div data-sly-test="${tileCount== 1}" data-sly-unwrap>
+    <div data-sly-test.clsTileClass="col-lg-12 col-md-12 col-sm-12" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${tileCount== 2}" data-sly-unwrap> 
+    <div data-sly-test.clsTileClass="col-lg-6 col-md-6 col-sm-6" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${tileCount== 3}" data-sly-unwrap>  
+    <div data-sly-test.clsTileClass="col-lg-4 col-md-4 col-sm-4" data-sly-unwrap></div>
+</div> 
+
+<div data-sly-test.isAutoCarousel="${properties.isAutoCarousel == 'true'  ? 'true' : 'false' }" data-sly-unwrap></div>
+<div data-sly-test.intervalTime="${properties.intervalTime}" data-sly-unwrap></div>
+
+<div class="tileCarouselContainer">
+    <div class="tileCarousel-inner col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <sly data-sly-test="${mainHeadline != null}">
+       		<h2 id="tileCarousel-mainHeader" style="font-size:${mainHeadlineFontSize @ context='styleToken'};color:#${mainHeadlineColor @ context='styleToken'};" tabindex="0">${mainHeadline}</h2>
+       </sly>
+	<sly data-sly-test="${subHeader != null}">
+        <h4 id="tileCarousel-subHeader" style="font-size:${subHeaderFontSize @ context='styleToken'};color:#${subHeaderColor @ context='styleToken'};" tabindex="0">${subHeader}</h4>
+        </sly>
+	<sly data-sly-test="${primaryText != null}">
+        <p id="tileCarousel-content" style="font-size:${primaryTextFontSize @ context='styleToken'};color:#${primaryTextColor @ context='styleToken'};" tabindex="0">${primaryText}</p>
+		</sly>
+    <sly data-sly-test="${secondaryText != null}">
+        <h4 id="tileCarousel-differentiatorHeader" style="font-size:${secondaryTextFontSize @ context='styleToken'};color:#${secondaryTextColor @ context='styleToken'};" tabindex="0">${secondaryText}</h4>
+    	</sly>
+        <div class="carouselTileContainer">
+            <section class="regular slider">
+                <div data-sly-list.tileConfigCount="${tileObject.tileConfigList}" data-sly-unwrap>
+                    <div class="col-xs-12">
+                        <div class="ppc-faicon" style="background:#${tileConfigCount.iconBackgroundColor @ context='styleToken'};"><i class="fa ${tileConfigCount.tileIcon}" aria-hidden="true" style="color:#${tileConfigCount.iconColor @ context='styleToken'};"></i></div>
+                        <div class="ppc-header" style="font-size:${tileTitleFontSize @ context='styleToken'};color:#${tileTitleColor @ context='styleToken'};">${tileConfigCount.tileHeading}</div>
+                        <div class="ppc-content" style="font-size:${tileBodyFontSize @ context='styleToken'};color:#${tileBodyColor @ context='styleToken'};">${tileConfigCount.tileBody @ context='html'} </div>
+                    </div>
+                </div>
+            </section>
+            <div id="ProofPointContainer" class="hidden-xs col-lg-12 col-md-12 col-sm-12">
+                <div data-sly-list.tileConfigCount="${tileObject.tileConfigList}" data-sly-unwrap>
+                    <div class="${clsTileClass}">
+                        <div class="ppc-faicon" style="background:#${tileConfigCount.iconBackgroundColor @ context='styleToken'};"><i class="fa ${tileConfigCount.tileIcon}" aria-hidden="true" style="color:#${tileConfigCount.iconColor @ context='styleToken'};"></i></div>
+                        <div class="ppc-header" style="font-size:${tileTitleFontSize @ context='styleToken'};color:#${mainHeadlineColor @ context='styleToken'};" tabindex="0">${tileConfigCount.tileHeading}</div>
+                        <div class="ppc-content" style="font-size:${tileBodyFontSize @ context='styleToken'};color:#${tileBodyColor @ context='styleToken'};" tabindex="0">${tileConfigCount.tileBody @ context='html'} </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+        <meta data-sly-call="${clientLib.js @ categories='designs.itc.poc.components.tileCarousel'}" data-sly-unwrap></meta>
+    </div>
+
+	
+<script>
+var tcDialogConfig = {};
+	tcDialogConfig.isAutoCarousel = "${properties.isAutoCarousel @ context='scriptString'}";
+	tcDialogConfig.intervalTime = "${properties.intervalTime @ context='scriptString'}";
+</script>    
