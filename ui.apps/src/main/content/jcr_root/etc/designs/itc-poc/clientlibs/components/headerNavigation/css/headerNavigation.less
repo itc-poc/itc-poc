@@ -1,0 +1,310 @@
+@color_1: #052E70;
+@color_2: white;
+@color_3:#eee;
+@font_family_1: sans-serif;
+@background_color_1: #052E70;
+@background_color_2: #eee;
+body{
+    overflow-x:hidden
+}
+h1, h2, h3, h4, h5, h6{
+	margin-top:0px;
+    margin-bottom:10px;
+} 
+h1, h2, h3{
+	@media (max-width: 992px) and (min-width: 768px) {
+        font-size:2.5rem;
+    }
+}
+.nav>li>a:hover, .nav>li>a:focus
+{
+    text-decoration: none;
+    background-color: inherit;
+}
+#megaNav,#megaNavSecond {
+	border-radius: 0;
+	margin-bottom: 0;
+    position: relative;
+    //width: 100%;
+    //overflow: auto;
+    @media (max-width: 767px) {
+        //overflow:auto;
+    }
+    .searchStrip {
+        background-color: #44006d;
+        padding: 10px 15px;
+        display: none;
+        .row {
+            //padding: 15px;
+        }
+        #megaSearch,#megaSearchSecond {
+            margin: 0;
+            .inputSearch {
+                position: relative;
+                display: inline-block;
+                margin: 0;
+                margin-right:10px;
+                width: 60%;
+                color:@color_2; 
+                background-color: transparent;
+                border:0px; box-shadow:none; border-radius:0px;
+                border-bottom:2px solid @color_2;
+                @media (max-width: 767px) {
+                    position: relative;
+                    display: inline-block;
+                    margin: 0;
+                    margin-right:5px;
+                }
+            }
+            .searchBtn {
+                width: 20%;
+                background-color:@color_2;
+                color:#44006d;
+                margin-left:10px;
+                @media (max-width: 767px) {
+                    width: 33%;
+                    margin-left:5px;
+                }
+                i {
+		          margin-right: 10px;
+                  @media (max-width: 767px) {
+                    margin-right: 0px;
+                }
+	           }
+            }
+        }
+    }
+    .headerStripouter{
+        //height:75px;
+        @media (max-width: 767px) {
+            height:75px;
+        }
+        .headerStrip{
+            .brandLogo {
+               float: left;
+               padding: 0px 15px;
+               height: 75px;
+                margin:5px 0px;
+               @media (max-width: 767px) {
+                  height: 65px;
+               }
+               img {
+                  display: block;
+                  max-width: 100%;
+                  height: 100%;
+               }
+            }
+            .navbarListslider {
+                @media (max-width: 767px) {
+                    position: fixed;
+                    height: 100%;
+                    //background: #eee;
+                    width: 75%;
+                    left: -100%;
+                }
+                .navbarList{
+                    @media (max-width: 767px) {
+                            height: 100%;
+                    }
+                    .menuList {
+                        @media (max-width: 767px) {
+                            float: none;
+                        }
+                   }
+                    .menu-item {
+                        position: inherit;
+                        display: inline-block;
+                        height: 85px;
+                        padding: 0 10px;
+                        cursor:pointer;
+                        @media (max-width: 767px) {
+                            padding:0px;
+                            height: auto;
+                            float: none;
+                            display: block;
+                        }
+                         a.dropdown-toggle, a.topnav__link, a{
+                            color: @color_1;
+                            padding: 0px; 
+                            top: 50%;
+                        	transform: translateY(-50%);
+                            text-align: center;
+                            /*@media (max-width: 992px) and (min-width: 768px) {
+                                padding: 0px 10px;
+                            }*/
+                            @media (max-width: 767px) {
+                                padding: 15px;
+                                transform: translateY(0);
+                                top: auto;
+                                text-align: left;
+                            }
+                             i.subMenuchevron,i {
+                                margin-left: 10px;
+                                margin-top:-5px;
+                                vertical-align:middle;
+                                //font-size:14px !important;
+                                @media (max-width: 767px) {
+                                    margin: 1% 0px;
+                                    vertical-align:middle;
+                                }
+                            }
+                        }
+                        a.topnav__icons{
+                            min-width:45px;
+                            @media (min-width:768px) and (max-width:992px){
+                            min-width:25px;
+                            }
+                            i{
+                                margin: 0px;
+                                font-size:inherit !important;
+                            }
+                         }
+
+                          .subDropdownmenu {
+                                display: none;
+                                width: 100%;
+                                height: 70px;
+                                position: absolute;
+                                left: 0;
+                            	top:100%;
+                                list-style: none;
+                                padding: 0;
+                                margin: 0;
+                                text-align: center;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                overflow-y: hidden;
+                                overflow-x: auto;
+                                background-color: @background_color_2;
+                                @media (max-width: 767px) {
+                                    padding: 0;
+                                    display:block;
+                                    height: 100%;
+                                    width: 100%;
+                                    top: 0;
+                                    left: -100%;
+                                    text-align: left;
+                                }
+                                ul {
+                                    padding: 0px;
+                                    position: relative;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    @media (max-width: 767px) {
+                                        top: auto;
+                                        transform: translate(0);
+                                    }
+                                li {
+                                    display: inline-block;
+                                    padding: 0px 10px;
+                                     @media (max-width: 767px) {
+                                        padding:0px;
+                                         display: block;
+                                         word-break: break-word;
+                                        white-space: normal;
+                                    }
+                                    .subdropdownClose{
+                                    	display:none;
+                                        @media (max-width: 767px) {
+                                        	display:block;
+                                        }
+                                    }
+                                    a {
+                                        color: @color_1;
+                                        @media (max-width: 767px) {
+                                            display: block;
+                                        }
+                                        &:hover {
+                                            text-decoration: none;
+                                            @media (max-width: 767px) {
+                                                border-bottom: 0px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }             
+                        }  
+                    }
+                    .activeHover{
+                       // background-color:@background_color_2;
+                    }
+                }
+            }
+        }
+    }
+    .navIconbar{
+        height:70px;
+        padding-right: 15px;
+        .navbar-toggle {
+            @media (max-width: 767px) {
+                display: block;
+                position:relative;
+                top: 50%;
+                transform: translateY(-50%);
+                padding:0;
+                margin:0px;
+            }
+            .icon-bar {
+                background-color: #4E4E4E;
+            }
+        }
+    }
+    .searchTogglebar,.userProfile, .shopCart {
+         box-shadow: none;
+         @media (max-width: 767px){
+            position:relative;
+            top: 50%;
+            transform: translateY(-50%);
+           	margin: 0px;
+            padding:0px 10px;
+        }
+
+		i {                
+			margin-right: 10px;
+            @media (max-width: 767px){
+                margin: 0px;
+                font-size: 20px;
+                color: #4E4E4E;
+            }
+            &:hover{
+            color:#000000;
+            }
+        }
+    }
+}
+#megaNav{
+    z-index:100;
+    .navbarListslider {
+        @media (max-width: 767px) {
+            z-index:99;
+        }
+        .subDropdownmenu {
+             z-index:100;
+        }
+    }
+}
+#megaNavSecond {
+    z-index:10;
+    .navbarListslider {
+        @media (max-width: 767px) {
+           z-index:9;
+        }
+        .subDropdownmenu {
+             z-index:100;
+        }
+    }
+}
+.fixedHeader {
+  position: fixed !important;
+  top:0;
+   //max-width: 940px;
+  width: 100%; 
+}
+@media (max-width: 767px) {
+	.navbarList {
+		width: 100%;
+	}
+	.dropdownmenuActive {
+		display: block;
+	}          
+}

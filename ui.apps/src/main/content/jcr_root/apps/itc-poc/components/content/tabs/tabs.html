@@ -1,0 +1,158 @@
+<sly data-sly-use.redesignedTabDisplayObj="${'com.adobe.itc.poc.core.models.Tabs'}" data-sly-unwrap>
+<sly data-sly-use.tabsModule="tabs.js" />
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" 	data-sly-unwrap>  
+    <meta
+		data-sly-call="${clientLib.all @ categories='itc-poc.handlebars'}"
+		data-sly-unwrap>
+    </meta> 
+	<meta
+		data-sly-call="${clientLib.all @ categories='designs.itc-poc.components.content.tabs'}"
+		data-sly-unwrap>
+    </meta> 
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> </meta> 
+<div data-sly-test.c="" data-sly-unwrap></div>
+
+    <div  role="tablist" class="TabContainer tabs-init tabs-nav-init">
+        <div class="accordion-wrapper">
+        <div data-sly-list.tabConfigCount="${redesignedTabDisplayObj.tabConfigList}" data-sly-unwrap>
+			<div data-sly-test.listCount="${tabConfigCountList.count}" data-sly-unwrap></div>
+        </div> 
+
+            <div data-sly-list.tabConfig="${redesignedTabDisplayObj.tabConfigList}" data-sly-unwrap>
+
+                <div data-sly-test.concat="${tabConfig.tabCount}" data-sly-unwrap></div>
+
+                <div data-sly-test="${listCount == 1}" data-sly-unwrap>
+                	<ul class='inline-list tabs-navigation  show-desktop col-lg-12 col-md-12 col-sm-12 hidden-xs' role='tablist'>
+                		<li role='presentation' class='tab-menu-item'>
+                			<button data-id="TabPanelTitle-${concat}" id="TabPanelTitle-${concat}" class='txt-btn tabs-navigation__item--current' role='tab' aria-selected='false' aria-controls="tab${tabConfig.tabTitleText}" tabindex=-1>
+                    			<span class='titleSpan' >${tabConfig.tabTitleText}</span>
+                    		</button>
+                   		</li>
+                	</ul>
+                    <div class="panel">		
+					<div data-sly-test="${properties.headingStyle == 'h1'}" data-sly-unwrap> 
+                        <h1  class="tabs-container__title" id="TabPanelTitle-${concat}" tabindex="0" role="tab" aria-selected="true" aria-controls="tab${tabConfig.tabTitleText}">  
+							<span class="titleSpan">${tabConfig.tabTitleText}</span>
+							<i class="fa fa-plus"></i>
+						</h1 >
+                    </div>
+					
+					<div data-sly-test="${properties.headingStyle == 'h2'}" data-sly-unwrap>
+                        <h2  class="tabs-container__title" id="TabPanelTitle-tab${concat}" tabindex="0" role="tab" aria-selected="true" aria-controls="tab${tabConfig.tabTitleText}">  
+							<span class="titleSpan">${tabConfig.tabTitleText}</span>
+							<i class="fa fa-plus"></i>
+						</h2 >
+                    </div>
+
+					<div data-sly-test="${properties.headingStyle == 'h3'  || properties.headingStyle == null || properties.headingStyle == ''}" data-sly-unwrap>
+                        <h3  class="tabs-container__title" id="TabPanelTitle-${concat}" tabindex="0" role="tab" aria-selected="true" aria-controls="tab${tabConfig.tabTitleText}">  
+							<span class="titleSpan">${tabConfig.tabTitleText}</span>
+							<i class="fa fa-plus"></i>
+						</h3 >
+                    </div>
+										
+					<div data-sly-test="${properties.headingStyle == 'h4'}" data-sly-unwrap>
+                        <h4  class="tabs-container__title" id="TabPanelTitle-tab${concat}" tabindex="0" role="tab" aria-selected="true" aria-controls="tab${tabConfig.tabTitleText}">  
+							<span class="titleSpan">${tabConfig.tabTitleText}</span>
+							<i class="fa fa-plus"></i>
+						</h4 >
+                    </div>
+										
+					<div data-sly-test="${properties.headingStyle == 'h5'}" data-sly-unwrap>
+                        <h5  class="tabs-container__title" id="TabPanelTitle-${concat}" tabindex="0" role="tab" aria-selected="true" aria-controls="tab${tabConfig.tabTitleText}">  
+							<span class="titleSpan">${tabConfig.tabTitleText}</span>
+							<i class="fa fa-plus"></i>
+						</h5 >
+                    </div>
+
+					<div data-sly-test="${properties.headingStyle == 'h6'}" data-sly-unwrap>
+                        <h6  class="tabs-container__title" id="TabPanelTitle-${concat}" tabindex="0" role="tab" aria-selected="true" aria-controls="tab${tabConfig.tabTitleText}">  
+							<span class="titleSpan">${tabConfig.tabTitleText}</span>
+							<i class="fa fa-plus"></i>
+						</h6 >
+                    </div>
+										
+					<div data-sly-test="${properties.headingStyle == 'p'}" data-sly-unwrap>
+                        <p  class="tabs-container__title" id="TabPanelTitle-${concat}" tabindex="0" role="tab" aria-selected="true" aria-controls="tab${tabConfig.tabTitleText}">  
+							<span class="titleSpan">${tabConfig.tabTitleText}</span>
+							<i class="fa fa-plus"></i>
+						</p >
+                    </div>
+                    <div class="tabs-container__panel  tabs-container__panel_content" data-title="${tabConfig.tabTitleText} " id="${concat}" aria-labelledby="TabController-${tabConfig.tabTitleText}" role="tabpanel" aria-hidden="false" aria-expanded="true">
+                       <div data-sly-resource="${@path=concat , resourceType='wcm/foundation/components/parsys'}"></div>
+					   <div class="comp-tabdiv" tabindex="0"></div>
+                    </div>
+                </div>
+				</div>
+
+
+				<div data-sly-test="${listCount > 1}" data-sly-unwrap>
+					<div class="panel">		
+					<div data-sly-test="${properties.headingStyle == 'h1'}" data-sly-unwrap> 
+                        <h1  class="tabs-container__title" id="TabPanelTitle-${concat}" tabindex="0" role="tab" aria-selected="true" aria-controls="tab${tabConfig.tabTitleText}">  
+							<span class="titleSpan">${tabConfig.tabTitleText}</span>
+							<i class="fa fa-plus"></i>
+						</h1 >
+                    </div>
+					
+					<div data-sly-test="${properties.headingStyle == 'h2'}" data-sly-unwrap>
+                        <h2  class="tabs-container__title" id="TabPanelTitle-tab${concat}" tabindex="0" role="tab" aria-selected="true" aria-controls="tab${tabConfig.tabTitleText}">  
+							<span class="titleSpan">${tabConfig.tabTitleText}</span>
+							<i class="fa fa-plus"></i>
+						</h2 >
+                    </div>
+
+					<div data-sly-test="${properties.headingStyle == 'h3'  || properties.headingStyle == null || properties.headingStyle == ''}" data-sly-unwrap>
+                        <h3  class="tabs-container__title" id="TabPanelTitle-${concat}" tabindex="0" role="tab" aria-selected="true" aria-controls="tab${tabConfig.tabTitleText}">  
+							<span class="titleSpan">${tabConfig.tabTitleText}</span>
+							<i class="fa fa-plus"></i>
+						</h3 >
+                    </div>
+										
+					<div data-sly-test="${properties.headingStyle == 'h4'}" data-sly-unwrap>
+                        <h4  class="tabs-container__title" id="TabPanelTitle-tab${concat}" tabindex="0" role="tab" aria-selected="true" aria-controls="tab${tabConfig.tabTitleText}">  
+							<span class="titleSpan">${tabConfig.tabTitleText}</span>
+							<i class="fa fa-plus"></i>
+						</h4 >
+                    </div>
+										
+					<div data-sly-test="${properties.headingStyle == 'h5'}" data-sly-unwrap>
+                        <h5  class="tabs-container__title" id="TabPanelTitle-${concat}" tabindex="0" role="tab" aria-selected="true" aria-controls="tab${tabConfig.tabTitleText}">  
+							<span class="titleSpan">${tabConfig.tabTitleText}</span>
+							<i class="fa fa-plus"></i>
+						</h5 >
+                    </div>
+
+					<div data-sly-test="${properties.headingStyle == 'h6'}" data-sly-unwrap>
+                        <h6  class="tabs-container__title" id="TabPanelTitle-${concat}" tabindex="0" role="tab" aria-selected="true" aria-controls="tab${tabConfig.tabTitleText}">  
+							<span class="titleSpan">${tabConfig.tabTitleText}</span>
+							<i class="fa fa-plus"></i>
+						</h6 >
+                    </div>
+										
+					<div data-sly-test="${properties.headingStyle == 'p'}" data-sly-unwrap>
+                        <p  class="tabs-container__title" id="TabPanelTitle-${concat}" tabindex="0" role="tab" aria-selected="true" aria-controls="tab${tabConfig.tabTitleText}">  
+							<span class="titleSpan">${tabConfig.tabTitleText}</span>
+							<i class="fa fa-plus"></i>
+						</p >
+                    </div>
+
+                    <div class="tabs-container__panel  tabs-container__panel_content" data-title="${tabConfig.tabTitleText} " id="${concat}" aria-labelledby="TabController-${tabConfig.tabTitleText}" role="tabpanel" aria-hidden="false" aria-expanded="true">
+                       <div data-sly-resource="${@path=concat , resourceType='wcm/foundation/components/parsys'}"></div>
+					   <div class="comp-tabdiv" tabindex="0"></div>
+                    </div>
+                </div>
+            </div>
+                
+            </div>        
+       </div>
+    </div>
+</div>
+</sly> 
+
+<script>
+	var tileDialogConfig = {};
+	tileDialogConfig.isTarget ="${properties.headingStyle  @ context='scriptString'}";
+</script>
+

@@ -12,11 +12,13 @@
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+    <nav class="page__topnav" data-sly-resource="topnav"></nav>
 */-->
 <div class="page__main" data-sly-use.main="main.js">
     <header class="page__header">
-        <div class="page__logo" data-sly-resource="logo"></div>
-        <nav class="page__topnav" data-sly-resource="topnav"></nav>
+        <!--/*<sly data-sly-include="/apps/itc-poc/components/content/headerNavigation/headerNavigation.html" data-sly-unwrap/>
+        <div class="page__logo" data-sly-resource="logo"></div>*/-->
+		<nav class="page__topnav" data-sly-resource="topnav"></nav>
     </header>
 
     <div class="page__title" data-sly-resource="${'title' @ decorationTagName='div'}"></div>
