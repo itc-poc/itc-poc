@@ -1,5 +1,6 @@
 @color_1: #052E70;
 @color_2: white;
+@color_3:#eee;
 @font_family_1: sans-serif;
 @background_color_1: #052E70;
 @background_color_2: #eee;
@@ -8,13 +9,19 @@ body{
 }
 h1, h2, h3, h4, h5, h6{
 	margin-top:0px;
-    margin-bottom:0px;
+    margin-bottom:10px;
+} 
+h1, h2, h3{
 	@media (max-width: 992px) and (min-width: 768px) {
         font-size:2.5rem;
     }
-} 
+}
+.nav>li>a:hover, .nav>li>a:focus
+{
+    text-decoration: none;
+    background-color: inherit;
+}
 #megaNav,#megaNavSecond {
-    background: white;
 	border-radius: 0;
 	margin-bottom: 0;
     position: relative;
@@ -24,12 +31,11 @@ h1, h2, h3, h4, h5, h6{
         //overflow:auto;
     }
     .searchStrip {
-        background-color: @background_color_1;
+        background-color: #44006d;
         padding: 10px 15px;
         display: none;
         .row {
-            background-size: 100% 6px;
-            padding: 15px;
+            //padding: 15px;
         }
         #megaSearch,#megaSearchSecond {
             margin: 0;
@@ -37,20 +43,27 @@ h1, h2, h3, h4, h5, h6{
                 position: relative;
                 display: inline-block;
                 margin: 0;
-                width: 80%;
+                margin-right:10px;
+                width: 60%;
+                color:@color_2; 
+                background-color: transparent;
+                border:0px; box-shadow:none; border-radius:0px;
+                border-bottom:2px solid @color_2;
                 @media (max-width: 767px) {
                     position: relative;
                     display: inline-block;
                     margin: 0;
-                    width:65%;
+                    margin-right:5px;
                 }
             }
             .searchBtn {
-                width: 19%;
+                width: 20%;
                 background-color:@color_2;
-                color:@color_1;
+                color:#44006d;
+                margin-left:10px;
                 @media (max-width: 767px) {
                     width: 33%;
+                    margin-left:5px;
                 }
                 i {
 		          margin-right: 10px;
@@ -115,6 +128,7 @@ h1, h2, h3, h4, h5, h6{
                             padding: 0px; 
                             top: 50%;
                         	transform: translateY(-50%);
+                            text-align: center;
                             /*@media (max-width: 992px) and (min-width: 768px) {
                                 padding: 0px 10px;
                             }*/
@@ -122,6 +136,7 @@ h1, h2, h3, h4, h5, h6{
                                 padding: 15px;
                                 transform: translateY(0);
                                 top: auto;
+                                text-align: left;
                             }
                              i.subMenuchevron,i {
                                 margin-left: 10px;
@@ -133,9 +148,14 @@ h1, h2, h3, h4, h5, h6{
                                     vertical-align:middle;
                                 }
                             }
-                            i.fa-search{
-                                margin-left: 0px;
-                                margin-right: 10px;
+                        }
+                        a.topnav__icons{
+                            min-width:45px;
+                            @media (min-width:768px) and (max-width:992px){
+                            min-width:25px;
+                            }
+                            i{
+                                margin: 0px;
                                 font-size:inherit !important;
                             }
                          }
@@ -225,11 +245,11 @@ h1, h2, h3, h4, h5, h6{
                 margin:0px;
             }
             .icon-bar {
-                background-color: @background_color_1;
+                background-color: #4E4E4E;
             }
         }
     }
-    .searchToggle {
+    .searchTogglebar,.userProfile, .shopCart {
          box-shadow: none;
          @media (max-width: 767px){
             position:relative;
@@ -238,12 +258,16 @@ h1, h2, h3, h4, h5, h6{
            	margin: 0px;
             padding:0px 10px;
         }
+
 		i {                
 			margin-right: 10px;
             @media (max-width: 767px){
                 margin: 0px;
                 font-size: 20px;
-                color: @color_1;
+                color: #4E4E4E;
+            }
+            &:hover{
+            color:#000000;
             }
         }
     }
@@ -273,7 +297,7 @@ h1, h2, h3, h4, h5, h6{
 .fixedHeader {
   position: fixed !important;
   top:0;
-    max-width: 940px;
+   //max-width: 940px;
   width: 100%; 
 }
 @media (max-width: 767px) {

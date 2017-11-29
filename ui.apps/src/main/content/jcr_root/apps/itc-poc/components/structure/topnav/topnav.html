@@ -16,7 +16,7 @@
 <ul class="topnav" data-sly-use.topnav="topnav.js" data-sly-list="${topnav.items}">
     <li class="topnav__item ${item.selected && 'topnav__item--selected'}">
         <a class="topnav__link" href="${item.page.path}.html">${item.page.title}</a> 
-    </li>   
+    </li>
 </ul>*/-->
 <meta charset="utf-8">
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
@@ -40,7 +40,7 @@
 <div class="">
     <div id="megaNavSecond" style="background-color: ${topNavBackgroundColor @ context='styleToken'}; color: ${topNavFontColor  @ context='styleToken'};">
         <div class='searchStrip'>
-            <div class='row center-block'>
+            <div class='container text-center'>
                 <form id="megaSearchSecond" class="center-block">
                     <input type="text" class="form-control inputSearch">
                     <button class="btn btn-default searchBtn" type="button">
@@ -52,7 +52,7 @@
         <div class='headerStripouter'>
             <div class='headerStrip'>
                 <div class="brandLogo">
-                    <img src="https://openmarkets.in/wp-content/uploads/2012/07/ITC-Logo.png" tabindex='0'>
+                    <img src="http://www.ithistory.org/sites/default/files/company/logo/200px-ITC_Infotech_logo.png" tabindex='0'>
                 </div>
                 <div class='navbarListslider'> 
                     <div class="navbarList"  style="background-color:${topNavBackgroundColor @ context='styleToken'};">
@@ -71,43 +71,43 @@
                                 <div data-sly-test="${item.page.hideInNav != true}" data-sly-unwrap>
                                     <a class="topnav__link" href="${item.page.path}.html" data-sly-test="${item.page.path != currentPage.path}" style="background-color: ${topNavBackgroundColor @ context='styleToken'}; color:${topNavFontColor @ context='styleToken'};">
                                         	<div data-sly-test="${topMainHeadingStyle == 'h1'}" data-sly-unwrap>
-                                                <h1>${item.page.title}</h1>
+                                                <h1>${item.page.title}<div data-sly-test="${item.page.listChildren}" data-sly-unwrap> <i class="subMenuchevron fa "></i> </div></h1>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h2'  || topMainHeadingStyle == null || topMainHeadingStyle == ''}" data-sly-unwrap>
-                                                <h2>${item.page.title}</h2>
+                                                <h2>${item.page.title}<div data-sly-test="${item.page.listChildren}" data-sly-unwrap> <i class="subMenuchevron fa "></i> </div></h2>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h3'}" data-sly-unwrap>
-                                                <h3>${item.page.title}</h3>
+                                                <h3>${item.page.title}<div data-sly-test="${item.page.listChildren}" data-sly-unwrap> <i class="subMenuchevron fa "></i> </div></h3>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h4'}" data-sly-unwrap>
-                                                <h4>${item.page.title}</h4>
+                                                <h4>${item.page.title}<div data-sly-test="${item.page.listChildren}" data-sly-unwrap> <i class="subMenuchevron fa "></i> </div></h4>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h5'}" data-sly-unwrap>
-                                                <h5>${item.page.title}</h5>
+                                                <h5>${item.page.title}<div data-sly-test="${item.page.listChildren}" data-sly-unwrap> <i class="subMenuchevron fa "></i> </div></h5>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h6'}" data-sly-unwrap>
-                                                <h6>${item.page.title}</h6>
+                                                <h6>${item.page.title}<div data-sly-test="${item.page.listChildren}" data-sly-unwrap> <i class="subMenuchevron fa "></i> </div></h6>
                                             </div> 
                                             <!-- /* ${item.page.title} */ -->
                                     </a>
                                     <a class="topnav__link" href="#" data-sly-test="${item.page.path == currentPage.path}" style="background-color: ${topNavBackgroundColor @ context='styleToken'};  color:${topNavFontColor @ context='styleToken'};">
                                         <div data-sly-test="${topMainHeadingStyle == 'h1'}" data-sly-unwrap>
-                                                <h1>${item.page.title}<i class="subMenuchevron fa "></i></h1>
+                                                <h1>${item.page.title}<div data-sly-test="${item.page.listChildren}" data-sly-unwrap> <i class="subMenuchevron fa "></i> </div></h1>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h2'  || topMainHeadingStyle == null || topMainHeadingStyle == ''}" data-sly-unwrap>
-                                                <h2>${item.page.title}<i class="subMenuchevron fa "></i></h2>
+                                                <h2>${item.page.title}<div data-sly-test="${item.page.listChildren}" data-sly-unwrap> <i class="subMenuchevron fa "></i> </div></h2>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h3'}" data-sly-unwrap>
-                                                <h3>${item.page.title}<i class="subMenuchevron fa "></i></h3>
+                                                <h3>${item.page.title}<div data-sly-test="${item.page.listChildren}" data-sly-unwrap> <i class="subMenuchevron fa "></i> </div></h3>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h4'}" data-sly-unwrap>
-                                                <h4>${item.page.title}<i class="subMenuchevron fa "></i></h4>
+                                                <h4>${item.page.title}<div data-sly-test="${item.page.listChildren}" data-sly-unwrap> <i class="subMenuchevron fa "></i> </div></h4>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h5'}" data-sly-unwrap>
-                                                <h5>${item.page.title}<i class="subMenuchevron fa "></i></h5>
+                                                <h5>${item.page.title}<div data-sly-test="${item.page.listChildren}" data-sly-unwrap> <i class="subMenuchevron fa "></i> </div></h5>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h6'}" data-sly-unwrap>
-                                                <h6>${item.page.title}<i class="subMenuchevron fa "></i></h6>
+                                                <h6>${item.page.title} <div data-sly-test="${item.page.listChildren}" data-sly-unwrap> <i class="subMenuchevron fa "></i> </div></h6>
                                             </div> 
                                             <!-- /* ${item.page.title} */ -->
                                      </a>
@@ -179,8 +179,7 @@
                                 </div>
     
                              </li>
-
-                             <li class="menu-item" tabindex='-1' data-sly-test="${itemList.last}" 
+                             <li class="menu-item pull-right searchTogglebar" tabindex='-1' data-sly-test="${itemList.last}" 
                              						ontouchstart="this.getElementsByClassName('searchToggle')[0].style.backgroundColor = '${topNavBackgroundColor @ context='styleToken'}'; 
                             									this.getElementsByClassName('searchToggle')[0].style.color = '${topNavFontColor @ context='styleToken'}';
 																this.style.backgroundColor = '${topNavBackgroundColor @ context='styleToken'}';
@@ -193,26 +192,96 @@
                                                     			this.getElementsByClassName('searchToggle')[0].style.color = '${topNavFontColor @ context='styleToken'}';
 																this.style.backgroundColor = '${topNavBackgroundColor @ context='styleToken'}'; 
                                                     			this.style.color = '${topNavFontColor @ context='styleToken'}'">
-                                 <a href='#' class="btn hidden-xs searchToggle" type="button" tabindex='0' style="background-color: ${topNavBackgroundColor @ context='styleToken'}; color:${topNavFontColor @ context='styleToken'};">
+                                 <a href='#' class="hidden-xs topnav__icons searchToggle" type="button" tabindex='0' style="background-color: ${topNavBackgroundColor @ context='styleToken'}; color:${topNavFontColor @ context='styleToken'};">
                                      <div data-sly-test="${topMainHeadingStyle == 'h1'}" data-sly-unwrap>
-                                                <h1><i class="fa fa-search"></i> Search </h1>
+                                                <h1><i class="fa fa-search"></i>  </h1>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h2'  || topMainHeadingStyle == null || topMainHeadingStyle == ''}" data-sly-unwrap>
-                                                <h2><i class="fa fa-search"></i> Search </h2>
+                                                <h2><i class="fa fa-search"></i>  </h2>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h3'}" data-sly-unwrap>
-                                                <h3><i class="fa fa-search"></i> Search </h3>
+                                                <h3><i class="fa fa-search"></i>  </h3>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h4'}" data-sly-unwrap>
-                                                <h4><i class="fa fa-search"></i> Search </h4>
+                                                <h4><i class="fa fa-search"></i>  </h4>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h5'}" data-sly-unwrap>
-                                                <h5><i class="fa fa-search"></i> Search </h5>
+                                                <h5><i class="fa fa-search"></i>  </h5>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h6'}" data-sly-unwrap>
-                                                <h6><i class="fa fa-search"></i> Search </h6>
+                                                <h6><i class="fa fa-search"></i>  </h6>
                                             </div>
                                             <!-- /* <i class="fa fa-search"></i> Search */ -->
+                                 </a>
+                            </li>
+							<li class="menu-item pull-right userProfile" tabindex='-1' data-sly-test="${itemList.last}" 
+                             						ontouchstart="this.getElementsByClassName('topnav__link')[0].style.backgroundColor = '${topNavBackgroundColor @ context='styleToken'}'; 
+                            									this.getElementsByClassName('topnav__link')[0].style.color = '${topNavFontColor @ context='styleToken'}';
+																this.style.backgroundColor = '${topNavBackgroundColor @ context='styleToken'}';
+																this.style.color = '${topNavFontColor @ context='styleToken'}'"
+                            						onmouseover="this.getElementsByClassName('topnav__link')[0].style.backgroundColor = '${topNavHoverColor @ context='styleToken'}'; 
+                                                    			this.getElementsByClassName('topnav__link')[0].style.color = '${topNavHoverFontColor @ context='styleToken'}';
+																this.style.backgroundColor = '${topNavHoverColor @ context='styleToken'}'; 
+                                                    			this.style.color = '${topNavHoverFontColor @ context='styleToken'}'"
+                                                    onmouseout="this.getElementsByClassName('topnav__link')[0].style.backgroundColor = '${topNavBackgroundColor @ context='styleToken'}'; 
+                                                    			this.getElementsByClassName('topnav__link')[0].style.color = '${topNavFontColor @ context='styleToken'}';
+																this.style.backgroundColor = '${topNavBackgroundColor @ context='styleToken'}'; 
+                                                    			this.style.color = '${topNavFontColor @ context='styleToken'}'">
+                                 <a href='#' class="hidden-xs topnav__link topnav__icons" type="button" tabindex='0' style="background-color: ${topNavBackgroundColor @ context='styleToken'}; color:${topNavFontColor @ context='styleToken'};">
+                                     <div data-sly-test="${topMainHeadingStyle == 'h1'}" data-sly-unwrap>
+                                                <h1><i class="fa fa-user"></i>  </h1>
+                                            </div>
+                                            <div data-sly-test="${topMainHeadingStyle == 'h2'  || topMainHeadingStyle == null || topMainHeadingStyle == ''}" data-sly-unwrap>
+                                                <h2><i class="fa fa-user"></i> </h2>
+                                            </div>
+                                            <div data-sly-test="${topMainHeadingStyle == 'h3'}" data-sly-unwrap>
+                                                <h3><i class="fa fa-user"></i> </h3>
+                                            </div>
+                                            <div data-sly-test="${topMainHeadingStyle == 'h4'}" data-sly-unwrap>
+                                                <h4><i class="fa fa-user"></i> </h4>
+                                            </div>
+                                            <div data-sly-test="${topMainHeadingStyle == 'h5'}" data-sly-unwrap>
+                                                <h5><i class="fa fa-user"></i> </h5>
+                                            </div>
+                                            <div data-sly-test="${topMainHeadingStyle == 'h6'}" data-sly-unwrap>
+                                                <h6><i class="fa fa-user"></i>  </h6>
+                                            </div>
+                                            <!-- /* <i class="fa fa-user"></i> </i>  */ -->
+                                 </a>
+                            </li>
+							<li class="menu-item pull-right shopCart" tabindex='-1' data-sly-test="${itemList.last}" 
+                             						ontouchstart="this.getElementsByClassName('topnav__link')[0].style.backgroundColor = '${topNavBackgroundColor @ context='styleToken'}'; 
+                            									this.getElementsByClassName('topnav__link')[0].style.color = '${topNavFontColor @ context='styleToken'}';
+																this.style.backgroundColor = '${topNavBackgroundColor @ context='styleToken'}';
+																this.style.color = '${topNavFontColor @ context='styleToken'}'"
+                            						onmouseover="this.getElementsByClassName('topnav__link')[0].style.backgroundColor = '${topNavHoverColor @ context='styleToken'}'; 
+                                                    			this.getElementsByClassName('topnav__link')[0].style.color = '${topNavHoverFontColor @ context='styleToken'}';
+																this.style.backgroundColor = '${topNavHoverColor @ context='styleToken'}'; 
+                                                    			this.style.color = '${topNavHoverFontColor @ context='styleToken'}'"
+                                                    onmouseout="this.getElementsByClassName('topnav__link')[0].style.backgroundColor = '${topNavBackgroundColor @ context='styleToken'}'; 
+                                                    			this.getElementsByClassName('topnav__link')[0].style.color = '${topNavFontColor @ context='styleToken'}';
+																this.style.backgroundColor = '${topNavBackgroundColor @ context='styleToken'}'; 
+                                                    			this.style.color = '${topNavFontColor @ context='styleToken'}'">
+                                 <a href='#' class="hidden-xs topnav__link topnav__icons" type="button" tabindex='0' style="background-color: ${topNavBackgroundColor @ context='styleToken'}; color:${topNavFontColor @ context='styleToken'};">
+                                     <div data-sly-test="${topMainHeadingStyle == 'h1'}" data-sly-unwrap>
+                                                <h1><i class="fa fa-shopping-basket"></i>  </h1>
+                                            </div>
+                                            <div data-sly-test="${topMainHeadingStyle == 'h2'  || topMainHeadingStyle == null || topMainHeadingStyle == ''}" data-sly-unwrap>
+                                                <h2><i class="fa fa-shopping-basket"></i> </h2>
+                                            </div>
+                                            <div data-sly-test="${topMainHeadingStyle == 'h3'}" data-sly-unwrap>
+                                                <h3><i class="fa fa-shopping-basket"></i> </h3>
+                                            </div>
+                                            <div data-sly-test="${topMainHeadingStyle == 'h4'}" data-sly-unwrap>
+                                                <h4><i class="fa fa-shopping-basket"></i> </h4>
+                                            </div>
+                                            <div data-sly-test="${topMainHeadingStyle == 'h5'}" data-sly-unwrap>
+                                                <h5><i class="fa fa-shopping-basket"></i> </h5>
+                                            </div>
+                                            <div data-sly-test="${topMainHeadingStyle == 'h6'}" data-sly-unwrap>
+                                                <h6><i class="fa fa-shopping-basket"></i> </h6>
+                                            </div>
+                                            <!-- /*<i class="fa fa-shopping-basket"></i> */ -->
                                  </a>
                             </li>
     
@@ -229,8 +298,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>  
-                <a href="javascript:void(0)" class="btn searchToggle pull-right" type="button">
-                    <i class="glyphicon glyphicon-search"></i>
+                <a href="javascript:void(0)" class="btn searchTogglebar pull-right" type="button">
+                    <i class="fa fa-search"></i>
+                </a>
+				<a href="javascript:void(0)" class="btn userProfile pull-right" type="button">
+                    <i class="fa fa-user"></i>
+                </a>
+				<a href="javascript:void(0)" class="btn shopCart pull-right" type="button">
+                    <i class="fa fa-shopping-basket"></i>
                 </a>
             </div>
         </div>

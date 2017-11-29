@@ -43,7 +43,7 @@ $(document).ready(function () {
     });
 
     //Toggle search form
-    $('#megaNav .searchToggle,#megaNavSecond .searchToggle').on('keydown click',function(e){ 
+    $('#megaNav .searchToggleli,#megaNavSecond .searchTogglebar').on('keydown click',function(e){ 
         var meganavSearch=$(this).parents('.headerStripouter').siblings('.searchStrip');
         var navbarlistslider=$(this).parents('.headerStripouter').find('.navbarListslider');
         if(e.keyCode===13 || e.type==='click'){
