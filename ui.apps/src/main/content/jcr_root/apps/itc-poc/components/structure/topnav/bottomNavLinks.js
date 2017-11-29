@@ -1,0 +1,1 @@
+"use strict";use(function(){var b=currentStyle.get("navLinks/itemHasDropdown")||"false";var a=currentStyle.get("navLinks/linkPath")||"/";var d=currentStyle.get("navLinks/linkText")||"?";var f=[];var e="";for(var c=0;c<b.length;c++){f.push({itemHasDropdown:b[c],linkPath:a[c],linkText:d[c],linkPosition:"mainNavDropdown"+(c+1)})}return f});

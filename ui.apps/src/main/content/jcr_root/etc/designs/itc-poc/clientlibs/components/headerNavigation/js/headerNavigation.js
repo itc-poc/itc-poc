@@ -83,8 +83,14 @@ $(document).ready(function () {
 
 });
 //on scroll, header to be in fixed position
-$(window).scroll(function(){
-    if ($(window).scrollTop() >= 20) {$('#megaNavSecond').addClass('fixedHeader');} else {$('#megaNavSecond').removeClass('fixedHeader');}
+$(window).scroll(function(e){
+    if ($(window).scrollTop() > 0) {
+        $('#megaNavSecond').addClass('fixedHeader');
+        e.stopPropagation();
+    } else {
+        $('#megaNavSecond').removeClass('fixedHeader');
+        e.stopPropagation();
+    }
 });
 
 $(window).resize(function() {
