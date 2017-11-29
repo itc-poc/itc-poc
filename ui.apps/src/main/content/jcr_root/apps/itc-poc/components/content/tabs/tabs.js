@@ -1,0 +1,1 @@
+"use strict";use(function(){var f=new Date();var a=Math.random().toString(36).substr(2,5);var e="";var g="";var c=currentNode.path.split("jcr:content");var b=c[1].split("/").slice(1);var d=b.join("_");d=d.replace(/ /g,"_");return{tabId:d,tabTitleId:"tabTitle"+a,tabCopyId:"tabCopy"+a}});
