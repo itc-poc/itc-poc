@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab2
+                jcr:primaryType="cq:Widget"
+                title="Tab Settings"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <headingStyle
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="h3"
+                        fieldDescription="Heading defaults to H3."
+                        fieldLabel="Tabs Heading Style"
+                        name="./headingStyle"
+                        type="select"
+                        value="h3"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <h1
+                                jcr:primaryType="nt:unstructured"
+                                text="Heading 1 (h1)"
+                                value="h1"/>
+                            <h2
+                                jcr:primaryType="nt:unstructured"
+                                text="Heading 2 (h2)"
+                                value="h2"/>
+                            <h3
+                                jcr:primaryType="nt:unstructured"
+                                text="Heading 3 (h3) - Default"
+                                value="h3"/>
+                            <h4
+                                jcr:primaryType="nt:unstructured"
+                                text="Heading 4 (h4)"
+                                value="h4"/>
+                            <h5
+                                jcr:primaryType="nt:unstructured"
+                                text="Heading 5 (h5)"
+                                value="h5"/>
+                            <h6
+                                jcr:primaryType="nt:unstructured"
+                                text="Heading 6 (h6)"
+                                value="h6"/>
+                            <p
+                                jcr:primaryType="nt:unstructured"
+                                text="Paragraph (p)"
+                                value="p"/>
+                        </options>
+                    </headingStyle>
+                    <tabconfigurations
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Tab Configurations"
+                        name="./tabConfig"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="itcmultifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <tabtitletext
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    anchor="100%"
+                                    fieldLabel="tab Title Text"
+                                    key="tabTitleText"
+                                    xtype="textfield"/>
+                                <tabCount
+                                    jcr:primaryType="cq:Widget"
+                                    anchor="100%"
+                                    fieldDescription="fieldDescription"
+                                    fieldLabel="tab Item ID"
+                                    hidden="{Boolean}true"
+                                    key="tabCount"
+                                    xtype="textfield"/>
+                            </items>
+                        </fieldConfig>
+                        <listeners
+                            jcr:primaryType="nt:unstructured"
+                            add="function(list, component, index) {&#xa;&#x9;&#xa;      var length = list.items.length;&#xa;&#xa;&#x9;  var num = Math.floor(Math.random() * 90000) + 10000;&#xa;&#x9; &#xa;&#xa;&#x9;&#x9;  for(var i=0;i&lt;=length;i++){&#xa;&#x9;&#x9;  &#xa;&#x9;&#x9;  var item = list.items.items[i].items.items[0].items.items[0].items.items[1].value;&#xa;&#x9;&#x9;  console.log(&quot; item &quot;+ list.items.items[i].items.items[0].items.items[0].items.items[0].value);&#xa;&#x9;&#x9;  if(item == &quot;&quot; || item == null){&#xa;&#x9;&#x9;&#x9;list.items.items[i].items.items[0].items.items[0].items.items[1].setValue(&quot;tab_item_&quot;+num);&#xa;&#x9;&#x9;  }&#xa;&#x9;&#x9;&#xa;&#x9;&#x9;  }&#xa;&#x9;&#xa;&#x9;&#x9; /* list.items.each(function(i){&#xa;            &#xa;&#x9;&#x9;&#x9;console.log(i.fieldConfig.items[&quot;0&quot;].key);&#xa;&#x9;&#x9;&#x9;&#xa;            //i.setValue(item[i.tabTitleText]);&#xa;        });*/&#xa;    }&#xa;&#x9;"
+                            added="function(list, component, index) {&#xa;&#x9;&#xa;      var length = list.items.length;&#xa;&#xa;&#x9;  var num = Math.floor(Math.random() * 90000) + 10000;&#xa;&#x9; &#xa;&#xa;&#x9;&#x9;  for(var i=0;i&lt;=length;i++){&#xa;&#x9;&#x9;  &#xa;&#x9;&#x9;  var item = list.items.items[i].items.items[0].items.items[0].items.items[1].value;&#xa;&#x9;&#x9;  console.log(&quot; item &quot;+ list.items.items[i].items.items[0].items.items[0].items.items[0].value);&#xa;&#x9;&#x9;  if(item == &quot;&quot; || item == null){&#xa;&#x9;&#x9;&#x9;list.items.items[i].items.items[0].items.items[0].items.items[1].setValue(&quot;tab_item_&quot;+num);&#xa;&#x9;&#x9;  }&#xa;&#x9;&#x9;&#xa;&#x9;&#x9;  }&#xa;&#x9;&#xa;&#x9;&#x9; /* list.items.each(function(i){&#xa;            &#xa;&#x9;&#x9;&#x9;console.log(i.fieldConfig.items[&quot;0&quot;].key);&#xa;&#x9;&#x9;&#x9;&#xa;            //i.setValue(item[i.tabTitleText]);&#xa;        });*/&#xa;    }&#xa;&#x9;"
+                            afterrender="function(list, component, index) {&#xa;&#x9;&#xa;      var length = list.items.length;&#xa;&#xa;&#x9;  var num = Math.floor(Math.random() * 90000) + 10000;&#xa;&#x9; &#xa;&#xa;&#x9;&#x9;  for(var i=0;i&lt;=length;i++){&#xa;&#x9;&#x9;  &#xa;&#x9;&#x9;  var item = list.items.items[i].items.items[0].items.items[0].items.items[1].value;&#xa;&#x9;&#x9;  console.log(&quot; item &quot;+ list.items.items[i].items.items[0].items.items[0].items.items[0].value);&#xa;&#x9;&#x9;  if(item == &quot;&quot; || item == null){&#xa;&#x9;&#x9;&#x9;list.items.items[i].items.items[0].items.items[0].items.items[1].setValue(&quot;tab_item_&quot;+num);&#xa;&#x9;&#x9;  }&#xa;&#x9;&#x9;&#xa;&#x9;&#x9;  }&#xa;&#x9;&#xa;&#x9;&#x9; /* list.items.each(function(i){&#xa;            &#xa;&#x9;&#x9;&#x9;console.log(i.fieldConfig.items[&quot;0&quot;].key);&#xa;&#x9;&#x9;&#x9;&#xa;            //i.setValue(item[i.tabTitleText]);&#xa;        });*/&#xa;    }&#xa;&#x9;"
+                            beforeadd="function(list, component, index) {&#xa;&#x9;&#xa;      var length = list.items.length;&#xa;&#xa;&#x9;  var num = Math.floor(Math.random() * 90000) + 10000;&#xa;&#x9; &#xa;&#xa;&#x9;&#x9;  for(var i=0;i&lt;=length;i++){&#xa;&#x9;&#x9;  &#xa;&#x9;&#x9;  var item = list.items.items[i].items.items[0].items.items[0].items.items[1].value;&#xa;&#x9;&#x9;  console.log(&quot; item &quot;+ list.items.items[i].items.items[0].items.items[0].items.items[0].value);&#xa;&#x9;&#x9;  if(item == &quot;&quot; || item == null){&#xa;&#x9;&#x9;&#x9;list.items.items[i].items.items[0].items.items[0].items.items[1].setValue(&quot;tab_item_&quot;+num);&#xa;&#x9;&#x9;  }&#xa;&#x9;&#x9;&#xa;&#x9;&#x9;  }&#xa;&#x9;&#xa;&#x9;&#x9; /* list.items.each(function(i){&#xa;            &#xa;&#x9;&#x9;&#x9;console.log(i.fieldConfig.items[&quot;0&quot;].key);&#xa;&#x9;&#x9;&#x9;&#xa;            //i.setValue(item[i.tabTitleText]);&#xa;        });*/&#xa;    }&#xa;&#x9;"
+                            beforeclose="function(list, component, index) {&#xa;&#x9;&#xa;      var length = list.items.length;&#xa;&#xa;&#x9;  var num = Math.floor(Math.random() * 90000) + 10000;&#xa;&#x9; &#xa;&#xa;&#x9;&#x9;  for(var i=0;i&lt;=length;i++){&#xa;&#x9;&#x9;  &#xa;&#x9;&#x9;  var item = list.items.items[i].items.items[0].items.items[0].items.items[1].value;&#xa;&#x9;&#x9;  console.log(&quot; item &quot;+ list.items.items[i].items.items[0].items.items[0].items.items[0].value);&#xa;&#x9;&#x9;  if(item == &quot;&quot; || item == null){&#xa;&#x9;&#x9;&#x9;list.items.items[i].items.items[0].items.items[0].items.items[1].setValue(&quot;tab_item_&quot;+num);&#xa;&#x9;&#x9;  }&#xa;&#x9;&#x9;&#xa;&#x9;&#x9;  }&#xa;&#x9;&#xa;&#x9;&#x9; /* list.items.each(function(i){&#xa;            &#xa;&#x9;&#x9;&#x9;console.log(i.fieldConfig.items[&quot;0&quot;].key);&#xa;&#x9;&#x9;&#x9;&#xa;            //i.setValue(item[i.tabTitleText]);&#xa;        });*/&#xa;    }&#xa;&#x9;"
+                            beforeshow="function(list, component, index) {&#xa;&#x9;&#xa;      var length = list.items.length;&#xa;&#xa;&#x9;  var num = Math.floor(Math.random() * 90000) + 10000;&#xa;&#x9; &#xa;&#xa;&#x9;&#x9;  for(var i=0;i&lt;=length;i++){&#xa;&#x9;&#x9;  &#xa;&#x9;&#x9;  var item = list.items.items[i].items.items[0].items.items[0].items.items[1].value;&#xa;&#x9;&#x9;  console.log(&quot; item &quot;+ list.items.items[i].items.items[0].items.items[0].items.items[0].value);&#xa;&#x9;&#x9;  if(item == &quot;&quot; || item == null){&#xa;&#x9;&#x9;&#x9;list.items.items[i].items.items[0].items.items[0].items.items[1].setValue(&quot;tab_item_&quot;+num);&#xa;&#x9;&#x9;  }&#xa;&#x9;&#x9;&#xa;&#x9;&#x9;  }&#xa;&#x9;&#xa;&#x9;&#x9; /* list.items.each(function(i){&#xa;            &#xa;&#x9;&#x9;&#x9;console.log(i.fieldConfig.items[&quot;0&quot;].key);&#xa;&#x9;&#x9;&#x9;&#xa;            //i.setValue(item[i.tabTitleText]);&#xa;        });*/&#xa;    }&#xa;&#x9;"/>
+                    </tabconfigurations>
+                </items>
+            </tab2>
+        </items>
+    </items>
+    <listeners jcr:primaryType="nt:unstructured"/>
+</jcr:root>
