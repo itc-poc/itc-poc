@@ -10,6 +10,13 @@
             title="General"
             xtype="panel">
             <items jcr:primaryType="cq:WidgetCollection">
+                <staticMenuFromDialog
+                    jcr:primaryType="nt:unstructured"
+                    fieldDescription="Checked Means Menu Bar will be display from  Design dialog"
+                    fieldLabel="Static menu from design dialog"
+                    name="./staticMenu"
+                    type="checkbox"
+                    xtype="selection"/>
                 <absParent
                     jcr:primaryType="nt:unstructured"
                     fieldDescription="(eg: 1 for /content/site)"
@@ -133,5 +140,22 @@
                 </subMenuheadingStyle>
             </items>
         </generalSettings>
+        <mainNavigationSetting
+            jcr:primaryType="cq:Widget"
+            title="Main Navigation"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <NavLinks
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Nav Links"
+                    name="./navLinks"
+                    orderable="{Boolean}true"
+                    xtype="customMultiField">
+                    <fieldConfig
+                        jcr:primaryType="cq:Widget"
+                        xtype="navListItem"/>
+                </NavLinks>
+            </items>
+        </mainNavigationSetting>
     </items>
 </jcr:root>
