@@ -1,4 +1,4 @@
-package apps.itc_poc.components.content.tile_carousel_container;
+package apps.itc_poc.components.content.tile_carousel_container; 
 
 import com.adobe.cq.sightly.WCMUsePojo;
 
