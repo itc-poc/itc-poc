@@ -1,0 +1,167 @@
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+    <meta data-sly-call="${clientLib.css @ categories='designs.itc-poc.components.new.carousel'}" data-sly-unwrap></meta>
+</div>
+
+<div data-sly-test.thumbnailNavigationOn="" data-sly-unwrap></div>
+<div data-sly-test.chkThumbnailNavigation="${properties.thumbnailNavigationOn}" data-sly-unwrap>
+    <div data-sly-test.thumbnailNavigationOn="true" data-sly-unwrap></div>
+</div>
+
+<div data-sly-test.backgroundColor="${properties.backgroundColor || '0099CC'}" data-sly-unwrap></div>
+<div data-sly-test.borderColor="${properties.borderColor || '0099CC'}" data-sly-unwrap></div>
+<div data-sly-test.fontColor="${properties.fontColor || 'FFFFFF'}" data-sly-unwrap></div>
+<div data-sly-test.faTileIcon="${properties.faTileIcon || 'fa fa-chevron-right'}" data-sly-unwrap></div>
+<div data-sly-test.backgroundColorHover="${properties.backgroundColorHover || 'FFFFFF'}" data-sly-unwrap></div>
+<div data-sly-test.borderColorHover="${properties.borderColorHover || '0099CC'}" data-sly-unwrap></div>
+<div data-sly-test.fontColorHover="${properties.fontColorHover || '000000'}" data-sly-unwrap></div>
+
+
+
+
+<div data-sly-test.someFlag="${properties.intervalTime ? properties.intervalTime : '5000'}"></div>
+<div data-sly-test.customClasses ="${properties.customClasses}" data-sly-unwrap></div>
+<div class="${customClasses}">
+<div class="newCarParentID">
+<div id="${properties.carouselId || 'newCarousel'}" class="newCarousel carousel slide ${thumbnailNavigationOn}" data-ride="carousel" data-pause="hover" data-interval="${( properties.isScrolling && properties.isScrolling == 'auto')? someFlag : 'false' }" data-wrap="true" role="complementary" aria-labelledby="id_title" aria-describedby="id_desc" data-sly-use.carouselList="${'com.adobe.itc.poc.core.models.NewCarousel'}">
+    <h2 id="id_title" class="sr-only">Carousel content with
+${carouselList.images.size} slide${carouselList.images.size == 1 ?'.'
+: 's.'}</h2>	
+
+    <p id="id_desc" class="sr-only">A carousel is a rotating set of images, rotation stops on keyboard focus on carousel tab controls or hovering the mouse pointer over images. Use the tabs or the previous and next buttons to change the displayed slide.</p>
+
+    <div class="carousel-inner" data-sly-list.slideInner="${carouselList.images}">
+
+        <div class="item ${slideInner.slideNumber == 0?'active':''}" role="tabpanel" id="${properties.carouselId || 'newCarousel'}tabpanel-${slideInner.slideNumber}-${slideInner.slideNumber}" aria-labelledby="${properties.carouselId || 'newCarousel'}tab-${slideInner.slideNumber}-${slideInner.slideNumber}">
+            <div data-caption="#caption${slideInner.slideNumber}">
+
+                <div class="imgContainer" style="background-image: url(${slideInner.src @ context='uri'})"></div>
+                <div class="carousel-content-wrapper carousel-content-wrapper-alignment">
+                    <div class="carousel-content">
+						<div data-sly-test="${slideInner.headingStyle== 'h1'}" data-sly-unwrap>
+							<h1 class="content-title heading-1 " tabindex="0">${slideInner.title || 'Title'}</h1>
+						</div>
+						<div data-sly-test="${slideInner.headingStyle == 'h2'}" data-sly-unwrap>
+							<h2 class="content-title heading-2 " tabindex="0">${slideInner.title || 'Title'}</h2>
+						</div>
+						<div  data-sly-test="${slideInner.headingStyle == 'h3'  || slideInner.headingStyle== null || slideInner.headingStyle == ''}" data-sly-unwrap>
+							<h3 class="content-title heading-3" tabindex="0">${slideInner.title || 'Title'}</h3>
+						</div>
+						<div data-sly-test="${slideInner.headingStyle == 'h4'}" data-sly-unwrap>
+							<h4 class="content-title heading-4" tabindex="0">${slideInner.title  @ context='html'}</h4>
+						</div>
+						<div data-sly-test="${slideInner.headingStyle== 'h5'}" data-sly-unwrap>
+							<h5 class="content-title heading-5 " tabindex="0">${slideInner.title @ context='html'}</h5>
+						</div>
+						<div data-sly-test="${slideInner.headingStyle == 'h6'}" data-sly-unwrap>
+							<h6 class="content-title heading-6 " tabindex="0">${slideInner.title  @ context='html'}</h6>
+						</div>
+                        <p class="content-desc">${slideInner.desc || 'Description' @context='html'}
+                        </p>
+                        <div data-sly-test="${slideInner.btnText}" data-sly-unwrap>
+                            <sly data-sly-use.urlGen="${'com.adobe.itc.poc.core.utils.ValidUrlGenerator' @ path=slideInner.btnLink || '', type=''}">
+                                <a href="${urlGen.getCompletePath @context='uri'}" class="btn view-program-btn" style="background-color: #${backgroundColor @ context='styleToken'}; color: #${fontColor @ context='styleToken'}; border-color: #${borderColor @ context='styleToken'};"> 
+                                    <span>${slideInner.btnText || "Button text"}</span> 
+                                    <i class="${faTileIcon}"></i>
+                                </a>
+                            </sly>
+                        </div>
+                    </div>
+                </div>
+                <div data-sly-test="${slideInner.videoURL}" class="content-video">
+                    <a href="${slideInner.videoURL}" class="modal-video" role="button" tabindex="-1" data-vtitle="${slideInner.videoTitle}" data-vcopy="${slideInner.videoCopy}" data-vtransript="${slideInner.videoTranscript}"> <i class="fa fa-play-circle-o" aria-label="video-button" tabindex="0"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- .item -->
+    </div>
+    <!-- carousel-inner -->
+    <div data-sly-test="${carouselList.images.size == 0}" data-sly-unwrap>
+        <div class="carousel-inner">
+            <div class="item active" role="tabpanel" id="tabpanel-0-0" aria-labelledby="tab-0-0">
+
+                <div data-caption="#caption1">
+                    <img src="/content/dam/itc-poc/asset.jpg" alt="${true}" data-object-fit="cover">
+                    <div class="carousel-content-wrapper carousel-content-wrapper-alignment">
+                        <div class="carousel-content">
+                            <h2 class="heading-2 content-title">Title</h2>
+                            <p class="content-desc">Description</p>
+                            <a href="#" class="btn view-program-btn" style="background-color: #${backgroundColor @ context='styleToken'}; color: #${fontColor @ context='styleToken'}; border-color: #${borderColor @ context='styleToken'};"> <span>Button text</span> <i class="${faTileIcon}"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-caption">
+                    <div class="feature-course-data">
+                        <div>
+                            <span>Featured Course:</span>
+                        </div>
+                        <a href="#"> Course Name </a>
+                    </div>
+                </div>
+                <!-- .carousel-caption -->
+            </div>
+            <!-- .item -->
+        </div>
+        <!-- carousel-inner -->
+    </div>
+
+    <div data-sly-test="${carouselList.moreSlides}" data-sly-unwrap>
+        <!-- Arrows -->
+        <a class="left carousel-control" href="" role="button" data-slide="prev" aria-label="Previous"> <span class="chevron-left"><i class="fa fa-chevron-left"
+aria-hidden="true"></i> </span> <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#" role="button" data-slide="next" aria-label="Next"> <span class="chevron-right n-carousel-size"><i
+class="fa fa-chevron-right" aria-hidden="true"></i> </span> <span class="sr-only">Next</span>
+        </a>
+        <!-- Indicators -->
+        <div data-sly-test="${thumbnailNavigationOn != 'true' }" data-sly-unwrap>
+            <ol class="carousel-indicators" role="tablist"  aria-hidden='true' data-sly-list.slideOl="${carouselList.images}">
+                <li aria-hidden='true' data-target="#${properties.carouselId || 'newCarousel'}" data-slide-to="${slideOl.slideNumber}" class="" role="tab" id="${properties.carouselId || 'newCarousel'}tab-${slideOl.slideNumber}-${slideOl.slideNumber}" aria-controls="${properties.carouselId || 'newCarousel'}tabpanel-${slideOl.slideNumber}-${slideOl.slideNumber}" aria-selected="true" tabindex="-1" class="${slideOl.slideNumber == 0?'active':''}"><span class="sr-only">Slide ${slideOl.slideNumber}:</span>
+                </li>
+            </ol>
+        </div>
+
+        <div data-sly-test="${thumbnailNavigationOn == 'true' }" data-sly-unwrap>
+
+
+            <ol class="carousel-indicators hidden-lg hidden-md" id="car-ind" role="tablist" data-sly-list.slideOl="${carouselList.images}">
+                <li data-target="#${properties.carouselId || 'newCarousel'}" data-slide-to="${slideOl.slideNumber}" class="" role="tab" data-id="${properties.carouselId || 'newCarousel'}tab-${slideOl.slideNumber}-${slideOl.slideNumber}" aria-controls="${properties.carouselId || 'newCarousel'}tabpanel-${slideOl.slideNumber}-${slideOl.slideNumber}" aria-selected="true" tabindex="-1" class="${slideOl.slideNumber == 0?'active':''}"><span class="sr-only">Slide ${slideOl.slideNumber}:</span>
+                </li>
+            </ol>
+
+<div style="background-color:#222222;height:84px;margin:0px;padding:0px;border:0px" class="hidden-xs  hidden-sm">
+<div  style="margin:auto;overflow:hidden;" id="thumbnail_div">
+      <ol class="carousel-indicators-thumb" role="tablist" style="transition-duration: 400ms;transform:translate3d(0px, 0px, 0px);width:100.2%" id="carousel-indicators-thumb">
+                <div data-sly-list.slideOl="${carouselList.images}" data-sly-unwrap>
+                 <li data-target="#${properties.carouselId || 'newCarousel'}" style="background-image: url(${slideOl.slideThumbnail @ context='uri'});background-size:cover;border-color:black ;border-style: solid;border-width: 3px 2px 3px 2px;max-width:20%;max-height:84px; transition: 0.6s ease;" data-slide-to="${slideOl.slideNumber}" class="" aria-label="slide Indicator thumbnail" role="tab" data-id="${properties.carouselId || 'newCarousel'}tab-${slideOl.slideNumber}-${slideOl.slideNumber}" aria-controls="${properties.carouselId || 'newCarousel'}tabpanel-${slideOl.slideNumber}-${slideOl.slideNumber}" aria-selected="true" tabindex="-1" class="${slideOl.slideNumber == 0?'active':''}"><span class="sr-only">Slide ${slideOl.slideNumber}:</span>
+<p class="text-carousel  ${slideOl.titleAlignment}" tabindex="0">${slideOl.thumbnailTitle || 'Title'}</p>
+                    </li>
+                </div>
+            </ol>
+            </div></div>
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+<!-- /.carousel -->
+
+
+
+<script>
+    var carouselConfig = {};
+    carouselConfig.carouselId 				= "${properties.carouselId || 'newCarousel' @ context='scriptString'}";
+	var buttonProps = {};
+    buttonProps.backgroundColor 		= "${backgroundColor || '' @ context='scriptString'}";
+    buttonProps.borderColor 			= "${borderColor || '' @ context='scriptString'}";
+    buttonProps.fontColor 				= "${fontColor || '' @ context='scriptString'}";
+    buttonProps.backgroundColorHover	= "${backgroundColorHover || '' @ context='scriptString'}";
+	buttonProps.borderColorHover 		= "${borderColorHover || '' @ context='scriptString'}";
+    buttonProps.fontColorHover 			= "${fontColorHover || '' @ context='scriptString'}";
+</script>
+
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+    <meta data-sly-call="${clientLib.js @ categories='designs.itc-poc.components.new.carousel'}" data-sly-unwrap></meta>
+</div>
