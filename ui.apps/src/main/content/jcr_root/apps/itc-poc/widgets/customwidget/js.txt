@@ -2,3 +2,5 @@
 
 DDPathField.js
 itcmultifieldpanel.js
+customMultiField.js
+navListItem.js
