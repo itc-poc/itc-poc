@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <containerlConfig
+                jcr:primaryType="cq:Panel"
+                title="Tile Container Configuration">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <noOfRows
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="enter no. of rows"
+                        fieldLabel="Number of Rows"
+                        name="./noOfRows"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <one
+                                jcr:primaryType="nt:unstructured"
+                                text="1"
+                                value="1"/>
+                            <two
+                                jcr:primaryType="nt:unstructured"
+                                text="2"
+                                value="2"/>
+                            <three
+                                jcr:primaryType="nt:unstructured"
+                                text="3"
+                                value="3"/>
+                            <four
+                                jcr:primaryType="nt:unstructured"
+                                text="4"
+                                value="4"/>
+                            <five
+                                jcr:primaryType="nt:unstructured"
+                                text="5"
+                                value="5"/>
+                        </options>
+                    </noOfRows>
+                    <noOfColumns
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="enter no. of columns"
+                        fieldLabel="Number of Columns"
+                        name="./noOfColumns"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <one
+                                jcr:primaryType="nt:unstructured"
+                                text="1"
+                                value="1"/>
+                            <two
+                                jcr:primaryType="nt:unstructured"
+                                text="2"
+                                value="2"/>
+                            <three
+                                jcr:primaryType="nt:unstructured"
+                                text="3"
+                                value="3"/>
+                            <four
+                                jcr:primaryType="nt:unstructured"
+                                text="4"
+                                value="4"/>
+                        </options>
+                    </noOfColumns>
+                    <view
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="carouselView"
+                        fieldLabel="Define the mobile view"
+                        name="./mobileView"
+                        type="radio"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <o1
+                                jcr:primaryType="nt:unstructured"
+                                text="Carousel View"
+                                value="carouselView"/>
+                            <o2
+                                jcr:primaryType="nt:unstructured"
+                                text="Stack View"
+                                value="stackView"/>
+                        </options>
+                    </view>
+                </items>
+            </containerlConfig>
+        </items>
+    </items>
+    <listeners
+        jcr:primaryType="nt:unstructured"
+        beforesubmit="function(dialog){&#xa;&#x9;var noOfRows = dialog.getField('./noOfRows').getValue();&#xa;&#x9;var noOfColumns = dialog.getField('./noOfColumns').getValue();&#xa;    var remainder = noOfRows * noOfColumns;&#xa;&#x9;&#xa;&#x9;if(remainder &lt;2){&#xa;&#x9;&#x9;alert(&quot;Please select a combintion of  atleast 2*1 or 1*2&quot;)&#x9;&#x9;&#xa;&#x9;}&#x9;&#xa;};"/>
+</jcr:root>

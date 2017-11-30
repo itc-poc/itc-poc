@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    cq:lastReplicated="{Date}2017-10-23T09:50:49.393Z"
+    cq:lastReplicatedBy="admin"
+    cq:lastReplicationAction="Activate"
+    jcr:description="tile-carousel-container"
+    jcr:mixinTypes="[cq:ReplicationStatus]"
+    jcr:primaryType="cq:Component"
+    jcr:title="Tile Carousel Container"
+    componentGroup="ITC-POC"/>

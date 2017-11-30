@@ -1,0 +1,84 @@
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap> 
+    <meta data-sly-call="${clientLib.all @ categories='designs.itc.poc.components.content.tileCarouselContainer'}" data-sly-unwrap>
+    </meta>
+</div>
+<div data-sly-use.carouselContainer="${'apps.itc_poc.components.content.tile_carousel_container.TileCarouselContainer'}" data-sly-unwrap></div>
+
+
+
+<div data-sly-test.clsColumnClass="" data-sly-unwrap></div>
+<div data-sly-test.noOfColumns="${carouselContainer.noOfColumns}" data-sly-unwrap></div>
+
+<div data-sly-test="${noOfColumns== '1'}" data-sly-unwrap>
+    <div data-sly-test.clsColumnClass="cc-one-col col-lg-12 col-md-12 col-sm-12" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${noOfColumns== '2'}" data-sly-unwrap>
+    <div data-sly-test.clsColumnClass="cc-two-col col-lg-6 col-md-6 col-sm-6" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${noOfColumns== '3'}" data-sly-unwrap>
+    <div data-sly-test.clsColumnClass="cc-three-col col-lg-4 col-md-4 col-sm-4" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${noOfColumns== '4'}" data-sly-unwrap>
+    <div data-sly-test.clsColumnClass="cc-four-col col-lg-3 col-md-3  col-sm-3" data-sly-unwrap></div>
+</div>
+<div data-sly-test.clsMobileView="carouselView" data-sly-unwrap></div>
+<div data-sly-test="${properties.mobileView== 'stackView'}" data-sly-unwrap>
+    <div data-sly-test.clsMobileView="stackView" data-sly-unwrap></div>
+</div>
+
+<div class="container">
+    <div id="myCarousel-generic" class="carousel slide genericTile" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <div data-sly-list.totalIteamLoopLi="${carouselContainer.totalIteamArray}" data-sly-unwrap>
+                <div data-sly-test="${totalIteamLoopLiList.index == 0}" data-sly-unwrap>
+                    <li data-target="#myCarousel-generic" data-slide-to="${totalIteamLoopLiList.index}" class="active"></li>
+                </div>
+                <div data-sly-test="${totalIteamLoopLiList.index != 0}" data-sly-unwrap>
+                    <li data-target="#myCarousel-generic" data-slide-to="${totalIteamLoopLiList.index}"></li>
+                </div>
+            </div>
+        </ol>
+
+
+<div data-sly-test.clsRowClass="tccRow0" data-sly-unwrap></div>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner hid ${clsMobileView}">
+            <div data-sly-list.totalIteamLoop="${carouselContainer.totalIteamArray}" data-sly-unwrap>
+                <sly data-sly-test.contentParsys='contentParsys${totalIteamLoopList.index}' />
+
+                <div data-sly-test="${carouselContainer.rowClassArray[totalIteamLoopList.index] != 'noRow'}" data-sly-unwrap>
+    				<div data-sly-test.clsRowClass="${carouselContainer.rowClassArray[totalIteamLoopList.index]}" data-sly-unwrap></div>
+				</div>
+
+                <div data-sly-test="${totalIteamLoopList.index == 0}" data-sly-unwrap>
+
+                    <div class="item ${clsColumnClass} active ${clsRowClass}">
+                        <sly data-sly-resource="${ @path=contentParsys, resourceType='foundation/components/parsys'}" />
+                    </div>
+                </div>
+                <div data-sly-test="${totalIteamLoopList.index != 0}" data-sly-unwrap>
+
+                        <div class="item ${clsColumnClass} ${clsRowClass}">
+                            <sly data-sly-resource="${ @path=contentParsys, resourceType='foundation/components/parsys'}" />
+                        </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel-generic" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+        <a class="right carousel-control" href="#myCarousel-generic" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    </div>
+</div>
+<span id="startCarousel"></span>
+<span id="stopCarousel"></span>
