@@ -1,0 +1,1 @@
+"use strict";use(function(){var d=properties.get("iconSize")||5;var c=2*parseInt(d);var a=2*parseInt(d);var b=2*parseInt(d);return{fontSize:d,width:c,height:a,lineHeight:b}});
