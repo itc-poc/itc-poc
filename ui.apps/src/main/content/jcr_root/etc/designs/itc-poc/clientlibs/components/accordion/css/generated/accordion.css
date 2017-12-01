@@ -1,0 +1,78 @@
+.itc-accordion {
+  margin-bottom: 20px;
+}
+@media (max-width: 1024px) {
+  .itc-accordion {
+    margin-bottom: 0px;
+  }
+}
+.itc-accordion .panel {
+  border-top: 2px solid tan;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.itc-accordion .panel-heading a {
+  display: table;
+  font-size: 2rem;
+  font-weight: 400;
+  text-decoration: none;
+  width: 100%;
+  line-height: 30px;
+}
+.itc-accordion .panel-heading a h3.panel-title {
+  display: table-row;
+  width: 100%;
+}
+.itc-accordion .panel-heading a .accordionHeaderTitleText {
+  display: table-cell;
+  width: 94%;
+}
+.itc-accordion .panel-heading a i.fa {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+}
+.itc-accordion .panel-heading a i.fa.fa-plus-square-o {
+  display: none;
+}
+.itc-accordion .panel-heading a.collapsed i.fa-minus-square-o {
+  display: none;
+}
+.itc-accordion .panel-heading a.collapsed i.fa-plus-square-o {
+  display: table-cell;
+}
+.itc-accordion .panel-collapse {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.itc-accordion .panel-collapse .panel-body {
+  margin-top: 10px;
+}
+.itc-accordion .accordionsection:last-child {
+  border-bottom: 2px solid tan;
+}
+@media (max-width: 1024px) {
+  .column.gridbase:first-child .accordion .accordionsection:last-child {
+    border-bottom: 0px;
+  }
+}
+.accordion .expand-collapse {
+  font-size: 18px;
+  text-align: right;
+  font-weight: bold;
+  color: #405e71;
+  padding-bottom: 6px;
+}
+.accordion .expand-collapse span {
+  text-decoration: underline;
+}
+.accordion .expand-collapse span:hover {
+  color: #000;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.accordion .expand-collapse span:focus {
+  color: #000;
+  text-decoration: underline;
+  cursor: pointer;
+}
