@@ -377,7 +377,7 @@
                             									this.getElementsByClassName('topnav__link')[0].style.color = '${topNavFontColor @ context='styleToken'}'">
                                 <div data-sly-test="${item.page.hideInNav != true}" data-sly-unwrap>
                                     <a class="topnav__link" href="${item.page.path}.html" data-sly-test="${item.page.path != currentPage.path}" style="background-color: ${topNavBackgroundColor @ context='styleToken'}; color:${topNavFontColor @ context='styleToken'};">
-                                        	<div data-sly-test="${topMainHeadingStyle == 'h1'}" data-sly-unwrap>
+                                        	<!-- /*<div data-sly-test="${topMainHeadingStyle == 'h1'}" data-sly-unwrap>
                                                 <h1>${item.page.title}<div data-sly-test="${item.page.listChildren}" data-sly-unwrap> <i class="subMenuchevron fa "></i> </div></h1>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h2'  || topMainHeadingStyle == null || topMainHeadingStyle == ''}" data-sly-unwrap>
@@ -394,11 +394,11 @@
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h6'}" data-sly-unwrap>
                                                 <h6>${item.page.title}<div data-sly-test="${item.page.listChildren}" data-sly-unwrap> <i class="subMenuchevron fa "></i> </div></h6>
-                                            </div> 
-                                            <!-- /* ${item.page.title} */ -->
+                                            </div> */ -->
+                                             ${item.page.title} 
                                     </a>
                                     <a class="topnav__link" href="#" data-sly-test="${item.page.path == currentPage.path}" style="background-color: ${topNavBackgroundColor @ context='styleToken'};  color:${topNavFontColor @ context='styleToken'};">
-                                        <div data-sly-test="${topMainHeadingStyle == 'h1'}" data-sly-unwrap>
+                                       <!-- /* <div data-sly-test="${topMainHeadingStyle == 'h1'}" data-sly-unwrap>
                                                 <h1>${item.page.title}<div data-sly-test="${item.page.listChildren}" data-sly-unwrap> <i class="subMenuchevron fa "></i> </div></h1>
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h2'  || topMainHeadingStyle == null || topMainHeadingStyle == ''}" data-sly-unwrap>
@@ -415,8 +415,8 @@
                                             </div>
                                             <div data-sly-test="${topMainHeadingStyle == 'h6'}" data-sly-unwrap>
                                                 <h6>${item.page.title} <div data-sly-test="${item.page.listChildren}" data-sly-unwrap> <i class="subMenuchevron fa "></i> </div></h6>
-                                            </div> 
-                                            <!-- /* ${item.page.title} */ -->
+                                            </div> */ -->
+                                             ${item.page.title} 
                                      </a>
                                 </div>
                                 <div data-sly-test="${item.page.listChildren}" data-sly-unwrap>
@@ -434,7 +434,7 @@
                                                     onmouseout="this.getElementsByClassName('top_back')[0].style.color = '${topNavFontColor @ context='styleToken'}'">
                                                     <sly data-sly-test="${subList.path != currentPage.path}"> 
                                                         <a class="top_back" href="${subList.path}.html" style="color:${topNavFontColor  @ context='styleToken'};">
-                                                            <div data-sly-test="${topSubHeadingStyle == 'h1'}" data-sly-unwrap>
+                                                            <!-- /*<div data-sly-test="${topSubHeadingStyle == 'h1'}" data-sly-unwrap>
                                                                 <h1>${subList.title}</h1>
                                                             </div>
                                                             <div data-sly-test="${topSubHeadingStyle == 'h2'}" data-sly-unwrap>
@@ -451,13 +451,13 @@
                                                             </div>
                                                             <div data-sly-test="${topSubHeadingStyle == 'h6'}" data-sly-unwrap>
                                                                 <h6>${subList.title}</h6>
-                                                            </div>
-                                                        	<!-- /* ${subList.title} */ -->
+                                                            </div> */ -->
+                                                        	 ${subList.title}
 														</a>
                                                     </sly>
                                                     <sly data-sly-test="${subList.path == currentPage.path}"> 
                                                         <a class="top_back" href="#" style="color:${topNavFontColor  @ context='styleToken'};">
-                                                            <div data-sly-test="${topSubHeadingStyle == 'h1'}" data-sly-unwrap>
+                                                            <!-- /*<div data-sly-test="${topSubHeadingStyle == 'h1'}" data-sly-unwrap>
                                                                 <h1>${subList.title}</h1>
                                                             </div>
                                                             <div data-sly-test="${topSubHeadingStyle == 'h2'}" data-sly-unwrap>
@@ -474,7 +474,7 @@
                                                             </div>
                                                             <div data-sly-test="${topSubHeadingStyle == 'h6'}" data-sly-unwrap>
                                                                 <h6>${subList.title}</h6>
-                                                            </div>
+                                                            </div> */ -->
                                                             ${subList.title}
 														</a> 
                                                    	</sly>
