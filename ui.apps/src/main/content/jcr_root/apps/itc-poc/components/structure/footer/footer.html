@@ -1,0 +1,55 @@
+<!--/* start of footer */-->
+
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+  <meta data-sly-call="${clientLib.js @ categories='apps.itc-poc.widgets'}" data-sly-unwrap></meta>
+</div>
+<sly data-sly-use.footerObj="${'com.adobe.itc.poc.core.models.Footer' @ currDesign = currentDesign}">
+<sly data-sly-use.logoURLPath="${'com.adobe.itc.poc.core.utils.ValidUrlGenerator' @ path=footerObj.logoURL}" />
+<!--/* design_dialog Inputs */-->
+<div data-sly-test.logoImage="${footerObj.logoImage}" data-sly-unwrap></div>
+<div data-sly-test.logoAltText="${footerObj.logoAltText}" data-sly-unwrap></div>
+<div data-sly-test.footerFontcolor="font-${footerObj.footerFontcolor}" data-sly-unwrap></div>
+<div data-sly-test.footerFontsize="${footerObj.footerFontsize}" data-sly-unwrap></div>
+<div data-sly-test.footerBgColor="background-${footerObj.footerBgColor}" data-sly-unwrap></div>
+<div data-sly-test.footerNavText="${footerObj.footerNavText}" data-sly-unwrap></div>
+
+<div data-sly-test.linkText="${footerObj.linkText}" data-sly-unwrap></div>
+<div data-sly-test.policyLinkText="${footerObj.policyLinkText}" data-sly-unwrap></div>
+<div data-sly-test.policyLinkURL="${footerObj.policyLinkURL}" data-sly-unwrap></div>
+<div data-sly-test.tncLinkText="${footerObj.tncLinkText}" data-sly-unwrap></div>
+<div data-sly-test.tncLinkURL="${footerObj.tncLinkURL}" data-sly-unwrap></div>
+<div data-sly-test.copyRightText="${footerObj.copyRightText}" data-sly-unwrap></div>
+
+
+<div class="footer-background-watermark ${footerBgColor} ${footerFontcolor} footer-${footerFontcolor} ${footerFontsize}">
+  <nav class="container-footer">
+    <div class="footer-logo hidden-xs">
+      <a href="${logoURLPath.getCompletePath @ context='unsafe'}" >      
+          <img src="${logoImage}" alt="${logoAltText}" style="padding-top:20px" />
+      </a>
+    </div>
+     <div class="footer-logo hidden-lg hidden-sm hidden-md">
+      <a href="${logoURLPath.getCompletePath @ context='unsafe'}" >
+          <img src="${logoImage}" alt="${logoAltText}" style="padding-top:20px" />
+      </a>
+    </div>
+    <h2 class="visually-hidden">${footerNavText}</h2>
+    <div class="row">
+      
+      <div class="col-xs-12 col-md-10 col-sm-12 colrest xsWid92 ${properties.accordionFlag ? 'auto-collapse-enabled' : ''}" >
+        <div data-sly-resource="${ @path='footerParsys', resourceType='foundation/components/iparsys'}" data-sly-unwrap></div>
+
+      </div>
+    </div>
+   <div class="row">
+      <div class="col-xs-12 col-sm-12 cdfooter" tabindex="0">
+          <p><span class="small-text copyright"><a adhocenable="false" href="${policyLinkURL}">${policyLinkText}</a> | <a adhocenable="false" href="${tncLinkURL}">${tncLinkText}</a></span></p>
+              <p><span class="small-text copyright">${copyRightText @ context='html'}</span></p>
+      </div>
+    </div>
+
+  </nav>
+</div>
+</sly>
+
+<!--/* end of footer */-->
