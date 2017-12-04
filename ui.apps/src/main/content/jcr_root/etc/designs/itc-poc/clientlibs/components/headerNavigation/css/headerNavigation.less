@@ -1,12 +1,12 @@
 @color_1: #052E70;
-@color_2: white;
-@color_3:#eee;
-@font_family_1: sans-serif;
-@background_color_1: #052E70;
-@background_color_2: #eee;
+@color_2: #ffffff;
+@font_family_1: 'Montserrat',"Helvetica Neue",Helvetica,Arial,sans-serif;
+@background_color_1: #eee;
+@background_color_2: #052E70;
+
 body{
     overflow-x:hidden;
-    font-family: 'Montserrat',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: @font_family_1;
 }
 
 #megaNav,#megaNavSecond {
@@ -19,6 +19,9 @@ body{
         //overflow:auto;
     }
     //global css
+    .tabindexClass{
+        height: inherit;
+    }
     h1, h2, h3, h4, h5, h6{
         margin-top:0px;
         margin-bottom:10px;
@@ -38,7 +41,7 @@ body{
     }
     //global css
     .searchStrip {
-        background-color: #44006d;
+        background-color: #162F4F;//#44006d;
         padding: 10px 15px;
         display: none;
         .row {
@@ -64,9 +67,9 @@ body{
                 }
             }
             .searchBtn {
-                width: 20%;
-                background-color:@color_2;
-                color:#44006d;
+                width: 20%;background-color:#F2683D;border:0px;
+                //background-color:@color_2;
+                color:@color_2;
                 margin-left:10px;
                 @media (max-width: 767px) {
                     width: 33%;
@@ -105,7 +108,6 @@ body{
                 @media (max-width: 767px) {
                     position: fixed;
                     height: 100%;
-                    //background: #eee;
                     width: 75%;
                     left: -100%;
                 }
@@ -124,6 +126,9 @@ body{
                         height: 85px;
                         padding: 0 10px;
                         cursor:pointer;
+                        @media (max-width: 992px) and (min-width: 768px) {
+                            padding:0px 0px 0px 10px;
+                        }
                         @media (max-width: 767px) {
                             padding:0px;
                             height: auto;
@@ -133,26 +138,29 @@ body{
                         &:first-child{
                             margin-left:25px;
                             @media (max-width: 992px) and (min-width: 768px) {
-                               margin-left:20px;
+                               margin-left:10px;
+                                padding:0px;
                             }
                             @media (max-width: 767px) {
                                 margin-left:0px;
                         	}
                     	}
-                         a.dropdown-toggle, a.topnav__link, a{
+                        a.dropdown-toggle, a.topnav__link, a{
+                        	font-size:15px;
                             color: @color_1;
                             padding: 0px; 
                             top: 50%;
                         	transform: translateY(-50%);
                             text-align: center;
-                            /*@media (max-width: 992px) and (min-width: 768px) {
-                                padding: 0px 10px;
-                            }*/
+                           @media (max-width: 992px) and (min-width: 768px) {
+                               font-size:13px;
+                            }
                             @media (max-width: 767px) {
                                 padding: 15px;
                                 transform: translateY(0);
                                 top: auto;
                                 text-align: left;
+                                font-size:13px;
                             }
                              i.subMenuchevron,i {
                                 margin-left: 10px;
@@ -193,7 +201,7 @@ body{
                                 overflow: hidden;
                                 overflow-y: hidden;
                                 overflow-x: auto;
-                                background-color: @background_color_2;
+                                background-color: @background_color_1;
                                 @media (max-width: 767px) {
                                     padding: 0;
                                     display:block;
@@ -228,7 +236,7 @@ body{
                                         }
                                     }
                                     a {
-                                        color: @color_1;
+                                        color: @color_2;
                                         @media (max-width: 767px) {
                                             display: block;
                                         }
@@ -244,7 +252,7 @@ body{
                         }  
                     }
                     .activeHover{
-                       // background-color:@background_color_2;
+                       // background-color:@background_color_1;
                     }
                 }
             }
@@ -263,7 +271,7 @@ body{
                 margin:0px;
             }
             .icon-bar {
-                background-color: #4E4E4E;
+                background-color: @background_color_2;
             }
         }
     }
@@ -282,10 +290,10 @@ body{
             @media (max-width: 767px){
                 margin: 0px;
                 font-size: 18px;
-                color: #4E4E4E;
+                color: @color_1;
             }
             &:hover{
-            color:#000000;
+            //color:#000000;
             }
         }
     }
