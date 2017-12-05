@@ -127,7 +127,7 @@ body{
                         padding: 0 10px;
                         cursor:pointer;
                         @media (max-width: 992px) and (min-width: 768px) {
-                            padding:0px 0px 0px 10px;
+                            padding:0px 5px;
                         }
                         @media (max-width: 767px) {
                             padding:0px;
@@ -138,8 +138,8 @@ body{
                         &:first-child{
                             margin-left:25px;
                             @media (max-width: 992px) and (min-width: 768px) {
-                               margin-left:10px;
-                                padding:0px;
+                               margin-left:5px;
+                               padding:0px 5px;
                             }
                             @media (max-width: 767px) {
                                 margin-left:0px;
@@ -160,7 +160,7 @@ body{
                                 transform: translateY(0);
                                 top: auto;
                                 text-align: left;
-                                font-size:13px;
+                                font-size:15px;
                             }
                              i.subMenuchevron,i {
                                 margin-left: 10px;
@@ -203,7 +203,7 @@ body{
                                 overflow-x: auto;
                                 background-color: @background_color_1;
                                 @media (max-width: 767px) {
-                                    padding: 0;
+                                    padding: 0px;
                                     display:block;
                                     height: 100%;
                                     width: 100%;
@@ -224,7 +224,8 @@ body{
                                     display: inline-block;
                                     padding: 0px 10px;
                                      @media (max-width: 767px) {
-                                        padding:0px;
+                                        padding:15px;
+                                        color:white;
                                          display: block;
                                          word-break: break-word;
                                         white-space: normal;
@@ -268,7 +269,7 @@ body{
                 top: 50%;
                 transform: translateY(-50%);
                 padding:0;
-                margin:0px;
+                margin:0px!important;
             }
             .icon-bar {
                 background-color: @background_color_2;
@@ -297,6 +298,7 @@ body{
             }
         }
     }
+
 }
 #megaNav{
     z-index:100;

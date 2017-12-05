@@ -1,6 +1,7 @@
 $(document).ready(function () {
 	//Add chevrons in Header based on device width 
     $('.headerStrip .menuList .subDropdownmenu').each(function(index){
+        //$(this).find('ul').prepend("<li class='hidden-sm hidden-md hidden-lg'>BACK<i class='fa fa-chevron-right subdropdownClose pull-right'></i></li>");
         if(window.matchMedia("(max-width: 767px)").matches){
         	$(this).siblings('a').find('i.subMenuchevron').addClass('fa-chevron-right pull-right').removeClass('fa-chevron-down'); 
        	}else{
@@ -74,10 +75,10 @@ $(document).ready(function () {
         var meganavSearch=$(this).parents('.headerStripouter').siblings('.searchStrip');
         var navbarlistslider=$(this).parents('.headerStripouter').find('.navbarListslider');
         if($(navbarlistslider).hasClass('active')){            
-            $(navbarlistslider).animate({left:'-100%'}).removeClass('active');
+            $(navbarlistslider).animate({left:'-100%'},'fast').removeClass('active');
         }else{
             $(meganavSearch).hide();
-            $(navbarlistslider).animate({left:'0px'}).addClass('active');
+            $(navbarlistslider).animate({left:'0px'},'fast').addClass('active');
         }
     })
 
@@ -95,7 +96,9 @@ $(window).scroll(function(e){
 $(window).resize(function() {
     if(window.matchMedia("(max-width: 767px)").matches){
         $('.subMenuchevron').addClass('fa-chevron-right pull-right').removeClass('fa-chevron-down');
+        $('.subDropdownmenu').show().css('left','-100%');
     }else{
+        $('.subDropdownmenu').css('left','0');
         $('.subMenuchevron').addClass('fa-chevron-down').removeClass('fa-chevron-right pull-right');
         $('.menuList li.menu-item .subDropdownmenu').hide();
         $('.headerStripouter .navbarListslider').removeAttr('style');
