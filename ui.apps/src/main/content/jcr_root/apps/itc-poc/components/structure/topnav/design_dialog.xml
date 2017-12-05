@@ -327,6 +327,7 @@
                             </subMenuList>
                             <mainMenuURL
                                 jcr:primaryType="cq:Widget"
+                                anchor="100%"
                                 fieldDescription="Optional field."
                                 fieldLabel="Enter Main Menu URL"
                                 key="mainMenuURL"
