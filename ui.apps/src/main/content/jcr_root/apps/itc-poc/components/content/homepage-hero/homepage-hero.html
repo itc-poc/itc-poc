@@ -1,0 +1,90 @@
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+    <meta data-sly-call="${clientLib.css @ categories='designs.itc.poc.components.homepageHero'}" data-sly-unwrap></meta>
+</div>
+
+<div data-sly-use.hero="homepage-hero.js" data-sly-unwrap></div>
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+    <meta data-sly-call="${clientLib.js @ categories='designs.itc.poc.components.homepageHero'}" data-sly-unwrap></meta>
+</div>
+
+
+<!--/* Code for Image rendition for Default Image */-->
+
+<div data-sly-test.imageReferencePath="${properties.imageReference}" data-sly-unwrap></div>
+<div data-sly-test.imageReferenceMDPath="${properties.imageReferenceMD}" data-sly-unwrap></div>
+<div data-sly-test.imageReferenceSMPath="${properties.imageReferenceSM}" data-sly-unwrap></div>
+<div data-sly-test.imageReferenceXSPath="${properties.imageReferenceXS}" data-sly-unwrap></div>
+	
+<div data-sly-test.isBigDesktopImage="${!properties.isBigDesktopImage}" data-sly-unwrap>
+</div>
+<div data-sly-test.isDesktopImage="${!properties.isDesktopImage}" data-sly-unwrap>   
+</div>
+<div data-sly-test.isTabletImage="${!properties.isTabletImage}" data-sly-unwrap>
+</div>
+<div data-sly-test.isMobileImage="${!properties.isMobileImage}" data-sly-unwrap>   
+</div>
+
+
+<div data-sly-test="${imageReferenceMDPath =='none' || imageReferenceMDPath == null || imageReferenceMDPath == ''}" data-sly-unwrap>
+	<div data-sly-test.imageReferenceMDPath = "${imageReferencePath}" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${imageReferenceSMPath =='none' || imageReferenceSMPath == null || imageReferenceSMPath == ''}" data-sly-unwrap>
+	<div data-sly-test.imageReferenceSMPath = "${imageReferenceMDPath}" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${imageReferenceXSPath =='none' || imageReferenceXSPath == null || imageReferenceXSPath == ''}" data-sly-unwrap>
+	<div data-sly-test.imageReferenceXSPath = "${imageReferenceSMPath}" data-sly-unwrap></div>
+</div>
+
+<div data-sly-test.hideText="${properties.hideText == 'true'  ? 'true' : 'false' }" data-sly-unwrap>
+</div>
+<div data-sly-test.clshideText ="" data-sly-unwrap></div>
+<div data-sly-test.hideText="${properties['hideText'] == 'true' }" data-sly-unwrap>
+	<div data-sly-test.clshideText ="hideHPHText" data-sly-unwrap></div>
+</div>
+
+<div>
+     ${properties.faTileIcon}
+</div>
+
+<!--/* Code to take input from Dialog - ENDS  */-->
+<div data-sly-test.customClasses ="${properties.customClasses}" data-sly-unwrap></div>
+<div class="${customClasses}">
+	<div class="no-gutter hero-top show-${properties.heroStyle}-view section">
+
+		<div data-sly-test="${properties.heroStyle=='single'}" class="single-view">
+			<img src="${imageReferencePath @ context='uri'}" class="homepage-hero-img-rendition" alt='${hero.singleHero.imageAltText || true}'
+							 data-imageReferenceLGPath="${imageReferencePath @ context='uri'}"
+							 data-imageReferenceMDPath="${imageReferenceMDPath @ context='uri'}"
+							 data-imageReferenceSMPath="${imageReferenceSMPath @ context='uri'}"
+							 data-imageReferenceXSPath="${imageReferenceXSPath @ context='uri'}"
+							 data-imageReferenceXSPath="${imageReferenceXSPath @ context='uri'}"
+							 data-isBigDesktopImage="${isBigDesktopImage @ context='uri'}"
+							 data-isDesktopImage="${isDesktopImage @ context='uri'}"
+							 data-isTabletImage="${isTabletImage @ context='uri'}"
+							 data-isMobileImage="${isMobileImage @ context='uri'} ">
+			 </img>
+			
+
+			<div data-sly-include="single-hero-desktop.html" data-sly-unwrap></div>
+		</div>
+
+		<div data-sly-test="${properties.heroStyle=='split'}" class='split-view'>
+			<div data-sly-include="split-hero-desktop.html" data-sly-unwrap></div>
+		</div>
+
+	</div>
+</div>
+<div data-sly-test="${properties.heroStyle=='split'}" class="mobile-content middle-border col-xs-12 col-sm-12 hidden-md hidden-lg ${hero.splitHero.showCenterBlock=='true' ? 'choice-overlay-padding' : ''} no-float">
+    <div data-sly-include="split-hero-mobile.html" data-sly-unwrap></div>
+</div>
+
+<div data-sly-test="${properties.heroStyle=='single'}" id="${clshideText}" class="mobile-content col-xs-12 col-sm-12 hidden-md hidden-lg no-float">
+    <div data-sly-include="single-hero-mobile.html" data-sly-unwrap></div>
+</div>
+
+
+<div data-sly-test="${hero.singleHero.showRfi=='true'}">
+    <div data-sly-test="${properties.heroStyle=='single'}" class="rfi-mobile-content  ${clsHideRfiMobile} col-xs-12 col-sm-12 hidden-md hidden-lg no-float" style="background-color: #${rfiBackgroundColor @ context='styleToken'};">
+
+</div>
+</div>

@@ -1,0 +1,117 @@
+<div data-sly-use.hero="homepage-hero.js" data-sly-unwrap></div>
+
+
+<div data-sly-test.backgroundColor="${properties['backgroundColor'] ? properties['backgroundColor'] : '' }" data-sly-unwrap>
+</div>
+<div data-sly-test.backgroundColorHover="${properties['backgroundColorHover'] ? properties['backgroundColorHover'] : '' }" data-sly-unwrap>
+</div>
+<div data-sly-test.borderColor="${properties['borderColor'] ? properties['borderColor'] : '' }" data-sly-unwrap>
+</div>
+<div data-sly-test.borderColorHover="${properties['borderColorHover'] ? properties['borderColorHover'] : '' }" data-sly-unwrap>
+</div>
+<div data-sly-test.fontColor="${properties['fontColor'] ? properties['fontColor'] : '' }" data-sly-unwrap>
+</div>
+<div data-sly-test.fontColorHover="${properties['fontColorHover'] ? properties['fontColorHover'] : '' }" data-sly-unwrap>
+</div>
+<div data-sly-test.iconPresent="${properties['faTileIcon'] ? properties['faTileIcon'] : '' }" data-sly-unwrap>
+</div>
+
+<div data-sly-test.newWindow="${properties['newWindow'] == 'true'  ? 'true' : 'false' }" data-sly-unwrap>
+</div>
+<div data-sly-test.hideText="${hero.singleHero.hideText == 'true'  ? 'true' : 'false' }" data-sly-unwrap>
+</div>
+<div data-sly-test.clshideText ="" data-sly-unwrap></div>
+<div data-sly-test.hideText="${hideText == 'true' }" data-sly-unwrap>
+	<div data-sly-test.clshideText ="hideHPHText" data-sly-unwrap></div>
+</div>
+
+<!-- Logic for Button as default color-->
+<div data-sly-test="${backgroundColor =='' || backgroundColor == null}" data-sly-unwrap>   
+   <div data-sly-test.backgroundColor="0099CC" data-sly-unwrap></div>
+</div>
+
+<div data-sly-test="${borderColor =='' || borderColor == null}" data-sly-unwrap>   
+   <div data-sly-test.borderColor="0099CC" data-sly-unwrap></div>
+</div>
+
+
+<div data-sly-test="${fontColor =='' || fontColor == null}" data-sly-unwrap>   
+   <div data-sly-test.fontColor="FFFFFF" data-sly-unwrap></div>
+</div>
+
+<div data-sly-test="${backgroundColorHover =='' || backgroundColorHover == null}" data-sly-unwrap>   
+   <div data-sly-test.backgroundColorHover="FFFFFF" data-sly-unwrap></div>
+</div>
+
+<div data-sly-test="${borderColorHover =='' || borderColorHover == null}" data-sly-unwrap>   
+   <div data-sly-test.borderColorHover="0099CC" data-sly-unwrap></div>
+</div>
+
+<div data-sly-test="${fontColorHover =='' || fontColorHover == null}" data-sly-unwrap>   
+   <div data-sly-test.fontColorHover="000000" data-sly-unwrap></div>
+</div>
+<!-- Logic for Button as default color-->
+
+<div data-sly-test="${newWindow =='' || newWindow == null || newWindow == 'false'}" data-sly-unwrap>   
+   <div data-sly-test.newWindow="" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${newWindow =='true'}" data-sly-unwrap>   
+   <div data-sly-test.newWindow="_blank" data-sly-unwrap></div>
+</div>
+ <sly data-sly-use.urlGen="${'com.adobe.itc.poc.core.utils.ValidUrlGenerator' @ path=properties['buttonURL']}" />
+
+<div data-sly-test.side="${hero.singleHero.activeSide}" data-sly-unwrap></div>
+<div class="content hidden-xs hidden-sm overlay-${side} ${clshideText}">
+    <div data-sly-test="${hero.singleHero.activeSide=='left'}" id="left" class="left">
+        <div class="hidden-xs col-sm-12 no-padding">
+            <div class="row">
+                <div class="pull-right col-xs-9 col-xs-pull-1 content-container">
+                    ${hero.singleHero.topTextHtml @ context='html'} ${hero.singleHero.bottomTextHtml @ context='html'}
+
+      <!--/* Button HTML */-->
+      <div class="buttonContainer"  ontouchstart="
+            this.getElementsByClassName('targetButtonClass')[0].style.backgroundColor = '#${backgroundColorHover @ context='styleToken'}';
+            this.getElementsByClassName('targetButtonClass')[0].style.color='#${fontColorHover @ context='styleToken'}';
+            this.getElementsByClassName('targetButtonClass')[0].style.border='3px solid #${borderColorHover @ context='styleToken'}'" 
+         onmouseover="
+            this.getElementsByClassName('targetButtonClass')[0].style.backgroundColor = '#${backgroundColorHover @ context='styleToken'}';
+            this.getElementsByClassName('targetButtonClass')[0].style.color='#${fontColorHover @ context='styleToken'}';
+            this.getElementsByClassName('targetButtonClass')[0].style.border='3px solid #${borderColorHover @ context='styleToken'}'" onmouseout="
+            this.getElementsByClassName('targetButtonClass')[0].style.backgroundColor = '#${backgroundColor @ context='styleToken'}';
+            this.getElementsByClassName('targetButtonClass')[0].style.color='#${fontColor @ context='styleToken'}';
+            this.getElementsByClassName('targetButtonClass')[0].style.border='3px solid #${borderColor @ context='styleToken'}'">
+      <a data-ceid="RFI-hero" href="${urlGen.getCompletePath @ context='unsafe'}"  style="color:#${fontColor @ context='styleToken'}; background-color: #${backgroundColor @ context='styleToken'};  border:3px solid #${borderColor @ context='styleToken'} ;" data-currentpage="${currentPage.path}" class="btn targetButtonClass ${properties['buttonSize']}" target="${newWindow}" > ${properties.buttonText @ context='unsafe'} <sly data-sly-test="${iconPresent != '' }" ><i class="${iconPresent}" aria-hidden="true"></i></sly></a>
+      </div>
+	<!--/* Button HTML */-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-sly-test="${hero.singleHero.activeSide=='right'}" id="right" class="right">
+        <div class="hidden-xs col-sm-12 no-padding">
+            <div class="row">
+                <div class="col-xs-9 col-xs-offset-1 content-container">
+                    ${hero.singleHero.topTextHtml @ context='html'} ${hero.singleHero.bottomTextHtml @ context='html'}
+
+      <!--/* Button HTML */-->
+
+      <div class="buttonContainer"  ontouchstart="
+            this.getElementsByClassName('targetButtonClass')[0].style.backgroundColor = '#${backgroundColorHover @ context='styleToken'}';
+            this.getElementsByClassName('targetButtonClass')[0].style.color='#${fontColorHover @ context='styleToken'}';
+            this.getElementsByClassName('targetButtonClass')[0].style.border='3px solid #${borderColorHover @ context='styleToken'}'" 
+         onmouseover="
+            this.getElementsByClassName('targetButtonClass')[0].style.backgroundColor = '#${backgroundColorHover @ context='styleToken'}';
+            this.getElementsByClassName('targetButtonClass')[0].style.color='#${fontColorHover @ context='styleToken'}';
+            this.getElementsByClassName('targetButtonClass')[0].style.border='3px solid #${borderColorHover @ context='styleToken'}'" onmouseout="
+            this.getElementsByClassName('targetButtonClass')[0].style.backgroundColor = '#${backgroundColor @ context='styleToken'}';
+            this.getElementsByClassName('targetButtonClass')[0].style.color='#${fontColor @ context='styleToken'}';
+            this.getElementsByClassName('targetButtonClass')[0].style.border='3px solid #${borderColor @ context='styleToken'}'">
+      <a data-ceid="RFI-hero" href="${urlGen.getCompletePath @ context='unsafe'}" style="color:#${fontColor @ context='styleToken'}; background-color: #${backgroundColor @ context='styleToken'};  border:3px solid #${borderColor @ context='styleToken'} ;" data-currentpage="${currentPage.path}" class="btn targetButtonClass ${properties['buttonSize']}" target="${newWindow}">${properties.buttonText @ context='unsafe'}<sly data-sly-test="${iconPresent != '' }" ><i class="${iconPresent}" aria-hidden="true"></i></sly></a>
+      </div>
+	<!--/* Button HTML */-->
+
+                </div>
+            </div> 
+        </div>   
+    </div>
+</div>
