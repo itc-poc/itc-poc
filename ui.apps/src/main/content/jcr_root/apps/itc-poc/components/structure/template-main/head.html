@@ -36,7 +36,10 @@
     <!-- javascript head includes -->
 
     <meta data-sly-call="${clientLib.js @ categories='apps.itc-poc.widgets.custom'}"  data-sly-unwrap  />
+    <meta data-sly-call="${clientLib.js @ categories='designs.itc-poc.utilities.author'}"  data-sly-unwrap  />
 
+  <meta data-sly-call="${clientLib.css @ categories='designs.itc-poc.utilities.author'}" data-sly-test="${!wcmmode.disabled && !wcmInit.isTouchAuthoring}" data-sly-unwrap />
+  <meta data-sly-call="${clientLib.js @ categories='designs.itc-poc.utilities.author'}" data-sly-test="${!wcmmode.disabled && !wcmInit.isTouchAuthoring}" data-sly-unwrap />
 
   <style>
   @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
