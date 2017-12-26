@@ -1,0 +1,152 @@
+<sly data-sly-use.pscModule="program-spotlight-carousel.js" />
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+	<meta data-sly-call="${clientLib.css @ categories='designs.itc-poc.components.content.programSpotlightCarousel'}" data-sly-unwrap></meta>
+</div>
+<div data-sly-test.pSpotlighttitle="${properties.title}" data-sly-unwrap></div>
+<div data-sly-test.pSpotlightsearchPageTitle="${properties.searchPageTitle}" data-sly-unwrap></div>
+<div data-sly-test.pSpotlighttitleColor="${properties.titleColor}" data-sly-unwrap></div>
+<div data-sly-test.pSpotlightDisplayType="${properties.displayType}" data-sly-unwrap></div>
+<div data-sly-test.backGroundColor="${properties.bgColor}" data-sly-unwrap></div>
+
+<div data-sly-use.psc="${'com.adobe.itc.poc.core.models.ProgramSpotlightCarousel'}" data-sly-unwrap></div>
+
+<div class="spotlightCar">
+   <div class="bkgrd_clr ${psc.fullWidthMobile}" style="background-color:#${backGroundColor @ context='styleToken'}">
+      <div data-sly-test.oneSlide="${psc.getNumberOfSilde == 1}" data-sly-unwrap>
+         <div data-sly-test.noOfSildeArr=${[0]} data-sly-unwrap></div>
+      </div>
+      <div data-sly-test="${psc.getNumberOfSilde == 2}" data-sly-unwrap>
+         <div data-sly-test.noOfSildeArr=${[0,1]} data-sly-unwrap></div>
+      </div>
+      <div data-sly-test="${psc.getNumberOfSilde == 3}" data-sly-unwrap>
+         <div data-sly-test.noOfSildeArr=${[0,1,2]} data-sly-unwrap></div>
+      </div>
+      <div data-sly-test="${psc.getNumberOfSilde == 4}" data-sly-unwrap>
+         <div data-sly-test.noOfSildeArr=${[0,1,2,3]} data-sly-unwrap></div>
+      </div>
+      <div data-sly-test="${psc.getNumberOfSilde == 5}" data-sly-unwrap>
+         <div data-sly-test.noOfSildeArr=${[0,1,2,3,4]} data-sly-unwrap></div>
+      </div>
+      <div data-sly-test="${psc.getNumberOfSilde == 6}" data-sly-unwrap>
+         <div data-sly-test.noOfSildeArr=${[0,1,2,3,4,5]} data-sly-unwrap></div>
+      </div>
+      <div data-sly-test="${psc.getNumberOfSilde == 7}" data-sly-unwrap>
+         <div data-sly-test.noOfSildeArr=${[0,1,2,3,4,5,6]} data-sly-unwrap></div>
+      </div>
+      <div data-sly-test="${properties.noOfTilePerSlide == '3'}" data-sly-unwrap>
+         <div data-sly-test.noOfTileArr=${[0,1,2]} data-sly-unwrap></div>
+      </div>
+      <div data-sly-test="${properties.noOfTilePerSlide == '4'}" data-sly-unwrap>
+         <div data-sly-test.noOfTileArr=${[0,1,2,3]} data-sly-unwrap></div>
+      </div>
+      <div data-sly-test="${properties.noOfTilePerSlide == '5'}" data-sly-unwrap>
+         <div data-sly-test.noOfTileArr=${[0,1,2,3,4]} data-sly-unwrap></div>
+      </div>
+      <div data-sly-test.clsActive="active" data-sly-unwrap></div>
+      <div data-sly-test.clsActive1="active" data-sly-unwrap></div>
+      <div data-sly-test.displayNone="displayNone" data-sly-unwrap></div>
+      <div  class=" desktopView hidden-xs">
+         <div id="${pscModule.pscId}" class="carousel slide true swipeImage spotlight-carousel" data-interval="false" style="padding: 0px;">
+            <div  data-sly-test="${psc.getProgramConfigList}" data-sly-unwrap>
+               <sly data-sly-test.pgm="${psc.getProgramConfigList}"/>
+               <input type="hidden" value="${properties.noOfTilePerSlide}" class="slideCount" />
+               <div class="carousel-inner myCarousel">
+                  <sly data-sly-list.slides="${noOfSildeArr}">
+                     <div data-sly-test="${slidesList.index > 0}" data-sly-unwrap>
+                        <div data-sly-test.clsActive="" data-sly-unwrap></div>
+                     </div>
+                     <ol class="item ${clsActive}" style="padding:0px;text-align: center ;background-color: #777777;" >
+                        <sly data-sly-list.tiles="${noOfTileArr}">
+                           <sly data-sly-test.pgmPosition="${pgm[psc.getSildePosition]}"/>
+                           <div data-sly-test="${pgmPosition.tileView[0]== 'imageView'}" data-sly-unwrap>
+                              <li class="pro-spot-caro ${pgmPosition.isActive == 'true'?'active':''}" style="background-image: url(${pgmPosition.imagePath @ context='uri' });background-size:100% 100%; max-width:240px;height:100px">
+                           </div>
+                           <div data-sly-test="${pgmPosition.tileView[0]== 'bgColorView'}" data-sly-unwrap>
+                           <li class="pro-spot-caro ${pgmPosition.isActive == 'true'?'active':''}" style="background-color: #${pgmPosition.tileBGColor[0] @ context='styleToken'};background-size:cover; max-width:240px;height:100px"> 
+                           </div>
+                           <div class="txtCarousel">
+                           <p class="text-carousel text-carouselFirst text-carousel-align ${displayNone}" style="text-transform:uppercase" tabindex="0">  ${pgmPosition.fieldOfStudy == "" ? "&nbsp" : pgmPosition.fieldOfStudy @ context='html'}</p>
+                           <p class="text-carousel  text-height" tabindex="0">
+                           <a class="text-carouselAnchorText" href=${pgmPosition.link} tabindex="-1">
+                           <span class="txtHeightDynm"> ${pgmPosition.linkText == ""?"&nbsp" : pgmPosition.linkText @ context='html'}</span>
+                           </a>
+                           </p>
+                           </div>
+                           </li>
+                        </sly>
+                     </ol>
+                  </sly>
+               </div>
+               <sly data-sly-test="${psc.getProgramConfigList.size > psc.getNumberOfSilde}">
+                  <a class="left carousel-control fa fa-chevron-left" href="" role="button"   data-slide="prev" data-target="#${pscModule.pscId}"></a>
+                  <a class="right carousel-control fa fa-chevron-right" href="" role="button"  data-slide="next" data-target="#${pscModule.pscId}"></a>  
+               </sly>
+            </div>
+            <div data-sly-test ="${!oneSlide}">
+               <ol class="carousel-indicators hidden-xs" role="tablist" tabindex="0">
+                  <sly data-sly-list.slides="${noOfSildeArr}">
+                     <div data-sly-test="${slidesList.index > 0}" data-sly-unwrap>
+                        <div data-sly-test.clsActive1="" data-sly-unwrap></div>
+                     </div>
+                     <li data-target="#${pscModule.pscId}" data-slide-to="${slidesList.index}" aria-label="slide to ${slidesList.index}"class="${clsActive1}" ></li>
+                  </sly>
+               </ol>
+            </div>
+         </div>
+      </div>
+      <div id="${pscModule.pscXsId}" data-interval="false" class="carousel slide true swipeImage mobileView hidden-sm hidden-md hidden-lg spotlight-carousel" style="margin: 0px; padding: 0px;">
+         <div  data-sly-test="${psc.getProgramConfigList}" data-sly-unwrap>
+            <!--  <ol class="carousel-indicators hidden-md hidden-lg" role="tablist" data-sly-list.pgm="${psc.getProgramConfigList}">
+               <li data-target="#myCarousel" data-slide-to="${pgmList.index}" class="${pgmList.index == 0?'active':''}"></li>
+               </ol> -->
+            <div class="carousel-inner myCarousel">
+               <sly data-sly-list.pgm="${psc.getProgramConfigList}">
+                  <div class="item itemheight  ${pgmlist.index == 0?'active':''}">
+                     <div data-sly-test="${pgm.tileView[0]== 'imageView'}" data-sly-unwrap>
+                        <div class="pro-spot-caro ${pgm.isActive == 'true'?'active':''}" style="background-image: url(${pgm.imagePath @ context='uri' });">
+                           <div class="txtCarousel">
+                              <p class="text-carousel text-carouselFirst text-carousel-align" style="text-transform:uppercase" tabindex="0">  ${pgm.fieldOfStudy == ""?"&nbsp" : pgm.fieldOfStudy @ context='html'}</p>
+                              <p class="text-carousel  text-height" >
+                                 <a class="text-carouselAnchorText" href=${pgm.link}>
+                                 <span class="txtHeightDynm"> ${pgm.linkText == ""?"&nbsp" : pgm.linkText @ context='html'}</span>
+                                 </a>
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div data-sly-test="${pgm.tileView[0]== 'bgColorView'}" data-sly-unwrap>
+                        <div class="pro-spot-caro ${pgm.isActive == 'true'?'active':''}" style="background-color: #${pgm.tileBGColor[0] @ context='styleToken'};">
+                           <div class="txtCarousel">
+                              <p class="text-carousel text-carouselFirst text-carousel-align" style="text-transform:uppercase">  ${pgm.fieldOfStudy == ""?"&nbsp" : pgm.fieldOfStudy @ context='html'}</p>
+                              <p class="text-carousel  text-height" >
+                                 <a class="text-carouselAnchorText" href=${pgm.link}>
+                                 <span class="txtHeightDynm"> ${pgm.linkText == ""?"&nbsp" : pgm.linkText @ context='html'}</span>
+                                 </a>
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <p class="spotlightCount"><span>${pgmList.count}</span> of <span>${psc.getProgramConfigList.size}</span></p>
+                  </div>
+               </sly>
+            </div>
+         </div>
+         <sly data-sly-test="${psc.getProgramConfigList.size > 1}">
+            <a class="left-xs carousel-control fa fa-chevron-left" href="" data-target="#${pscModule.pscXsId}" role="button" data-slide="prev"></a>
+            <a class="right-xs carousel-control fa fa-chevron-right" href"" data-target="#${pscModule.pscXsId}" role="button" data-slide="next"></a>
+         </sly>
+      </div>
+   </div>
+</div>
+</div>
+</div>
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+   <meta data-sly-call="${clientLib.js @ categories='designs.itc-poc.components.content.programSpotlightCarousel'}" data-sly-unwrap>
+   </meta>
+</div>
+<script>
+   var pSpotlightDialogConfig = {};
+   pSpotlightDialogConfig.resultItemInfoText ="${properties.programInfoText || '' @ context='scriptString'}";
+   pSpotlightDialogConfig.pscId ="${pscModule.pscId || '' @ context='scriptString'}";
+   pSpotlightDialogConfig.pscXsId ="${pscModule.pscXsId || '' @ context='scriptString'}";
+</script>

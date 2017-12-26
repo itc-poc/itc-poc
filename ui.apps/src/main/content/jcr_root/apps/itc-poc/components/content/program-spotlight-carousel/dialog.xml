@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <programs
+                jcr:primaryType="cq:Panel"
+                title="Programs Configurations">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <noOfTilePerSlide
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="5"
+                        fieldDescription="Max no of tiles to be displayed per slide"
+                        fieldLabel="no of tiles per slide"
+                        name="./noOfTilePerSlide"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <three
+                                jcr:primaryType="nt:unstructured"
+                                text="3"
+                                value="3"/>
+                            <four
+                                jcr:primaryType="nt:unstructured"
+                                text="4"
+                                value="4"/>
+                            <five
+                                jcr:primaryType="nt:unstructured"
+                                text="5"
+                                value="5"/>
+                        </options>
+                    </noOfTilePerSlide>
+                    <displayType
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="Y"
+                        fieldLabel="Display Type"
+                        name="./displayType"
+                        type="radio"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <yes
+                                jcr:primarType="nt:unstructured"
+                                jcr:primaryType="cq:Widget"
+                                text="display the field of study text above the program name"
+                                value="Y"/>
+                            <no
+                                jcr:primarType="nt:unstructured"
+                                jcr:primaryType="cq:Widget"
+                                text="do not display the field of study text above the program name"
+                                value="N"/>
+                        </options>
+                    </displayType>
+                    <fullWidthMobile
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="false"
+                        fieldDescription="disable Full Width in Mobile"
+                        fieldLabel="disable FullWidth in Mobile"
+                        name="./fullWidthMobile"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <bgColor
+                        jcr:primaryType="cq:Widget"
+                        colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF]"
+                        fieldLabel="Background color"
+                        name="./bgColor"
+                        showHexValue="true"
+                        xtype="colorfield"/>
+                    <socialLink
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Programs"
+                        name="./programConfig"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="itcmultifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <link
+                                    jcr:primaryType="cq:Widget"
+                                    anchor="100%"
+                                    fieldLabel="Program link"
+                                    key="programLink"
+                                    xtype="pathfield"/>
+                                <linkText
+                                    jcr:primaryType="cq:Widget"
+                                    anchor="100%"
+                                    fieldLabel="Program Name"
+                                    key="programName"
+                                    xtype="textfield"/>
+                                <fieldOfStudy
+                                    jcr:primaryType="cq:Widget"
+                                    anchor="100%"
+                                    fieldLabel="Field of study"
+                                    key="fieldOfStudy"
+                                    xtype="textfield"/>
+                                <isActivePgm
+                                    jcr:primaryType="cq:Widget"
+                                    defaultValue="false"
+                                    fieldDescription="Is Active Program"
+                                    fieldLabel="Is Active Program"
+                                    key="isActivePgm"
+                                    type="checkbox"
+                                    xtype="selection"/>
+                                <view
+                                    jcr:primaryType="cq:Widget"
+                                    defaultValue="imageView"
+                                    fieldLabel="define the view"
+                                    key="tileView"
+                                    type="select"
+                                    xtype="selection">
+                                    <options jcr:primaryType="cq:WidgetCollection">
+                                        <o1
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Image View"
+                                            value="imageView"/>
+                                        <o2
+                                            jcr:primaryType="nt:unstructured"
+                                            text="BG color View"
+                                            value="bgColorView"/>
+                                    </options>
+                                </view>
+                                <Icons
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="Tile Image"
+                                    key="pImage"
+                                    xtype="ddpathfield"/>
+                                <bgColor
+                                    jcr:primaryType="cq:Widget"
+                                    colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF]"
+                                    fieldLabel="Tile Background color"
+                                    key="tileBGColor"
+                                    showHexValue="true"
+                                    xtype="colorfield"/>
+                            </items>
+                        </fieldConfig>
+                    </socialLink>
+                </items>
+            </programs>
+        </items>
+    </items>
+    <listeners
+        jcr:primaryType="nt:unstructured"
+        beforesubmit="function(dialog){&#xa;&#x9;var programList = dialog.getField('./programConfig').getValue();&#xa;&#x9;var noOfTilePerSlide = dialog.getField('./noOfTilePerSlide').getValue();&#xa;    var remender = programList.length % noOfTilePerSlide;&#xa;&#x9;var tileLimit = noOfTilePerSlide *6 ;&#xa;&#xa;&#x9;if(remender >=1 || programList.length > tileLimit){&#xa;&#x9;&#x9;alert(&quot;Please author tiles in multiple of &quot;+noOfTilePerSlide+&quot; . Current tile count =&quot; + programList.length +&quot;, MaxLimit =&quot;+ noOfTilePerSlide*6 )&#xa;&#x9;&#x9;return false;&#xa;&#x9;}&#xa;&#x9;else if(remender&lt;1){&#xa;&#x9;&#x9;&#xa;&#x9;}&#xa;&#x9;return true;&#xa;};"/>
+</jcr:root>
