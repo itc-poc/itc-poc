@@ -5,6 +5,26 @@
     title="Top Navigation Settings"
     xtype="tabpanel">
     <items jcr:primaryType="cq:WidgetCollection">
+        <icon
+            jcr:primaryType="cq:Widget"
+            title="Logo"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <logoicon
+                    jcr:primaryType="nt:unstructured"
+                    fieldDescription="Logo Image"
+                    fieldLabel="Select Logo Image"
+                    name="./iconpath"
+                    rootPath="/content/dam"
+                    xtype="pathfield"/>
+                <logoURL
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="logo click will redirect to given path"
+                    fieldLabel="Logo URL"
+                    name="./iconpathlink"
+                    xtype="browsefield"/>
+            </items>
+        </icon>
         <generalSettings
             jcr:primaryType="cq:Widget"
             title="General"

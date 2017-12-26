@@ -12,6 +12,8 @@
 <div data-sly-test.topNavHoverFontColor="#${currentStyle.topNavHoverFontColor}" data-sly-unwrap></div>
 <div data-sly-test.topMainHeadingStyle="${currentStyle.topMainHeadingStyle}" data-sly-unwrap></div>
 <div data-sly-test.topSubHeadingStyle="${currentStyle.topSubHeadingStyle}" data-sly-unwrap></div>
+<div data-sly-test.icon="${currentStyle.iconpath}" data-sly-unwrap></div>
+<sly data-sly-use.urlGen="${'com.adobe.itc.poc.core.utils.ValidUrlGenerator' @ path=currentStyle.iconpathlink, type=''}" />
 
 <div class="">
     <div id="megaNavSecond" style="background-color: ${topNavBackgroundColor @ context='styleToken'}; color: ${topNavFontColor  @ context='styleToken'};">
@@ -27,8 +29,11 @@
         </div>
         <div class='headerStripouter'>
             <div class='headerStrip'> 
-                <div class="brandLogo"> 
-                    <img src="/content/dam/itc-poc/Wiki_Project_Med_Foundation_logo.png" tabindex='0'>
+                <div class="brandLogo">
+					<a href="${urlGen.getCompletePath @ context='unsafe'}" >
+                    	<!--<img src="/content/dam/itc-poc/Wiki_Project_Med_Foundation_logo.png" tabindex='0'> -->
+						<img src="${icon}" tabindex='0'>
+                    </a>
                 </div>
                 <div class='navbarListslider'> 
                     <div class="navbarList"  style="background-color:${topNavBackgroundColor @ context='styleToken'};">
