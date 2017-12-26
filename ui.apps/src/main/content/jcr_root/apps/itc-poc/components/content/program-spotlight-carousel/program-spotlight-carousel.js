@@ -1,0 +1,1 @@
+"use strict";use(function(){var a=Math.floor((Math.random()*100000)+1);var d="";var e="";var c=currentNode.path.split("jcr:content");var b=c[1].split("/").slice(1);var g="myCarousel_"+a;var f="myCarouselXs_"+a;return{pscId:g,pscXsId:f}});
