@@ -1,6 +1,7 @@
    .tabs{
        .tabs-container__panel {
       		background: #fff;
+        	padding:10px 24px;
         	.tabs-container__panel_content{
 				display:inline-block;
         	}
@@ -25,6 +26,8 @@
         .tabs-nav-init .tabs-container__panel[aria-hidden="false"] {
            display:inline-block;
            background-color: #F7F6F4; 
+            padding-left: 24px;
+  			  padding-right: 24px;
         }
         .tabs-init{
             background-color: #fff;
@@ -74,21 +77,29 @@
                 min-height:62px;
                 width:100%;
                 text-align:left;
-                background-color:#ddd3c7;
+                background-color:#F2B225;
                 border-right: 2px solid #fff;
             }
             .tabs-navigation__item--current {
-            	background-color: #4c3732 !important;  
+            	background-color: #5890C0 !important;  
             	z-index: 10;
                 color:#fff;
         	}
         }
 
     }
-
+}
     @media (max-width: 991px) {
+    .h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+    .panel {
+        margin-bottom: 0px;
+    }
         .tab_title{
-            background: rgba(221,211,199, 0.2);
+            //background: rgba(221,211,199, 0.2);
+       		background-color: rgb(242, 178, 37);
             position:relative;
             text-decoration:none;
             cursor:pointer;
@@ -119,6 +130,7 @@
                          position:relative;
             			 display:table;
             			 width:100%;
+                    	text-align: left;
 						.tab_title();
                         .titleSpan{
                             display:table-cell;
@@ -164,7 +176,7 @@
             }
         }
     }
-}
+
 
 
 .tabs .tabs-navigation li:last-child .txt-btn {
