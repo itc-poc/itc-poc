@@ -11,8 +11,11 @@
     }
     .image-icon {
         @media (min-width: 320px) and (max-width: 599px){
-            display: table-cell;
+            //display: table-cell;
             vertical-align: middle;
+        }
+        img{
+            width:100%;
         }
     }
     .image-text {
@@ -21,17 +24,20 @@
         }
         p {
 			margin-bottom: 0;
-            margin-left: 10px !important;
+           // margin-left: 10px !important;
         }
         @media (min-width: 320px) and (max-width: 599px){
-            display: table-cell;
+           // display: table-cell;
             vertical-align: middle;
+            padding-left: 10px;
+            padding-bottom: 10px;
         }
     }
     @media (min-width: 320px) and (max-width: 599px){
-        display: table;
+        //display: table;
         vertical-align: middle;
         text-align: left;
+        border: 1px solid #fff;
     }
 }
 .top-align-text {
