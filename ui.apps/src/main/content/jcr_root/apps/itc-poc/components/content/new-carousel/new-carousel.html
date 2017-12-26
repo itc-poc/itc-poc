@@ -35,7 +35,10 @@ ${carouselList.images.size} slide${carouselList.images.size == 1 ?'.'
         <div class="item ${slideInner.slideNumber == 0?'active':''}" role="tabpanel" id="${properties.carouselId || 'newCarousel'}tabpanel-${slideInner.slideNumber}-${slideInner.slideNumber}" aria-labelledby="${properties.carouselId || 'newCarousel'}tab-${slideInner.slideNumber}-${slideInner.slideNumber}">
             <div data-caption="#caption${slideInner.slideNumber}">
 
-                <div class="imgContainer" style="background-image: url(${slideInner.src @ context='uri'})"></div>
+               <!-- /* <div class="imgContainer" style="background-image: url(${slideInner.src @ context='uri'})"></div> */-->
+                 <div class="imgContainer" >
+                     <img src="${slideInner.src @ context='uri'}"/>
+                 </div>
                 <div class="carousel-content-wrapper carousel-content-wrapper-alignment ${clshideHoverEffect}">
                     <div class="carousel-content">
 						<div data-sly-test="${slideInner.headingStyle== 'h1'}" data-sly-unwrap>
@@ -56,7 +59,7 @@ ${carouselList.images.size} slide${carouselList.images.size == 1 ?'.'
 						<div data-sly-test="${slideInner.headingStyle == 'h6'}" data-sly-unwrap>
 							<h6 class="content-title heading-6 " tabindex="0">${slideInner.title  @ context='html'}</h6>
 						</div>
-                        <p class="content-desc">${slideInner.desc || 'Description' @context='html'}
+                        <p class="content-desc">${slideInner.desc || '' @context='html'}
                         </p>
                         <div data-sly-test="${slideInner.btnText}" data-sly-unwrap>
                             <sly data-sly-use.urlGen="${'com.adobe.itc.poc.core.utils.ValidUrlGenerator' @ path=slideInner.btnLink || '', type=''}">

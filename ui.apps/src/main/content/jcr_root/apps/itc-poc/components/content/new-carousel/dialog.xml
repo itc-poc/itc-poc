@@ -132,13 +132,6 @@
                 title="General"
                 xtype="panel">
                 <items jcr:primaryType="cq:WidgetCollection">
-                    <hideText
-                        jcr:primaryType="cq:Widget"
-                        defaultValue="false"
-                        fieldLabel="Hide Hover Effect of Image"
-                        name="./hideHoverEffect"
-                        type="checkbox"
-                        xtype="selection"/>
                     <carouselId
                         jcr:primaryType="cq:Widget"
                         fieldDescription="Please use unique carousel id on the same page"
@@ -179,6 +172,13 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Enable Thumbnail Navigation"
                         name="./thumbnailNavigationOn"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <hideText
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="false"
+                        fieldLabel="Hide Hover Effect of Image"
+                        name="./hideHoverEffect"
                         type="checkbox"
                         xtype="selection"/>
                 </items>
