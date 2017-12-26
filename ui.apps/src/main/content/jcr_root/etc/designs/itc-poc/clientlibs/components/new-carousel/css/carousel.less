@@ -1,4 +1,4 @@
-@import (reference) "/etc/designs/uopx/clientlibs/global/global-head/css/colors.less";
+@import (reference) "/etc/designs/itc-poc/clientlibs/global/global-head/css/colors.less";
 
 .viewportRatio(@x, @y) {
   width: 100vw;
@@ -80,14 +80,14 @@ p.content-desc {
         position: absolute;
         left: 0;
         top: 0;
-        background: rgba(0,0,0,0.65);
+        background: rgba(0,0,0,0.39);
         color: #fff;
         width:50%;
         height: 100%;
         .carousel-content {
             vertical-align: middle;
             position: relative;
-            top: 26%;
+            top: 36%;
             max-width: 320px;
             float: none;
             margin: 0 auto;
@@ -260,6 +260,7 @@ ol li:before
 }
 .carousel-control.left {
     left: 25px;
+        background-image: none;
     span {
         left: 0;
         right: auto;
@@ -267,6 +268,7 @@ ol li:before
 }
 .carousel-control.right {
     right: 25px;
+        background-image: none;
     span {
         right: 0;
         left: auto;
@@ -288,7 +290,7 @@ ol li:before
 .carousel-indicators {
     position: absolute;
     bottom: -8px;
-    z-index: 15;
+    z-index: 0;//15;
     padding-left: 0;
     list-style: none;
     left: 0;
@@ -327,15 +329,20 @@ ol li:before
 }
 .carousel-inner .item .imgContainer 
 {
-				display: block;
-                background-repeat: no-repeat;
-                -webkit-background-size: cover;
-  				-moz-background-size: cover;
-  				-o-background-size: cover;
-  				background-size: cover;
-    			//max-height: 400px;
-    			width: 100vw;
-    			height: 30vw;
+        display: block;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        //max-height: 400px;
+        width: 100vw;
+        //height: 30vw;
+        overflow:hidden;
+        img{
+            max-height:400px;
+        }
+
 }
 }
 

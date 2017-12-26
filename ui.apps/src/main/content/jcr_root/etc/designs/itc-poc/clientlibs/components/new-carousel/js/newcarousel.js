@@ -184,15 +184,15 @@ $(function(){
 		   var carsx = this.$element;
  if((carsx).hasClass('newCarousel')){
 
-        var $element = this.$element
-          , $active  = $element.find('[role=tabpanel].active')
+        var $element = this.$element;
+         var $active  = $element.find('[role=tabpanel].active')
         ,$activeimage  = $element.find('[role=tabpanelimage].active')
         , $activeimage  = $element.find('[role=tabpanelimage].active')
           , $next    = next || $active[type]()
 		   , $nextimage    = next || $activeimage[type]()
           , $tab
-          , $tab_count = $element.find('[role=tabpanel]').size()
-          , $tab_image_count = $element.find('[role=tabpanelimage]').size()
+          , $tab_count = $element.find('[role=tabpanel]').length//size()
+          , $tab_image_count = $element.find('[role=tabpanelimage]').length//size()
           , $prev_side = $element.find('[data-slide="prev"]')
           , $next_side = $element.find('[data-slide="next"]')
           , $index      = 0
@@ -450,7 +450,7 @@ $(function(){
         }); 
 
    }
- swipeCarousel();
+ //swipeCarousel();later need to fix this issue for mobile swipe
 
 
 
