@@ -1,1 +1,132 @@
-$(document).ready(function(){$("#startCarousel").on("click",function(){$(".genericTile").carousel("cycle")});$("#stopCarousel").on("click",function(){$(".genericTile").carousel("pause")})});$(window).load(function(){var a=$(window).width();if(a>=768){setSameHeight()}else{if($(".genericTile .carousel-inner").hasClass("stackView")){$(".genericTile .carousel-indicators, .genericTile .left, .genericTile .right").hide();$("#stopCarousel").trigger("click")}}setTimeout(function(){if(a>=768){$("#stopCarousel").trigger("click")}$('.genericTile a[data-slide="prev"]').on("click",function(){$("#myCarousel-generic").carousel("prev")});$('.genericTile a[data-slide="next"]').on("click",function(){$("#myCarousel-generic").carousel("next")});if($(".cq-wcm-edit").length>0){$("#myCarousel-generic .carousel-inner > div").removeClass("active");setSameHeight()}},1000)});$(window).resize(function(){var a=$(window).width();if($(".genericTile .carousel-inner").hasClass("carouselView")){if(a>=768){$(".genericTile .carousel-indicators, .genericTile .left, .genericTile .right").hide();$(".genericTile .carousel-inner").addClass("desktopView");$("#stopCarousel").trigger("click");setSameHeight()}else{$(".genericTile .carousel-indicators, .genericTile .left, .genericTile .right, .genericTile .carousel-inner").show();$(".genericTile .carousel-inner").removeClass("desktopView");$("#myCarousel-generic .carousel-inner > div").removeAttr("style");$("#startCarousel").trigger("click")}}if($(".genericTile .carousel-inner").hasClass("stackView")){if(a>=768){$(".genericTile .carousel-indicators, .genericTile .left, .genericTile .right").hide();$(".genericTile .carousel-inner").addClass("desktopView");$("#stopCarousel").trigger("click");setSameHeight()}else{$(".genericTile .carousel-indicators, .genericTile .left, .genericTile .right").hide();$(".genericTile .carousel-inner").removeClass("desktopView");$(".genericTile .carousel-inner").show();$("#myCarousel-generic .carousel-inner > div").removeAttr("style");$("#stopCarousel").trigger("click")}}});function setSameHeight(){divHeight=100;$("#myCarousel-generic .carousel-inner > .tccRow1").height(divHeight+"%");var e=0;$("#myCarousel-generic .carousel-inner > .tccRow1").each(function(){if(e<$(this).height()){e=$(this).height()}});$("#myCarousel-generic .carousel-inner > .tccRow1").height(e);$("#myCarousel-generic .carousel-inner > .tccRow2").height(divHeight+"%");var d=0;$("#myCarousel-generic .carousel-inner > .tccRow2").each(function(){if(d<$(this).height()){d=$(this).height()}});$("#myCarousel-generic .carousel-inner > .tccRow2").height(d);$("#myCarousel-generic .carousel-inner > .tccRow3").height(divHeight+"%");var c=0;$("#myCarousel-generic .carousel-inner > .tccRow3").each(function(){if(c<$(this).height()){c=$(this).height()}});$("#myCarousel-generic .carousel-inner > .tccRow3").height(c);$("#myCarousel-generic .carousel-inner > .tccRow4").height(divHeight+"%");var b=0;$("#myCarousel-generic .carousel-inner > .tccRow4").each(function(){if(b<$(this).height()){b=$(this).height()}});$("#myCarousel-generic .carousel-inner > .tccRow4").height(b);$("#myCarousel-generic .carousel-inner > .tccRow5").height(divHeight+"%");var a=0;$("#myCarousel-generic .carousel-inner > .tccRow5").each(function(){if(a<$(this).height()){a=$(this).height()}});$("#myCarousel-generic .carousel-inner > .tccRow5").height(a)};
+$(document).ready(function() {
+$('#myCarousel-generic').carousel({
+        interval:3000,
+        pause: "false"
+    });
+    $('#startCarousel').on("click", function() {
+        $('#myCarousel-generic').carousel('cycle');
+    });
+    $('#stopCarousel').on("click", function() {
+        $('#myCarousel-generic').carousel('pause');
+    });
+
+});
+$(window).load(function() {
+
+    var sysWidth = $(window).width();
+
+    if (sysWidth >= 768) {
+                                $('#stopCarousel').trigger("click");
+                                $('.genericTile .carousel-indicators, .genericTile .left, .genericTile .right').hide();
+        $('.genericTile .carousel-inner').addClass('desktopView');
+        setSameHeight();
+    } else {
+        if ($(".genericTile .carousel-inner").hasClass('stackView')) {
+            $('.genericTile .carousel-indicators, .genericTile .left, .genericTile .right').hide();
+            $('#stopCarousel').trigger("click");
+        }
+
+    }
+                $('.genericTile a[data-slide="prev"]').on("click", function() {
+            $('#myCarousel-generic').carousel('prev');
+                });
+
+                $('.genericTile a[data-slide="next"]').on("click", function() {
+                                $('#myCarousel-generic').carousel('next');
+                });
+
+    setTimeout(function() { 
+        if ($(".cq-wcm-edit").length > 0) {
+            $("#myCarousel-generic .carousel-inner > div").removeClass('active');
+            setSameHeight();
+        }
+    }, 1000); 
+
+
+});
+$(window).resize(function() {
+    var sysWidth = $(window).width();
+    if ($(".genericTile .carousel-inner").hasClass('carouselView')) {
+        if (sysWidth >= 768) {
+            $('.genericTile .carousel-indicators, .genericTile .left, .genericTile .right').hide();
+            $('.genericTile .carousel-inner').addClass('desktopView');
+            $('#stopCarousel').trigger("click");
+            setSameHeight();
+        } else {
+            $('.genericTile .carousel-indicators, .genericTile .left, .genericTile .right, .genericTile .carousel-inner').show();
+            $('.genericTile .carousel-inner').removeClass('desktopView');
+            $("#myCarousel-generic .carousel-inner > div").removeAttr("style");
+            $('#startCarousel').trigger("click");
+
+        }
+    }
+    if ($(".genericTile .carousel-inner").hasClass('stackView')) {
+        if (sysWidth >= 768) {
+            $('.genericTile .carousel-indicators, .genericTile .left, .genericTile .right').hide();
+            $('.genericTile .carousel-inner').addClass('desktopView');
+            $('#stopCarousel').trigger("click");
+            setSameHeight();
+        } else {
+            $('.genericTile .carousel-indicators, .genericTile .left, .genericTile .right').hide();
+            $('.genericTile .carousel-inner').removeClass('desktopView');
+            $('.genericTile .carousel-inner').show();
+            $("#myCarousel-generic .carousel-inner > div").removeAttr("style");
+            $('#stopCarousel').trigger("click");
+        }
+    }
+});
+
+function setSameHeight() {
+    divHeight = 100;
+    /* for row1 */
+    $("#myCarousel-generic .carousel-inner > .tccRow1").height(divHeight + '%');
+    var row1 = 0;
+    $("#myCarousel-generic .carousel-inner > .tccRow1").each(function() {
+        if (row1 < $(this).height()) {
+            row1 = $(this).height()
+        }
+    });
+
+    $("#myCarousel-generic .carousel-inner > .tccRow1").height(row1);
+
+
+    /* for row2 */
+    $("#myCarousel-generic .carousel-inner > .tccRow2").height(divHeight + '%');
+    var row2 = 0;
+    $("#myCarousel-generic .carousel-inner > .tccRow2").each(function() {
+        if (row2 < $(this).height()) {
+            row2 = $(this).height()
+        }
+    });
+    $("#myCarousel-generic .carousel-inner > .tccRow2").height(row2);
+
+    /* for row3 */
+    $("#myCarousel-generic .carousel-inner > .tccRow3").height(divHeight + '%');
+    var row3 = 0;
+    $("#myCarousel-generic .carousel-inner > .tccRow3").each(function() {
+        if (row3 < $(this).height()) {
+            row3 = $(this).height()
+        }
+    });
+    $("#myCarousel-generic .carousel-inner > .tccRow3").height(row3);
+
+    /* for row4 */
+    $("#myCarousel-generic .carousel-inner > .tccRow4").height(divHeight + '%');
+    var row4 = 0;
+    $("#myCarousel-generic .carousel-inner > .tccRow4").each(function() {
+        if (row4 < $(this).height()) {
+            row4 = $(this).height()
+        }
+    });
+    $("#myCarousel-generic .carousel-inner > .tccRow4").height(row4);
+
+    /* for row5 */
+    $("#myCarousel-generic .carousel-inner > .tccRow5").height(divHeight + '%');
+    var row5 = 0;
+    $("#myCarousel-generic .carousel-inner > .tccRow5").each(function() {
+        if (row5 < $(this).height()) {
+            row5 = $(this).height()
+        }
+    });
+    $("#myCarousel-generic .carousel-inner > .tccRow5").height(row5);
+}
