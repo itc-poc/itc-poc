@@ -1,6 +1,6 @@
 <%--
 
-  UoPX Grid Base Component
+ Grid Base Component
   
 --%><%@page import="com.day.cq.wcm.foundation.Paragraph,
 										com.day.cq.wcm.foundation.ParagraphSystem,
