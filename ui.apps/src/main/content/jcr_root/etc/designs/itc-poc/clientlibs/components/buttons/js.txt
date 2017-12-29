@@ -1,2 +1,2 @@
 #base=js
-buttons.js
+//buttons.js
