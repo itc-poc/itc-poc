@@ -82,20 +82,6 @@
                             name="./newWindow"
                             type="checkbox"
                             xtype="selection"/>
-                        <isChatButton
-                            jcr:primaryType="cq:Widget"
-                            fieldDescription="Check this option only in case if the button is a Chat button"
-                            fieldLabel="Is this button a Chat Button?"
-                            name="./isChatButton"
-                            type="checkbox"
-                            xtype="selection"/>
-                        <isPhoneButton
-                            jcr:primaryType="cq:Widget"
-                            fieldDescription="Check this option only in case if the button is a Phone button"
-                            fieldLabel="Is this button a Phone Button?"
-                            name="./isPhoneButton"
-                            type="checkbox"
-                            xtype="selection"/>
                         <noPadding
                             jcr:primaryType="cq:Widget"
                             fieldDescription="Checking this removes padding left and right sides"
