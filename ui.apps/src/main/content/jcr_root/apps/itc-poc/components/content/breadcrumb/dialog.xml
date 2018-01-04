@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Breadcrumb"
+    xtype="tabpanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <breadcrumbSettings
+            jcr:primaryType="cq:Widget"
+            title="Breadcrumb Settings"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <linkList
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Add everything after 'Home', which is in there by default. Please remove the path from the last breadcrumb (a.k.a. the current page). If you add a title to the last breadcrumb it will be used, otherwise it will dynamically use the current page title."
+                    fieldLabel="Breadcrumb links"
+                    name="./linkList"
+                    orderable="{Boolean}true"
+                    xtype="customMultiField">
+                    <fieldConfig
+                        jcr:primaryType="cq:Widget"
+                        xtype="linkListItem"/>
+                </linkList>
+                <hidebreadcrumb
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Hide Breadcrumb"
+                    inputValue="true"
+                    name="./hideBreadcrumb"
+                    type="checkbox"
+                    xtype="selection"/>
+            </items>
+        </breadcrumbSettings>
+    </items>
+</jcr:root>
