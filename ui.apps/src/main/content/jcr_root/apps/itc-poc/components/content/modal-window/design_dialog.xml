@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Modal Window Configuration - Global Level"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <modalWindow
+                jcr:primaryType="cq:Panel"
+                title="Modal Window Configuration">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <componentHideShow
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Checked means component will hidden on page level"
+                        fieldLabel="Component Show/Hide"
+                        name="/etc/designs/ac/jcr:content/modalwindowconfig/componentShowHide"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <modalLinkText
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Modal Link Text"
+                        name="/etc/designs/ac/jcr:content/modalwindowconfig/modalLinkText"
+                        xtype="textfield"/>
+                    <backgroundColor
+                        jcr:primaryType="cq:Widget"
+                        colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF,000000]"
+                        fieldLabel="Background Color"
+                        name="/etc/designs/ac/jcr:content/modalwindowconfig/backgroundColorMW"
+                        showHexValue="true"
+                        xtype="colorfield"/>
+                    <fontSize
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="values in px"
+                        fieldLabel="link Font Size"
+                        name="/etc/designs/ac/jcr:content/modalwindowconfig/linkFontSize"
+                        type="select"
+                        value="20"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <_x008_
+                                jcr:primaryType="nt:unstructured"
+                                text="8"
+                                value="8"/>
+                            <_x009_
+                                jcr:primaryType="nt:unstructured"
+                                text="9"
+                                value="9"/>
+                            <_x010_
+                                jcr:primaryType="nt:unstructured"
+                                text="10"
+                                value="10"/>
+                            <_x011_
+                                jcr:primaryType="nt:unstructured"
+                                text="11"
+                                value="11"/>
+                            <_x012_
+                                jcr:primaryType="nt:unstructured"
+                                text="12"
+                                value="12"/>
+                            <_x013_
+                                jcr:primaryType="nt:unstructured"
+                                text="13"
+                                value="13"/>
+                            <_x014_
+                                jcr:primaryType="nt:unstructured"
+                                text="14"
+                                value="14"/>
+                            <_x015_
+                                jcr:primaryType="nt:unstructured"
+                                text="15"
+                                value="15"/>
+                            <_x016_
+                                jcr:primaryType="nt:unstructured"
+                                text="16"
+                                value="16"/>
+                            <_x017_
+                                jcr:primaryType="nt:unstructured"
+                                text="17"
+                                value="17"/>
+                            <_x018_
+                                jcr:primaryType="nt:unstructured"
+                                text="18"
+                                value="18"/>
+                            <_x019_
+                                jcr:primaryType="nt:unstructured"
+                                text="19"
+                                value="19"/>
+                            <_x020_
+                                jcr:primaryType="nt:unstructured"
+                                text="20"
+                                value="20"/>
+                            <_x021_
+                                jcr:primaryType="nt:unstructured"
+                                text="21"
+                                value="21"/>
+                            <_x022_
+                                jcr:primaryType="nt:unstructured"
+                                text="22"
+                                value="22"/>
+                            <_x023_
+                                jcr:primaryType="nt:unstructured"
+                                text="23"
+                                value="23"/>
+                            <_x024_
+                                jcr:primaryType="nt:unstructured"
+                                text="24"
+                                value="24"/>
+                            <_x025_
+                                jcr:primaryType="nt:unstructured"
+                                text="25"
+                                value="25"/>
+                            <_x026_
+                                jcr:primaryType="nt:unstructured"
+                                text="26"
+                                value="26"/>
+                            <_x027_
+                                jcr:primaryType="nt:unstructured"
+                                text="27"
+                                value="27"/>
+                            <_x028_
+                                jcr:primaryType="nt:unstructured"
+                                text="28"
+                                value="28"/>
+                            <_x029_
+                                jcr:primaryType="nt:unstructured"
+                                text="29"
+                                value="29"/>
+                            <_x030_
+                                jcr:primaryType="nt:unstructured"
+                                text="30"
+                                value="30"/>
+                            <_x031_
+                                jcr:primaryType="nt:unstructured"
+                                text="31"
+                                value="31"/>
+                            <_x032_
+                                jcr:primaryType="nt:unstructured"
+                                text="32"
+                                value="32"/>
+                            <_x033_
+                                jcr:primaryType="nt:unstructured"
+                                text="33"
+                                value="33"/>
+                            <_x034_
+                                jcr:primaryType="nt:unstructured"
+                                text="34"
+                                value="34"/>
+                            <_x035_
+                                jcr:primaryType="nt:unstructured"
+                                text="35"
+                                value="35"/>
+                            <_x036_
+                                jcr:primaryType="nt:unstructured"
+                                text="36"
+                                value="36"/>
+                        </options>
+                    </fontSize>
+                    <circularCarousel
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Checked means carousel continues to rotate after last tile is reached"
+                        fieldLabel="Circular Carousel"
+                        hidden="{Boolean}true"
+                        name="/etc/designs/ac/jcr:content/modalwindowconfig/circularCarousel"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <modalWindowConfig
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Modal Window Inputs"
+                        name="/etc/designs/ac/jcr:content/modalwindowconfig/globalModalWindowConfig"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="itcmultifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <modalWindowText
+                                    jcr:primaryType="cq:Widget"
+                                    anchor="100%"
+                                    fieldLabel="Modal Window Text"
+                                    key="mwText"
+                                    xtype="richtext">
+                                    <rtePlugins jcr:primaryType="nt:unstructured">
+                                        <links jcr:primaryType="nt:unstructured">
+                                            <linkDialogConfig
+                                                jcr:primaryType="nt:unstructured"
+                                                height="{Long}316">
+                                                <linkAttributes jcr:primaryType="cq:WidgetCollection">
+                                                    <linkAdvanced
+                                                        jcr:primaryType="cq:Widget"
+                                                        collapsed="{Boolean}true"
+                                                        collapsible="{Boolean}true"
+                                                        inputValue="advanced"
+                                                        name="./linkdialog/cq:adhocLinkTrackingTab"
+                                                        title="Link tracking"
+                                                        xtype="dialogfieldset">
+                                                        <items jcr:primaryType="cq:WidgetCollection">
+                                                            <enable
+                                                                jcr:primaryType="nt:unstructured"
+                                                                attribute="enabletracking"
+                                                                fieldDescription="override analytics framework settings"
+                                                                fieldLabel="Custom link tracking"
+                                                                name="./linkdialog/cq:adhocLinkTrackingEnableTracking"
+                                                                xtype="checkbox">
+                                                                <listeners
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    check="function(component){var dlg=component.findParentByType('rtelinkdialog');dlg.enableSCFields(component.checked);}"/>
+                                                            </enable>
+                                                            <events
+                                                                jcr:primaryType="nt:unstructured"
+                                                                attribute="adhocevents"
+                                                                fieldDescription="e.g.: event2, event7"
+                                                                fieldLabel="Include SiteCatalyst events"
+                                                                name="./linkdialog/cq:adhocLinkTrackingEvents"
+                                                                xtype="textfield"/>
+                                                            <evars
+                                                                jcr:primaryType="nt:unstructured"
+                                                                attribute="adhocevars"
+                                                                fieldDescription="e.g.: eVar1: pagedata.url, prop4: 'const'"
+                                                                fieldLabel="Include SiteCatalyst variables"
+                                                                name="./linkdialog/cq:adhocLinkTrackingEvars"
+                                                                xtype="textfield"/>
+                                                        </items>
+                                                    </linkAdvanced>
+                                                </linkAttributes>
+                                            </linkDialogConfig>
+                                        </links>
+                                        <findreplace
+                                            jcr:primaryType="nt:unstructured"
+                                            features="*"/>
+                                        <format
+                                            jcr:primaryType="nt:unstructured"
+                                            features="*"/>
+                                        <justify
+                                            jcr:primaryType="nt:unstructured"
+                                            features="*"/>
+                                        <lists
+                                            jcr:primaryType="nt:unstructured"
+                                            features="*"/>
+                                        <subsuperscript
+                                            jcr:primaryType="nt:unstructured"
+                                            features="*"/>
+                                        <edit
+                                            jcr:primaryType="nt:unstructured"
+                                            features="*"/>
+                                        <misctools
+                                            jcr:primaryType="nt:unstructured"
+                                            features="*"/>
+                                        <paraformat
+                                            jcr:primaryType="nt:unstructured"
+                                            features="*">
+                                            <formats jcr:primaryType="cq:WidgetCollection">
+                                                <paragraph
+                                                    jcr:primaryType="nt:unstructured"
+                                                    description="Paragraph"
+                                                    tag="p"/>
+                                                <heading1
+                                                    jcr:primaryType="nt:unstructured"
+                                                    description="Heading 1"
+                                                    tag="h1"/>
+                                                <heading2
+                                                    jcr:primaryType="nt:unstructured"
+                                                    description="Heading 2"
+                                                    tag="h2"/>
+                                                <heading3
+                                                    jcr:primaryType="nt:unstructured"
+                                                    description="Heading 3"
+                                                    tag="h3"/>
+                                                <heading4
+                                                    jcr:primaryType="nt:unstructured"
+                                                    description="Heading 4"
+                                                    tag="h4"/>
+                                                <strong
+                                                    jcr:primaryType="nt:unstructured"
+                                                    description="Strong"
+                                                    tag="strong"/>
+                                                <em
+                                                    jcr:primaryType="nt:unstructured"
+                                                    description="Em"
+                                                    tag="em"/>
+                                            </formats>
+                                        </paraformat>
+                                        <spellcheck
+                                            jcr:primaryType="nt:unstructured"
+                                            features="*"/>
+                                        <table
+                                            jcr:primaryType="nt:unstructured"
+                                            features="*"/>
+                                        <styles
+                                            jcr:primaryType="nt:unstructured"
+                                            features="*">
+                                            <styles jcr:primaryType="cq:WidgetCollection">
+                                                <leadText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cssName="lead-text"
+                                                    text="Lead text"/>
+                                                <smallText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cssName="small-text"
+                                                    text="Small text"/>
+                                                <bigText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cssName="big-text"
+                                                    text="Big text"/>
+                                                <programText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cssName="program-text"
+                                                    text="Program para text"/>
+                                                <programLegalText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cssName="program-legal-text"
+                                                    text="Program legal copy text"/>
+                                                <noBulletList
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cssName="no-bullets"
+                                                    text="Non-bulleted list"/>
+                                                <faRightIcon
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cssName="fa fa-angle-right"
+                                                    text="FA Right Arrow(Green)"/>
+                                                <noMargin
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cssName="margin-top-10px"
+                                                    text="10px top Margin"/>
+                                                <leftBorderedQuotes
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cssName="left-bordered-quotes"
+                                                    text="Left bordered quotes"/>
+                                            </styles>
+                                        </styles>
+                                        <colorpicker
+                                            jcr:primaryType="nt:unstructured"
+                                            features="*"/>
+                                    </rtePlugins>
+                                </modalWindowText>
+                                <carouselImages
+                                    jcr:primaryType="cq:Widget"
+                                    anchor="100%"
+                                    fieldDescription="Image Dimensions are 600 X 300"
+                                    fieldLabel="Carousel Images"
+                                    key="mwImage"
+                                    rootPath="/content/dam"
+                                    xtype="ddpathfield"/>
+                                <modalWindowAltText
+                                    jcr:primaryType="cq:Widget"
+                                    anchor="100%"
+                                    fieldLabel="Alt Text For Image"
+                                    key="mwAltText"
+                                    xtype="textfield"/>
+                                <modalWindowLinkText
+                                    jcr:primaryType="cq:Widget"
+                                    anchor="100%"
+                                    fieldLabel="Text For The Link"
+                                    key="mwLinkText"
+                                    xtype="textfield"/>
+                                <modalWindowLink
+                                    jcr:primaryType="cq:Widget"
+                                    anchor="100%"
+                                    fieldLabel="Modal Window Link"
+                                    key="mwLink"
+                                    xtype="ddpathfield"/>
+                            </items>
+                        </fieldConfig>
+                    </modalWindowConfig>
+                </items>
+            </modalWindow>
+            <colorConfig
+                jcr:primaryType="cq:Widget"
+                title="Color Config"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <backgroundColor
+                        jcr:primaryType="cq:Widget"
+                        colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF,000000]"
+                        fieldLabel="Button Background Color"
+                        name="/etc/designs/ac/jcr:content/modalwindowconfig/backgroundColorModalWindow"
+                        showHexValue="true"
+                        xtype="colorfield"/>
+                    <borderColor
+                        jcr:primaryType="cq:Widget"
+                        colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF,000000]"
+                        fieldLabel="Button Border Color"
+                        name="/etc/designs/ac/jcr:content/modalwindowconfig/borderColorModalWindow"
+                        showHexValue="true"
+                        xtype="colorfield"/>
+                    <fontColor
+                        jcr:primaryType="cq:Widget"
+                        colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF,000000]"
+                        fieldLabel="Text Color"
+                        name="/etc/designs/ac/jcr:content/modalwindowconfig/fontColorModalWindow"
+                        showHexValue="true"
+                        xtype="colorfield"/>
+                    <backgroundColorHover
+                        jcr:primaryType="cq:Widget"
+                        colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF,000000]"
+                        fieldLabel="Button Background Color on Hover"
+                        name="/etc/designs/ac/jcr:content/modalwindowconfig/backgroundColorHoverModalWindow"
+                        showHexValue="true"
+                        xtype="colorfield"/>
+                    <borderColorHover
+                        jcr:primaryType="cq:Widget"
+                        colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF,000000]"
+                        fieldLabel="Button Border Color on Hover"
+                        name="/etc/designs/ac/jcr:content/modalwindowconfig/borderColorHoverModalWindow"
+                        showHexValue="true"
+                        xtype="colorfield"/>
+                    <fontColorHover
+                        jcr:primaryType="cq:Widget"
+                        colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF,000000]"
+                        fieldLabel="Text Color on Hover"
+                        name="/etc/designs/ac/jcr:content/modalwindowconfig/fontColorHoverModalWIndow"
+                        showHexValue="true"
+                        xtype="colorfield"/>
+                </items>
+            </colorConfig>
+        </items>
+    </items>
+    <listeners
+        jcr:primaryType="nt:unstructured"
+        loadContent="function(dialog) {       &#xa;        var designObj = CQ.WCM.getDesign(CQ.WCM.getPagePath());&#xa;        //alert(&quot;Hello&quot;+CQ.WCM.getPagePath());                 &#xa;        //alert(&quot;Hello1&quot;+designObj.getPath());&#xa;        var url = &quot;/etc/designs/ac/jcr:content/modalwindowconfig&quot; + CQ.Sling.SELECTOR_INFINITY + CQ.HTTP.EXTENSION_JSON;&#xa;        url = CQ.HTTP.noCaching(url);&#xa;        try{&#xa;            var res = CQ.HTTP.eval(CQ.HTTP.get(url));&#x9;&#x9;&#x9;&#xa;            if(res){&#xa;                &#xa;&#x9;&#x9;&#x9;&#x9;if (res.globalModalWindowConfig){&#xa;                    if((res.globalModalWindowConfig) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/globalModalWindowConfig') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/globalModalWindowConfig').setValue(res.globalModalWindowConfig);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;if (res.mwText){&#xa;                    if((res.mwText) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/mwText') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/mwText').setValue(res.mwText);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;if (res.mwImage){&#xa;                    if((res.mwImage) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/mwImage') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/mwImage').setValue(res.mwImage);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;if (res.mwAltText){&#xa;                    if((res.mwAltText) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/mwAltText') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/mwAltText').setValue(res.mwAltText);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;if (res.mwLinkText){&#xa;                    if((res.mwLinkText) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/mwLinkText') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/mwLinkText').setValue(res.mwLinkText);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;if (res.mwLink){&#xa;                    if((res.mwLink) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/mwLink') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/mwLink').setValue(res.mwLink);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;if (res.componentShowHide){&#xa;                    if((res.componentShowHide) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/componentShowHide') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/componentShowHide').setValue(res.componentShowHide);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;if (res.modalLinkText){&#xa;                    if((res.modalLinkText) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/modalLinkText') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/modalLinkText').setValue(res.modalLinkText);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;if (res.backgroundColorMW){&#xa;                    if((res.backgroundColorMW) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/backgroundColorMW') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/backgroundColorMW').setValue(res.backgroundColorMW);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;if (res.linkFontSize){&#xa;                    if((res.linkFontSize) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/linkFontSize') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/linkFontSize').setValue(res.linkFontSize);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;if (res.circularCarousel){&#xa;                    if((res.circularCarousel) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/circularCarousel') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/circularCarousel').setValue(res.circularCarousel);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;if (res.backgroundColorModalWindow){&#xa;                    if((res.backgroundColorModalWindow) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/backgroundColorModalWindow') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/backgroundColorModalWindow').setValue(res.backgroundColorModalWindow);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;if (res.borderColorModalWindow){&#xa;                    if((res.borderColorModalWindow) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/borderColorModalWindow') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/borderColorModalWindow').setValue(res.borderColorModalWindow);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;if (res.fontColorModalWindow){&#xa;                    if((res.fontColorModalWindow) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/fontColorModalWindow') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/fontColorModalWindow').setValue(res.fontColorModalWindow);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;if (res.backgroundColorHoverModalWindow){&#xa;                    if((res.backgroundColorHoverModalWindow) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/backgroundColorHoverModalWindow') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/backgroundColorHoverModalWindow').setValue(res.backgroundColorHoverModalWindow);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;if (res.borderColorHoverModalWindow){&#xa;                    if((res.borderColorHoverModalWindow) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/borderColorHoverModalWindow') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/borderColorHoverModalWindow').setValue(res.borderColorHoverModalWindow);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;//fontColorHoverModalWIndow&#xa;&#x9;&#x9;&#x9;&#x9;if (res.fontColorHoverModalWIndow){&#xa;                    if((res.fontColorHoverModalWIndow) &amp;&amp; (dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/fontColorHoverModalWIndow') != null)) {&#xa;                            dialog.form.findField('/etc/designs/ac/jcr:content/modalwindowconfig/fontColorHoverModalWIndow').setValue(res.fontColorHoverModalWIndow);&#xa;                    }&#xa;                }&#xa;                }&#x9;&#x9;&#x9;&#x9;&#xa;            }&#xa;        catch (e) {&#xa;        &#x9;CQ.Ext.MessageBox.alert(&quot;Error&quot;, e.message);&#xa;        }&#xa;&#x9;&#x9;}"/>
+</jcr:root>

@@ -1,0 +1,194 @@
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+   <meta data-sly-call="${clientLib.css @ categories='designs.itc-poc.components.modal-window'}" data-sly-unwrap>
+   </meta>
+</div>
+
+ <div data-sly-use.modalWindowObject="${'com.adobe.itc.poc.core.models.ModalWindow'}" data-sly-unwrap>
+<!-- Page level propertices value -->
+<div data-sly-test.backgroundColor="${properties['backgroundColorModalWindow']}" data-sly-unwrap></div>
+<div data-sly-test.borderColor="${properties['borderColorModalWindow']}" data-sly-unwrap></div>
+<div data-sly-test.fontColor="${properties['fontColorModalWindow']}" data-sly-unwrap></div>
+<div data-sly-test.backgroundColorHover="${properties['backgroundColorHoverModalWindow']}" data-sly-unwrap></div>
+<div data-sly-test.borderColorHover="${properties['borderColorHoverModalWindow']}" data-sly-unwrap></div>
+<div data-sly-test.fontColorHover="${properties['fontColorHoverModalWIndow']}" data-sly-unwrap></div>
+<div data-sly-test.componentShowHide="${properties['componentShowHide']}" data-sly-unwrap></div>
+<div data-sly-test.modalLinkText="${properties['modalLinkText']}" data-sly-unwrap></div>
+<div data-sly-test.circularCarousel="${properties['circularCarousel']}" data-sly-unwrap></div>
+<div data-sly-test.carouselStaticMove="${properties['carouselStaticMove']}" data-sly-unwrap></div>
+
+    <div data-sly-test.backgroundColorComponent ="#${properties['backgroundColorMW'] || 'ccc'}" data-sly-unwrap></div> 
+    <div data-sly-test.linkFontSize = "${properties['linkFontSize']}" data-sly-unwrap></div> 
+
+<!-- Page level propertices value -->
+
+<!-- Global Level propertices value -->
+<div data-sly-test="${backgroundColor == null && borderColor == null &&  fontColor == null &&  backgroundColorHover == null && borderColorHover == null && fontColorHover == null }" data-sly-unwrap>
+   <div data-sly-test.backgroundColor="${modalWindowObject.backgroundColorModalWindow || 'DE3518'}" data-sly-unwrap></div>
+   <div data-sly-test.borderColor="${modalWindowObject.borderColorModalWindow || 'DE3518'}" data-sly-unwrap></div>
+   <div data-sly-test.fontColor="${modalWindowObject.fontColorModalWindow || 'fff'}" data-sly-unwrap></div>
+   <div data-sly-test.backgroundColorHover="${modalWindowObject.backgroundColorHoverModalWindow || 'fff'}" data-sly-unwrap></div>
+   <div data-sly-test.borderColorHover="${modalWindowObject.borderColorHoverModalWindow  || 'DE3518'}" data-sly-unwrap></div>
+   <div data-sly-test.fontColorHover="${modalWindowObject.fontColorHoverModalWIndow || '000'}" data-sly-unwrap></div>
+</div>
+<div data-sly-test='${modalLinkText == null}' data-sly-unwrap>
+   <div data-sly-test.modalLinkText="${modalWindowObject.modalLinkText}" data-sly-unwrap></div>
+</div>
+
+
+<div data-sly-test="${properties['backgroundColorMW'] == null}" data-sly-unwrap>   
+   <div data-sly-test.backgroundColorComponent="#${modalWindowObject.backgroundColorMW || 'ccc' }" data-sly-unwrap></div>
+</div>
+
+<div data-sly-test='${linkFontSize == null}' data-sly-unwrap>
+   <div data-sly-test.linkFontSize="${modalWindowObject.linkFontSize}" data-sly-unwrap></div>
+</div>
+
+<div data-sly-test.globalComponentShowHide="${modalWindowObject.componentShowHide}" data-sly-unwrap></div>
+<div data-sly-test.globalCircularCarousel="${modalWindowObject.circularCarousel}" data-sly-unwrap></div>
+
+<!-- <div data-sly-test='${circularCarousel == null}' data-sly-unwrap>
+   <div data-sly-test.circularCarousel="${globalCircularCarousel}" data-sly-unwrap></div>
+</div> -->
+
+<div data-sly-test='${circularCarousel == "true"}' data-sly-unwrap>
+   <div data-sly-test.circularCarousel="false" data-sly-unwrap></div>
+</div>
+<div data-sly-test='${circularCarousel == null}' data-sly-unwrap>
+    <div data-sly-test.circularCarousel="true" data-sly-unwrap></div>
+</div>
+
+<!-- <div data-sly-test='${carouselStaticMove == null}' data-sly-unwrap>
+   <div data-sly-test.carouselStaticMove="${currentStyle['carouselStaticMove']}" data-sly-unwrap></div>
+</div> -->
+
+<!-- Global Level propertices value -->
+
+<div data-sly-test='${componentShowHide == null && globalComponentShowHide == null}' data-sly-unwrap>
+   <!--main div for show and hide component start-->
+      <div data-sly-test="${! modalWindowObject.multiFiledEmpty}" data-sly-unwrap>
+    <div style="padding-top: 10px;padding-bottom: 10px;background-color:${backgroundColorComponent @ context='styleToken'};height:auto;font-weight: 700;font-size: ${linkFontSize  @ context='scriptString'}px;line-height: 2;vertical-align: middle;text-align: center;margin-left:-30px;margin-right:-30px;">
+            <a role='link' class="openModel" style="cursor: pointer; " tabindex="0">${modalLinkText} </a>
+         </div>
+      </div>
+      <div data-sly-test="${modalWindowObject.multiFiledEmpty && modalWindowObject.getWcmModeEdit}" data-sly-unwrap>	  
+         <div style="padding-top: 10px;padding-bottom: 10px;background-color:${backgroundColorComponent @ context='styleToken'};height:auto;font-weight: 700;font-size: ${linkFontSize  @ context='scriptString'}px;line-height: 2;vertical-align: middle;text-align: center;margin-left:-30px;margin-right:-30px;">
+            <a >Please configure component </a>
+         </div> 		 
+      </div>
+      <!--/* Model popup code */--> 
+      <div class="modal fade modal-window-container" tabindex="-1"  aria-hidden="true"  data-keyboard="true">
+         <div class="vertical-align-center-main">
+            <div class="modal-dialog vertical-align-item">
+               <div class="modal-content">
+                  <div class="modal-body" aria-label='modal window'>
+                     <div class="Modal-body-container">
+                        <span class="close-modal-icon" ><i class="fa fa-window-close-o"  tabindex="0" role='button' aria-label="click to close modal window"></i></span>
+                        <div class="container">
+    						<div id="myCarousel-modal" class="carousel slide modalTile" data-ride="slider" data-wrap="${circularCarousel}">
+                              <!-- Wrapper for slides --> 
+
+                              <div class="carousel-inner ${clsMobileView}" >
+                                 <div data-sly-list.totalIteamLoop="${modalWindowObject.getModalWindowConfigList}" data-sly-unwrap>
+                                    <div data-sly-test.mwLinkTex="${totalIteamLoop.mwLinkTex}" data-sly-unwrap></div>
+                                    <div data-sly-test.mwLink="${totalIteamLoop.mwLink}" data-sly-unwrap></div>
+                                    <div data-sly-test="${totalIteamLoopList.index == 0}" data-sly-unwrap>
+                                       <div class="item ${clsColumnClass} active " >
+                                          <div class="carouselImage">
+                                             <img src="${totalIteamLoop.imagePath}" alt="${ totalIteamLoop.imagePath ? totalIteamLoop.imageAltText || 'null' :  ''}" tabindex="0">
+                                          </div>
+                                          <div class="contentSection" >
+                                             <span class="mwTextSection" tabindex="0">
+                                                <span>${totalIteamLoop.mwText @ context='html'}</span>
+                                                <div data-sly-test="${totalIteamLoop.mwLinkText}" data-sly-unwrap> 
+                                                   <div class="btnParent" 
+                                                      ontouchstart="
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.backgroundColor = '#${backgroundColorHover @ context='styleToken'}';
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.color='#${fontColorHover @ context='styleToken'}';
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.border='3px solid #${borderColorHover @ context='styleToken'}'"
+                                                      onmouseover="
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.backgroundColor = '#${backgroundColorHover @ context='styleToken'}';
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.color='#${fontColorHover @ context='styleToken'}';
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.border='3px solid #${borderColorHover @ context='styleToken'}'"
+                                                      onmouseout="
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.backgroundColor = '#${backgroundColor @ context='styleToken'}';
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.color='#${fontColor @ context='styleToken'}';
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.border='3px solid #${borderColor @ context='styleToken'}'">
+                                                      <a class="tryItOutBtn btn" href="${totalIteamLoop.mwLink @ context='unsafe'}"   style="background-color: #${backgroundColor @ context='styleToken'}; color: #${fontColor @ context='styleToken'}; border: 3px solid #${borderColor @ context='styleToken'};"> ${totalIteamLoop.mwLinkText}</a>
+                                                   </div>
+                                                </div>
+                                             </span>
+                                          </div>
+                                       </div>
+                                    </div> 
+                                    <div data-sly-test="${totalIteamLoopList.index != 0}" data-sly-unwrap>
+                                       <div class="item ${clsColumnClass} " >
+                                          <div class="carouselImage">
+                                             <img src="${totalIteamLoop.imagePath}" alt="${ totalIteamLoop.imagePath ? totalIteamLoop.imageAltText || 'null' :  ''}" tabindex="0">
+                                          </div>
+                                          <div class="contentSection" >
+                                             <span class="mwTextSection" tabindex="0">
+                                                <span>${totalIteamLoop.mwText @ context='html'}</span>
+                                                <div data-sly-test="${totalIteamLoop.mwLinkText}" data-sly-unwrap>
+                                                   <div class="btnParent" 
+                                                      ontouchstart="
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.backgroundColor = '#${backgroundColorHover @ context='styleToken'}';
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.color='#${fontColorHover @ context='styleToken'}';
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.border='3px solid #${borderColorHover @ context='styleToken'}'"
+                                                      onmouseover="
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.backgroundColor = '#${backgroundColorHover @ context='styleToken'}';
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.color='#${fontColorHover @ context='styleToken'}';
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.border='3px solid #${borderColorHover @ context='styleToken'}'" 
+                                                          onmouseout="
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.backgroundColor = '#${backgroundColor @ context='styleToken'}';
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.color='#${fontColor @ context='styleToken'}';
+                                                      this.getElementsByClassName('tryItOutBtn')[0].style.border='3px solid #${borderColor @ context='styleToken'}'">
+                                                      <a class="tryItOutBtn btn" href="${totalIteamLoop.mwLink @ context='unsafe'}"  style="background-color: #${backgroundColor @ context='styleToken'}; color: #${fontColor @ context='styleToken'}; border: 3px solid #${borderColor @ context='styleToken'};"> ${totalIteamLoop.mwLinkText}</a>
+                                                   </div>
+                                                </div>
+                                             </span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- Indicators -->
+                              <ol class="carousel-indicators" >
+                                 <div data-sly-list.totalIteamLoopLi="${modalWindowObject.getModalWindowConfigList}" data-sly-unwrap>
+                                    <div data-sly-test="${totalIteamLoopLiList.index == 0}" data-sly-unwrap>
+                                       <li data-target="#myCarousel-modal" data-slide-to="${totalIteamLoopLiList.index}" class="active " tabindex="0" aria-label='carousel indicator ${totalIteamLoopLiList.index}'></li>
+                                    </div>
+                                    <div data-sly-test="${totalIteamLoopLiList.index != 0}" data-sly-unwrap>
+                                       <li data-target="#myCarousel-modal" data-slide-to="${totalIteamLoopLiList.index}" tabindex="0" aria-label='carousel indicator ${totalIteamLoopLiList.index}'></li>
+                                    </div>
+                                 </div>
+                              </ol>
+                              <!-- Left and right controls -->
+                              <a class="left carousel-control"  >
+                                    <span class="glyphicon glyphicon-chevron-left"><i class="fa fa-chevron-left" role='button' data-slide="prev"  tabindex="0" aria-label="click to go previous slide"></i></span>
+                                    <span class="sr-only">Previous</span>
+							  </a>
+                              <a class="right carousel-control"  >
+                                  <span class="glyphicon glyphicon-chevron-right"><i class="fa fa-chevron-right" role='button' tabindex="0"  data-slide="next" aria-label="click to go next slide"></i></span>
+                                  <span class="sr-only">Next</span>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+</div>
+</div>
+<!--main div for show and hide component end -->
+
+<script>
+		var modalWindowObj= {};
+		modalWindowObj.staticMove ="${carouselStaticMove || 'false' @ context='scriptString'}";
+</script>
+
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+   <meta data-sly-call="${clientLib.js @ categories='designs.itc-poc.components.modal-window,apps.itc-poc.widgets.custom'}" data-sly-unwrap>
+   </meta>
+</div>
