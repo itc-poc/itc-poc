@@ -1,0 +1,17 @@
+
+{{#detailsVal}}
+        <div class="article-item card-item col-xs-12 col-md-4 col-sm-4 col-lg-4">
+            <div class="card">
+                <img class="card-img-top img-responsive" src="{{funReadHeroImage}}" data-holder-rendered="true">
+                <div class="card-block thumbnail">
+                    <div><a href="{{pagePath}}" class="card-text text-left">{{pageTitle}}</a></div>
+					 {{#if postedBy}}
+							<div class="byOption text-left">{{byOption}} : {{postedBy}}</div>
+                    {{/if}} 
+
+                    <div class="post-date text-left">{{publishDate}}</div>
+                </div>
+            </div>
+        </div>
+
+{{/detailsVal}}
