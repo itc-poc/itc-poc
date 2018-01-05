@@ -1,0 +1,177 @@
+@import (reference) "/etc/designs/itc-poc/clientlibs/global/global-head/css/mixins.less";
+@import (reference) "/etc/designs/itc-poc/clientlibs/global/global-head/css/colors.less";
+
+/* ----------------------- */
+/*  hero component styles */
+/* ----------------------- */
+
+
+.hero {
+    position: relative;
+    margin: 0 auto;
+
+    .hero-image {
+        width: 100vw;
+        height: 50vw;
+        background:#666;
+    }
+    .hero-section {
+        background: rgba(0,0,0,.75);/* Updated  to fix the 13692*/
+        color: #ffffff;
+        /*  opacity: 0.75; Commented to fix the 13692*/
+        position: absolute;
+        padding: 26px 50px 30px;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+        left: 0;
+        right: 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        @media (min-width: 320px) and (max-width: 991px) {
+            position: relative;
+            padding: 20px;
+            width: 100%;
+        }
+        @media (min-width: 992px) and (max-width: 1199px) {
+            padding: 20px 30px;
+        }
+        .hero-section-title {
+            font-size: 34px;
+            line-height: 40px;
+            font-weight: bold;
+            @media (min-width: 320px) and (max-width: 991px) {
+                font-size: 26px;
+            }
+        }
+        span,p {
+            font-size: 14px;
+        }
+        span {
+            font-weight: 600;
+    		font-style: italic;
+        }
+        p {
+            padding-top: 12px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.profile-section {
+    color: #ffffff;
+    display: table;
+    padding: 0;
+    .profile-image-section {
+        display: table-cell;
+        height: 100%;
+        width: 50%;
+        background: #000000;
+        @media (min-width: 320px) and (max-width: 991px) {
+            display: block;
+            width: 100%;
+        }
+        img {
+            float: right;
+            position: relative;
+            z-index: 1;
+            @media (min-width: 320px) and (max-width: 991px) {
+                float: none;
+                width: 100%;
+            }
+        }
+    }
+    .profile-text-section {
+        display: table-cell;
+        width: 50%;
+        padding: 10px 30px;
+        vertical-align: middle;
+        background: #666666;
+        background: -webkit-linear-gradient(left, #5C5C5B 5%, #000000);
+        background: -moz-linear-gradient(left, #5C5C5B 5%, #000000);
+        background: -o-linear-gradient(left, #5C5C5B 5%, #000000);
+        background: -ms-linear-gradient(left, #5C5C5B 5%, #000000);
+  		/*background: -moz-linear-gradient(top, #666666 0%, #5c5c5c 49%, #5c5c5c 100%);
+  		background: -webkit-gradient(left top, left bottom, color-stop(0%, #666666), color-stop(49%, #5c5c5c), color-stop(100%, #5c5c5c));
+  		background: -webkit-linear-gradient(top, #666666 0%, #5c5c5c 49%, #5c5c5c 100%);
+  		background: -o-linear-gradient(top, #666666 0%, #5c5c5c 49%, #5c5c5c 100%);
+  		background: -ms-linear-gradient(top, #666666 0%, #5c5c5c 49%, #5c5c5c 100%);
+  		background: linear-gradient(to bottom, #666666 0%, #5c5c5c 49%, #5c5c5c 100%);*/
+
+        &:before {
+			background-image: url(/content/dam/itc-poc/download.jpg);
+            background-repeat: no-repeat;
+            background-position: left 90px top 25%;
+            background-size: cover;
+            position: absolute;
+            content: '';
+            opacity: .5;
+            width: 50%;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            z-index: 0;
+            @media (min-width: 320px) and (max-width: 479px) {
+				background-position: center center;
+                background-size: contain;
+                top: 48%;
+				left: 30%;
+                width: 100%;
+                height: 100%;
+            }
+            @media (min-width: 480px) and (max-width: 767px) {
+                position: absolute;
+                top: 58%;
+                left: 24%;
+                width: 100%;
+                height: 100%;
+                background-position: center center;
+                background-size: contain;
+            }
+            @media (min-width: 768px) and (max-width: 991px) {
+                top: 77%;
+                left: 0;
+                width: 100%;
+                background-position: left 116% top 25%;
+                background-size: inherit;
+                position: absolute;
+            }
+        }
+        @media (min-width: 320px) and (max-width: 991px) {
+            display: block;
+            width: 100%;
+            padding: 56px 60px 58px;
+            text-align: center;
+        }
+        .hero-section-title {
+            font-size: 34px;
+            line-height: 40px;
+            font-weight: bold;
+        }
+        a {
+            color: #ffffff;
+            text-decoration: underline;
+            font-size: 14px;
+			position: relative;
+            cursor:pointer;
+        }
+    }
+    .center-align {
+        text-align: center;
+        background-position: left 103% top 31%; 
+        height: 330px;
+        display: table-cell;
+        background-size: inherit;
+        @media (min-width: 320px) and (max-width: 479px) {
+        	background-position: center center;
+            background-size: contain;
+        }
+        @media (min-width: 480px) and (max-width: 767px) {
+			background-position: left 258% top 31%;
+        }
+        @media (min-width: 768px) and (max-width: 991px) {
+        	background-position: left 142% top 31%;
+            background-size: inherit;
+        }
+    }
+}
