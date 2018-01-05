@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Article Settings"
+    xtype="panel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <title
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Title"
+            name="./title"
+            xtype="textfield"/>
+        <articlesPath
+            jcr:primaryType="cq:Widget"
+            fieldDescription="By default, articles parent page path should be configured. If you are authoring a single article page, then please check the below check box to indicate the path configured is a article page."
+            fieldLabel="Articles path"
+            name="./articlesPath"
+            xtype="pathfield"/>
+        <newWindowArticlePath
+            jcr:primaryType="cq:Widget"
+            fieldDescription="Default internal link behavior opens link in same window."
+            fieldLabel="Open link in a new window?"
+            name="./newWindow1"
+            type="checkbox"
+            xtype="selection"/>
+        <isArticlePage
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Is Article page"
+            name="./isArticlePage"
+            type="checkbox"
+            xtype="selection"/>
+        <articleLimit
+            jcr:primaryType="cq:Widget"
+            fieldDescription="By default, articles to be shown is set to 4."
+            fieldLabel="Number of articles"
+            name="./articleLimit"
+            xtype="numberfield"/>
+        <showArticleDesc
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Show article description"
+            name="./showArticleDesc"
+            type="checkbox"
+            xtype="selection"/>
+        <lengthOfDesc
+            jcr:primaryType="cq:Widget"
+            fieldDescription="By default, character limit is set to 400."
+            fieldLabel="Length of description"
+            name="./lengthOfDesc"
+            xtype="numberfield"/>
+        <allArticlesPagePath
+            jcr:primaryType="cq:Widget"
+            fieldLabel="See all articles link path"
+            name="./allArticlesPagePath"
+            xtype="pathfield"/>
+        <newWindowAllArticles
+            jcr:primaryType="cq:Widget"
+            fieldDescription="Default internal link behavior opens link in same window."
+            fieldLabel="Open link in a new window?"
+            name="./newWindow2"
+            type="checkbox"
+            xtype="selection"/>
+    </items>
+</jcr:root>

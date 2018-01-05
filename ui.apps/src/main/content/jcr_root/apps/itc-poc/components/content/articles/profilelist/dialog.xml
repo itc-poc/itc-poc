@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Profile Settings"
+    xtype="panel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <title
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Title"
+            name="./title"
+            xtype="textfield"/>
+        <profilesPath
+            jcr:primaryType="cq:Widget"
+            fieldDescription="By default, articles parent page path should be configured. If you are authoring a single article page, then please check the below check box to indicate the path configured is a article page.In case of external link please use http/https in start of link "
+            fieldLabel="Profiles path"
+            name="./profilesPath"
+            xtype="pathfield"/>
+        <newWindow
+            jcr:primaryType="cq:Widget"
+            fieldDescription="Default internal link behavior opens link in same window."
+            fieldLabel="Open link in a new window?"
+            name="./newWindow"
+            type="checkbox"
+            xtype="selection"/>
+        <isProfilePage
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Is Profile page"
+            name="./isProfilePage"
+            type="checkbox"
+            xtype="selection"/>
+        <profileLimit
+            jcr:primaryType="cq:Widget"
+            fieldDescription="By default, profiles to be shown is set to 2."
+            fieldLabel="Number of profiles"
+            name="./profileLimit"
+            xtype="numberfield"/>
+        <allProfilesPagePath
+            jcr:primaryType="cq:Widget"
+            fieldLabel="See all profiles link path"
+            name="./allProfilesPagePath"
+            xtype="pathfield"/>
+        <newWindow1
+            jcr:primaryType="cq:Widget"
+            fieldDescription="Default internal link behavior opens link in same window."
+            fieldLabel="Open link in a new window?"
+            name="./newWindow1"
+            type="checkbox"
+            xtype="selection"/>
+    </items>
+</jcr:root>

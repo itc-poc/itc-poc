@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    layoutOnTabChange="{Boolean}true"
+    xtype="dialog">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <tabs jcr:primaryType="cq:TabPanel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <basic
+                    jcr:primaryType="cq:Widget"
+                    path="/libs/foundation/components/page/tab_basic.infinity.json"
+                    xtype="cqinclude"/>
+                <articlepage
+                    jcr:primaryType="cq:Panel"
+                    title="Article Settings">
+                    <items jcr:primaryType="cq:WidgetCollection">
+                        <articletype
+                            jcr:primaryType="cq:Widget"
+                            defaultValue="pressrelease"
+                            fieldLabel="Article page type"
+                            name="./articlePageType"
+                            type="select"
+                            value="pressrelease"
+                            xtype="selection">
+                            <options jcr:primaryType="cq:WidgetCollection">
+                                <pressrelease
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Press release page"
+                                    value="pressrelease"/>
+                                <profile
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Profile page"
+                                    value="profile"/>
+                                <listicle
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Listicle page"
+                                    value="listicle"/>
+                            </options>
+                        </articletype>
+                    </items>
+                </articlepage>
+                <advanced
+                    jcr:primaryType="cq:Widget"
+                    path="/libs/foundation/components/page/tab_advanced.infinity.json"
+                    xtype="cqinclude"/>
+                <image
+                    jcr:primaryType="cq:Widget"
+                    path="/libs/foundation/components/page/tab_image.infinity.json"
+                    xtype="cqinclude"/>
+                <search
+                    jcr:primaryType="cq:Panel"
+                    title="Search Settings">
+                    <items jcr:primaryType="cq:WidgetCollection">
+                        <KeywordTag
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Keyword Tag"
+                            name="./keywords"
+                            type="select"
+                            xtype="selection">
+                            <options jcr:primaryType="cq:WidgetCollection">
+                                <new
+                                    jcr:primaryType="cq:Widget"
+                                    text="news"
+                                    value="news"/>
+                                <sports
+                                    jcr:primaryType="cq:Widget"
+                                    text="sports"
+                                    value="sports"/>
+                                <politics
+                                    jcr:primaryType="cq:Widget"
+                                    text="politics"
+                                    value="politics"/>
+                                <games
+                                    jcr:primaryType="cq:Widget"
+                                    text="games"
+                                    value="games"/>
+                            </options>
+                        </KeywordTag>
+                    </items>
+                </search>
+            </items>
+        </tabs>
+    </items>
+</jcr:root>

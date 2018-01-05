@@ -1,0 +1,14 @@
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+    <meta data-sly-call="${clientLib.all @ categories='designs.itc.poc.components.articles.listicleItems'}" data-sly-unwrap></meta>
+</div>
+<div data-sly-test="${wcmmode.edit}">Edit listicle component here</div>
+<sly data-sly-test="${properties.itemsList}" data-sly-list="${properties.itemsList}">
+    <div class="list-item clearfix">
+        <div class="circle-wrapper col-xs-12 col-sm-1">
+            <span class="circle">${itemList.count}</span>
+        </div>
+        <div class="doctoral-program-desc col-xs-12 col-sm-11">
+            ${item @ context='html'}
+        </div>
+    </div>
+</sly>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Profile Settings"
+    xtype="panel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <itemsList
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Items"
+            name="./itemsList"
+            xtype="multifield">
+            <fieldConfig
+                jcr:primaryType="nt:unstructured"
+                xtype="richtext">
+                <rtePlugins
+                    jcr:primaryType="cq:Widget"
+                    path="/apps/itc-poc/components/content/text/dialog/items/tab1/items/text/rtePlugins.infinity.json"
+                    xtype="cqinclude"/>
+            </fieldConfig>
+        </itemsList>
+    </items>
+</jcr:root>
