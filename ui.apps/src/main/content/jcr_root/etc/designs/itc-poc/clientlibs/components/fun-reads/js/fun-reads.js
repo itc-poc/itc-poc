@@ -35,13 +35,13 @@ var FunReads = {
 	var searchUrl=articleFilter.searchPath;
 	var backgroundClr=articleFilter.backgroundColor;
     var linkTextclr=articleFilter.linkTextcolor;
-    var noOfArticles=articleFilter.noOfArticles === ""?6:articleFilter.noOfArticles;
-        
-	if (searchUrl.startsWith("/content/itc-poc/blog"))
+    var noOfArticles=articleFilter.noOfArticles === ""?6:articleFilter.noOfArticles; 
+	if (!searchUrl.startsWith("/"))
 	{
-		searchUrl=searchUrl;
+		searchUrl="/content/itc-poc/blog";
 	}else{
-		searchUrl="/content/itc-poc/blog"+searchUrl;
+		//searchUrl="/content/itc-poc/blog"+searchUrl;
+        searchUrl=searchUrl;
 	}
 	
 	var author = "no";
@@ -49,7 +49,7 @@ var FunReads = {
 	if( $(location).attr('host').search("author") > -1 ){
 		
 		author = "yes";
-		
+
 	}
 		
 		  $.ajax({
