@@ -2,7 +2,7 @@
 @import (reference) "/etc/designs/itc-poc/clientlibs/global/global-head/css/colors.less";
 
 .section > .section-styles {
-  border: 10px solid @color-brand-mintgreen;
+ // border: 10px solid @color-brand-mintgreen;
   /*padding: 5rem 1rem;*/
   padding:2.5rem;
 }
@@ -257,4 +257,10 @@
 }
 .column {
     margin-left: 0px;
+}
+@media (max-width:767px){
+.row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+	}
 }
