@@ -1,0 +1,145 @@
+.preShowAccordion {
+  width: 100%;
+        text-align: left;
+}
+/* .preShowAccordion ul {
+  padding: 0px;
+  margin: auto;
+} */
+.preShowAccordion ul li {
+border-bottom: 1px solid #fff;
+}
+#myList > li, #Display > ul li {
+    background-color: #bdbcbc;
+      list-style-type: none;
+}
+#myList , #Display > ul {
+    padding: 0px;
+  margin: auto;
+}
+.hideElement {
+  overflow: hidden;
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  -moz-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.showElement {
+  -moz-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  max-height: 1000px;
+  overflow: hidden;
+}
+div#loadMore {
+    width: 100%;
+    background-color: #002e6a;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: sans-serif;
+        cursor: pointer;
+}
+.more:before {
+    content: "Load more";
+}
+.more.less:before {
+    content: "Load less";
+}
+#myList > li > div, .hideElement ul > li > div {
+  display:none;
+}
+#myList a, #Display a {display: block;padding: 0 10px;font-size: 1.5rem;}
+
+#myList .fa, #Display .fa {
+    margin-right: 10px;
+}
+.preShowAccordion {
+  width: 100%;
+}
+/* .preShowAccordion ul {
+  padding: 0px;
+  margin: auto;
+} */
+
+.hideElement {
+  overflow: hidden;
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  -moz-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.showElement {
+  -moz-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  max-height: 1000px;
+  overflow: hidden;
+}
+div#loadMore {
+  width: 100%;
+  background-color: #002e6a;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+.more:before {
+  content: "Load more";
+}
+.more.less:before {
+  content: "Load less";
+}
+#myList > li > div,
+.hideElement ul > li > div {
+  display: none;
+}
+#myList a,
+#Display a {
+  display: block;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+}
+#myList .fa,
+#Display .fa {
+  margin-right: 10px;
+}
+#myList .multiAccordion a:hover,
+#Display .multiAccordion a:hover,
+#myList .multiAccordion a:focus,
+#Display .multiAccordion a:focus {
+  text-decoration: none;
+}
+.multiAccordion > div {
+    background-color: #fff;
+    padding: 10px 10px;
+}
+.multiAccordion a:after {
+    content: "\f067";
+    font-family: fontawesome;
+    float: right;
+}
+.multiAccordion.isActive a:after {
+    content: "\f068";
+    font-family: fontawesome;
+    float: right;
+}
+
