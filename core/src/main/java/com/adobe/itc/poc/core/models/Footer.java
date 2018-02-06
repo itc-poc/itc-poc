@@ -17,7 +17,7 @@ public class Footer
 {
   private static Logger log = LoggerFactory.getLogger(Footer.class);
   Style siteCongifStyle;
-  public String logoURL = "/content/altcloud/en";
+  public String logoURL;
   public String logoImage;
   public String logoAltText;
   public String footerFontcolor;
