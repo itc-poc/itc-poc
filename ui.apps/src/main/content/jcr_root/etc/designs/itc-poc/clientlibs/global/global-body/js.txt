@@ -7,3 +7,4 @@ lazy-load.js
 accordion.js
 text.js
 section.js
+bootstrap-custom.min.js
