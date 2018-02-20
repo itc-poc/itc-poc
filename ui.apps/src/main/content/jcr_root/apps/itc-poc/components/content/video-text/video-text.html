@@ -1,3 +1,4 @@
+
 <div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
   <meta data-sly-call="${clientLib.css @ categories='designs.itc.poc.components.video-text'}" data-sly-unwrap></meta>
 </div>
@@ -31,13 +32,30 @@
 		</div>
     </div>
 </div>
-
+<!-- modal video markup -->
+<div class="modal fade" id="mediaModal" tabindex="-1" role="dialog" aria-labelledby="mediaModalTitle" aria-hidden="true">
+	<div class="modal-dialog">
+    	<div class="modal-content">
+    		<div class="modal-body">
+    			<button class="modal-close"><i class="fa fa-close"></i>close</button>
+    			<!-- content dynamically inserted -->
+        	</div>
+        	<div class="modal-details" tabindex="0">
+          		<h3 class="modal-Title" id="mediaModalTitle" tabindex="0"><!-- content dynamically inserted --></h3>
+          		<div class="modal-Copy" tabindex="0"><!-- content dynamically inserted --></div>
+          		<div class="transcript-title" tabindex="0">Transcript:</div>
+          		<div class="modal-Transcript" tabindex="0">	<!-- content dynamically inserted --></div>
+        	</div>
+    	</div>
+    </div>
+</div> 
 <script>
 	var vidTxtDialogConfig = {}; 
   	vidTxtDialogConfig.vidTxtTitle = "${properties.videoTitle @ context='scriptString'}";
   	vidTxtDialogConfig.vidTxtCopy = "${properties.videoCopy @ context='scriptString'}";
   	vidTxtDialogConfig.vidTxtTranscript = "${properties.videoTranscript @ context='scriptString'}";
 </script>
+
 <div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
   <meta data-sly-call="${clientLib.js @ categories='designs.itc.poc.components.video-text'}" data-sly-unwrap></meta>
 </div>
