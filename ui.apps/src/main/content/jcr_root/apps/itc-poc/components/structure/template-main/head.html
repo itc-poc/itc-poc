@@ -6,6 +6,7 @@
 <head data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
     <meta charset="utf-8">
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -38,8 +39,8 @@
     <meta data-sly-call="${clientLib.js @ categories='apps.itc-poc.widgets.custom'}"  data-sly-unwrap  />
     <meta data-sly-call="${clientLib.js @ categories='designs.itc-poc.utilities.author'}"  data-sly-unwrap  />
 
-  <meta data-sly-call="${clientLib.css @ categories='designs.itc-poc.utilities.author'}" data-sly-test="${!wcmmode.disabled && !wcmInit.isTouchAuthoring}" data-sly-unwrap />
-  <meta data-sly-call="${clientLib.js @ categories='designs.itc-poc.utilities.author'}" data-sly-test="${!wcmmode.disabled && !wcmInit.isTouchAuthoring}" data-sly-unwrap />
+  <meta data-sly-call="${clientLib.css @ categories='designs.itc-poc.utilities.author'}" data-sly-test="${!wcmmode.disabled && !wcmmode.preview && !wcmInit.isTouchAuthoring}" data-sly-unwrap />
+  <meta data-sly-call="${clientLib.js @ categories='designs.itc-poc.utilities.author'}" data-sly-test="${!wcmmode.disabled && !wcmmode.preview && !wcmInit.isTouchAuthoring}" data-sly-unwrap />
 
   <style>
   @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
