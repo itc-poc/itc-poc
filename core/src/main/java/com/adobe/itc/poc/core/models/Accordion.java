@@ -16,14 +16,14 @@
 package com.adobe.itc.poc.core.models;
 
 
-import com.adobe.cq.sightly.WCMUse;
+import com.adobe.cq.sightly.WCMUsePojo;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Accordion
-  extends WCMUse
+  extends WCMUsePojo
 {
   private static Logger log = LoggerFactory.getLogger(Accordion.class);
   private String uniqueId;

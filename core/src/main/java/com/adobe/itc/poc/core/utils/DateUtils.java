@@ -1,18 +1,19 @@
 package com.adobe.itc.poc.core.utils;
 
-import com.adobe.cq.sightly.WCMUse;
-import java.text.ParseException;
+import com.adobe.cq.sightly.WCMUsePojo;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Calendar;
 
-public class DateUtils extends WCMUse {
+public class DateUtils extends WCMUsePojo {
 
     private String formatedDate, monthName, day;
     private int year, date, month;
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public void activate() throws Exception {
 
         String dateEntered = get("date", String.class);

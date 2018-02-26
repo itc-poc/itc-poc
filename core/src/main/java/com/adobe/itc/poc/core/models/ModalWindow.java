@@ -9,13 +9,13 @@ import org.apache.sling.commons.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.adobe.cq.sightly.WCMUse;
+import com.adobe.cq.sightly.WCMUsePojo;
 
 /**
  * @author 22642
  *
  */
-public class ModalWindow extends WCMUse {
+public class ModalWindow extends WCMUsePojo {
 	private static Logger logger = LoggerFactory.getLogger(ModalWindow.class);
 	public List<ModalWindowConfig> getModalWindowConfigList;
 	public String[] mwConfig;
