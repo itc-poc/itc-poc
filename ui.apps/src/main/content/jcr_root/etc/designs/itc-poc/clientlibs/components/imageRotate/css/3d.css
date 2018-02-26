@@ -1,0 +1,15 @@
+
+html,body{
+	width:100%;
+	height:100%;
+	//overflow: hidden;
+}
+
+ div#myCar {
+    height: 618px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
