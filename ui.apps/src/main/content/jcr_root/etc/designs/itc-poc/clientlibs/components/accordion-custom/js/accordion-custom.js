@@ -5,6 +5,7 @@ $(document).ready(function() {
     }
 	
     var limitIntLi = parseInt($("#myList").attr('data-limitli'));
+    var limitLiTotal = parseInt($("#myList").attr('data-li-total'));
 	var liActiveBg = '#' + $("#myList").attr('data-activebg');
 	var liActivefont = '#' +  $("#myList").attr('data-activefont');
 	var liBg = '#' + $("#myList").attr('data-bg');
@@ -14,7 +15,10 @@ $(document).ready(function() {
 	var liActiveBtnfont = '#' +  $("#loadMore").attr('data-hoverfont');
 	var btnBg = '#' + $("#loadMore").attr('data-btnbg');
 	var btnfont = '#' +  $("#loadMore").attr('data-btnfont');
-	
+	if(limitIntLi >= limitLiTotal)
+    {
+        $("#loadMore").css({'display': 'none'});
+    }
     var clone = $("#myList > li").slice(limitIntLi);
     clone.appendTo(".hideElement ul");
     $("#myList > li").slice(limitIntLi).remove();

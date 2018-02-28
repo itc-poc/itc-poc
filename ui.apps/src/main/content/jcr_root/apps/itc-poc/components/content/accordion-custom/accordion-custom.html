@@ -21,7 +21,7 @@
 <div data-sly-test.noOfItemsToDispaly="${properties.nooflist}" data-sly-unwrap></div>
 <div data-sly-test.isAccordion="${properties.isAccordion ? 'multiAccordion' : ''}"data-sly-unwrap></div>
 <div class="preShowAccordion">
-	<ul id="myList" data-limitLi="${noOfItemsToDispaly}" data-activeBg="${activeBgColor}" data-activeFont="${activefontColor}" data-Bg="${bgColor}" data-font="${fontColor}">
+	<ul id="myList" data-limitLi="${noOfItemsToDispaly}" data-Li-total="${accordionCustomCount}" data-activeBg="${activeBgColor}" data-activeFont="${activefontColor}" data-Bg="${bgColor}" data-font="${fontColor}">
 		<div data-sly-list.accordionCustomConfigCount="${accordionCustomObject.AccordionCustomConfigList}" data-sly-unwrap>
 			<sly data-sly-use.urlGen="${'com.adobe.itc.poc.core.utils.ValidUrlGenerator' @ path=accordionCustomConfigCount.accordionCustomUrl}" />
 			<li class="${isAccordion}" style="background:#${bgColor @ context='styleToken'};"><a href="${urlGen.getCompletePath}" style="color:#${fontColor @ context='styleToken'};" target="_blank"><i class="fa ${accordionCustomConfigCount.accordionCustomIcon}"></i><span>${accordionCustomConfigCount.accordionCustomHeading}</span></a>
