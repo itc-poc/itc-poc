@@ -10,6 +10,13 @@
             title="General"
             xtype="panel">
             <items jcr:primaryType="cq:WidgetCollection">
+                <enableParallax
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Enable Parallax?"
+                    inputValue="false"
+                    name="./enableParallax"
+                    type="checkbox"
+                    xtype="selection"/>
                 <sectionTitle
                     jcr:primaryType="cq:Widget"
                     fieldLabel="Section title"

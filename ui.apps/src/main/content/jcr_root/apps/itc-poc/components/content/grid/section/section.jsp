@@ -51,8 +51,9 @@
 			}
 		}
 	}
-
+  
 	%>
+
 
 	<c:choose>
 		<%-- institution palette --%>
@@ -302,12 +303,12 @@
 <c:choose>
         <c:when test="${properties['opacity'] != null}" >
 
-            <div data-rgbacheck="${modifiedBgHexColor}" data-minheightcheck="${sectionTitleMinHeight}" data-sectionbgcolor="${bgHexColor}" ${scrollAnchor} class="section-styles dummyrgbaClass sectionImg ${bgColor} ${bgBorder} ${borderColor} ${noPadding} ${bgLogoPosition} ${lazyStyles} ${xsRowMaxWidth} ${smRowMaxWidth} ${mdRowMaxWidth} ${lgRowMaxWidth}" ${bgLogoImage}  style="background-color: ${modifiedBgHexColor}; min-height:${sectionTitleMinHeight}; " >
+            <div data-rgbacheck="${modifiedBgHexColor}" data-minheightcheck="${sectionTitleMinHeight}" data-sectionbgcolor="${bgHexColor}" ${scrollAnchor} class="${properties['enableParallax'] ? 'sectionParallax' :'no'} section-styles dummyrgbaClass sectionImg ${bgColor} ${bgBorder} ${borderColor} ${noPadding} ${bgLogoPosition} ${lazyStyles} ${xsRowMaxWidth} ${smRowMaxWidth} ${mdRowMaxWidth} ${lgRowMaxWidth}" ${bgLogoImage}  style="background-color: ${modifiedBgHexColor}; min-height:${sectionTitleMinHeight}; " >
 
 		</c:when>
 		
 		<c:otherwise>
-        <div  data-rgbacheck="" data-minheightcheck="${sectionTitleMinHeight}" data-sectionbgcolor="${bgHexColor}" ${scrollAnchor} class="section-styles sectionImg ${bgColor} ${bgBorder} ${borderColor} ${noPadding} ${bgLogoPosition} ${lazyStyles} ${xsRowMaxWidth} ${smRowMaxWidth} ${mdRowMaxWidth} ${lgRowMaxWidth}" ${bgLogoImage} style="background-color: #${bgHexColor}; min-height:${sectionTitleMinHeight}; " >
+            <div  data-rgbacheck="" data-minheightcheck="${sectionTitleMinHeight}" data-sectionbgcolor="${bgHexColor}" ${scrollAnchor} class="${properties['enableParallax'] ? 'sectionParallax' :'no'} section-styles sectionImg ${bgColor} ${bgBorder} ${borderColor} ${noPadding} ${bgLogoPosition} ${lazyStyles} ${xsRowMaxWidth} ${smRowMaxWidth} ${mdRowMaxWidth} ${lgRowMaxWidth}" ${bgLogoImage} style="background-color: #${bgHexColor}; min-height:${sectionTitleMinHeight}; " >
          </c:otherwise>
 		 
 		</c:choose>
