@@ -8,23 +8,33 @@
 .tile {
     margin:1.5rem 0px 0 0;
     font-famiy:'Open Sans', arial, sans-serif;
-    	.tileImg{
+     	.tileImg{
             width:100%;
         	min-height:240px;
         }
+    	.tileImgContainer{ overflow:hidden; }
         .tile-block {
             background-image: url();
             background-position: center;
-            background-repeat: no-repeat;
-            /*background-size: cover;*/
+            background-repeat: no-repeat; 
+            background-size: cover;
             position: relative;
         	cursor:pointer;
-         	background-size: 100% 100% ;
-        	height: 240px;
-                margin-top: 0;
-                padding: 0;
-            .tileImg();      
+         	height: 240px;
+            margin-top: 0;
+            padding: 0;
+        	transition: all 0.7s ease-out 0s;
+        	-webkit-transition: all 0.7s ease-out 0s;
+            -moz-transition: all 0.7s ease-out 0s;
+            -o-transition: all 0.7s ease-out 0s;
+            .tileImg(); 
         }
+    .tile-block.true{
+        /*background-size: 100% 100% ;*/
+        &:hover{
+                    transform: scale(1.5);
+                }
+    }
         .copy-block {
             font-size: 1.3rem;
             font-weight: 400;
