@@ -157,8 +157,8 @@
 <div data-sly-test="${properties.videoURL == null}" data-sly-unwrap>
     <div id="${tileModule.tileId}" class="tile-module tile-image ${clsOverlayTitle} ${clsFullWidth} ${clsDisplayBorder}" href="${urlGen.getCompletePath}" data-linktarget="${properties.newWindow}" aria-labelledby="${tileModule.tileModuleTitleId}">
 
-
-		<div class="tileImg img-responsive tile-block lazy-loader lazy-bg ${properties.opacity} ${clsOverlayAll}"
+	<div class="tileImgContainer"> 
+<div class="${properties.enableZoom} tileImg img-responsive tile-block lazy-loader lazy-bg ${properties.opacity} ${clsOverlayAll}"
         	 style="background-image: url(${imageReferencePath @ context='uri'})"
              data-imageReferenceMDPath="${imageReferenceMDPath @ context='uri'}"
              data-imageReferenceSMPath="${imageReferenceSMPath @ context='uri'}"
@@ -168,6 +168,7 @@
              data-isTabletImage="${isTabletImage @ context='uri'}"
              data-isMobileImage="${isMobileImage @ context='uri'}">
 		</div>
+     </div>
 
 
 		<div id="${tileModule.tileTitleId}" class="tileText-wrapper  ${properties.textBoxPosition} ${clsBodyText} ${properties.backgroundType}  ${clsCenterText}">

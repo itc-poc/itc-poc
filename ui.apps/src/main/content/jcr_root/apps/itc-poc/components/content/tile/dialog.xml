@@ -10,6 +10,13 @@
             title="Image Rendition"
             xtype="panel">
             <items jcr:primaryType="cq:WidgetCollection">
+                <enableZoom
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Enable Zoom of Images on Hover"
+                    fieldLabel="Enable Image Zoom on Hover?"
+                    name="./enableZoom"
+                    type="checkbox"
+                    xtype="selection"/>
                 <bigDesktopImage
                     jcr:primaryType="cq:Widget"
                     fieldDescription="Drag image here from content finder"
