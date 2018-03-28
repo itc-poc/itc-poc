@@ -1,6 +1,6 @@
    .tabs{
        .tabs-container__panel {
-      		background: #fff;
+      		background: inherit;
         	padding:10px 24px;
         	.tabs-container__panel_content{
 				display:inline-block;
@@ -17,7 +17,7 @@
     @media (min-width: 992px) {
         .tabs-container__panel.tabs-container__panel_content {
             	//padding:28px 18px 28px 45px;
-                margin-top: -1.6px;
+                margin-top: -1.6px; 
     	}
         .tabs-nav-init .tabs-container__title,
         .tabs-nav-init .tabs-container__panel {
@@ -30,11 +30,15 @@
   			  padding-right: 24px;
         }
         .tabs-init{
-            background-color: #fff;
+            background-color: inherit;
             .accordion-wrapper{
 				  display:none;
                 .panel{
    					width: 100%;
+                    margin-bottom:0px;  /*bug fix*/
+                   	background-color:transparent; 
+                    border:0px; 
+                    box-shadow:none;  
                     .tabs-container__panel_content{
                         .image-text-container{
 							margin:0;
@@ -52,13 +56,16 @@
             border-bottom:3px solid #4c3732;
            // padding:0 28px;
             padding:0 0px;
-           // background-color: #fff;
+            background-color: transparent;  /*bug fix*/
             display:block;
             li {
                 display:inline-block;
                 vertical-align:middle;
-                padding:0 0px 0px 0px;
+                padding:0 2px 0px 0px;  /*bug fix*/
                 margin-bottom:0 !important;
+                &:last-child{
+                    padding:0px;
+                }
                 &:before{
                     content:"" !important;
                 }
@@ -78,7 +85,7 @@
                 width:100%;
                 text-align:left;
                 background-color:#F2B225;
-                border-right: 2px solid #fff;
+                border-right: 0px solid #fff; /*bug fix*/
             }
             .tabs-navigation__item--current {
             	background-color: #5890C0 !important;  
@@ -124,6 +131,8 @@
 				}
                 .panel{
                 	margin: 0;
+                   	background-color:transparent; /*bug fix*/
+                    border:0px; 
                     &:last-child{
             				border-bottom:solid 3px #ddd3c7;
         			}
