@@ -6,13 +6,55 @@
         jcr:primaryType="cq:Widget"
         xtype="tabpanel">
         <items jcr:primaryType="cq:WidgetCollection">
-            <containerlConfig
+            <viewConfig
                 jcr:primaryType="cq:Panel"
-                title="Tile Container Configuration">
+                title="View Configuration ">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <viewMobile
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="carouselView"
+                        fieldLabel="Define the mobile view"
+                        name="./mobileView"
+                        type="radio"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <o1
+                                jcr:primaryType="nt:unstructured"
+                                text="Carousel View"
+                                value="carouselView"/>
+                            <o2
+                                jcr:primaryType="nt:unstructured"
+                                text="Stack View"
+                                value="stackView"/>
+                        </options>
+                    </viewMobile>
+                    <viewDesktop
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="DesktopcarouselView"
+                        fieldLabel="Define the Desktop view"
+                        name="./desktopView"
+                        type="radio"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <o1
+                                jcr:primaryType="nt:unstructured"
+                                text="Carousel View"
+                                value="DesktopcarouselView"/>
+                            <o2
+                                jcr:primaryType="nt:unstructured"
+                                text="Stack View"
+                                value="DesktopstackView"/>
+                        </options>
+                    </viewDesktop>
+                </items>
+            </viewConfig>
+            <containerConfig
+                jcr:primaryType="cq:Panel"
+                title="Container Configuration">
                 <items jcr:primaryType="cq:WidgetCollection">
                     <noOfRows
                         jcr:primaryType="cq:Widget"
-                        fieldDescription="enter no. of rows"
+                        fieldDescription="enter no. of rows / no of slides"
                         fieldLabel="Number of Rows"
                         name="./noOfRows"
                         type="select"
@@ -42,7 +84,7 @@
                     </noOfRows>
                     <noOfColumns
                         jcr:primaryType="cq:Widget"
-                        fieldDescription="enter no. of columns"
+                        fieldDescription="enter no. of columns / no of tile per slide"
                         fieldLabel="Number of Columns"
                         name="./noOfColumns"
                         type="select"
@@ -66,29 +108,11 @@
                                 value="4"/>
                         </options>
                     </noOfColumns>
-                    <view
-                        jcr:primaryType="cq:Widget"
-                        defaultValue="carouselView"
-                        fieldLabel="Define the mobile view"
-                        name="./mobileView"
-                        type="radio"
-                        xtype="selection">
-                        <options jcr:primaryType="cq:WidgetCollection">
-                            <o1
-                                jcr:primaryType="nt:unstructured"
-                                text="Carousel View"
-                                value="carouselView"/>
-                            <o2
-                                jcr:primaryType="nt:unstructured"
-                                text="Stack View"
-                                value="stackView"/>
-                        </options>
-                    </view>
                 </items>
-            </containerlConfig>
+            </containerConfig>
         </items>
     </items>
     <listeners
         jcr:primaryType="nt:unstructured"
-        beforesubmit="function(dialog){&#xa;&#x9;var noOfRows = dialog.getField('./noOfRows').getValue();&#xa;&#x9;var noOfColumns = dialog.getField('./noOfColumns').getValue();&#xa;    var remainder = noOfRows * noOfColumns;&#xa;&#x9;&#xa;&#x9;if(remainder &lt;2){&#xa;&#x9;&#x9;alert(&quot;Please select a combintion of  atleast 2*1 or 1*2&quot;)&#x9;&#x9;&#xa;&#x9;}&#x9;&#xa;};"/>
+        beforesubmit="function(dialog){&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;var noOfRows = dialog.getField('./noOfRows').getValue();&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;var noOfColumns = dialog.getField('./noOfColumns').getValue();&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;var remainder = noOfRows * noOfColumns;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if(remainder &lt;2){&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;alert(&quot;Please select a combintion of  atleast 2*1 or 1*2&quot;);&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return false;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;}"/>
 </jcr:root>
