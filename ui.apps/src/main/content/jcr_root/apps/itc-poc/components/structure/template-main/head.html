@@ -1,0 +1,53 @@
+<!--/* start of head */-->
+
+
+
+
+<head data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+    <meta charset="utf-8">
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+
+
+    <!-- font include -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+
+    <!-- jquery include -->
+	<meta data-sly-call="${clientLib.all @ categories='designs.itc-poc.libraries.jquery'}" data-sly-unwrap />
+
+    <!-- css incldues -->
+
+    <meta data-sly-include="/libs/wcm/core/components/init/init.jsp" data-sly-unwrap />
+    <meta data-sly-include="/libs/cq/cloudserviceconfigs/components/servicelibs/servicelibs.jsp" data-sly-unwrap />
+
+<meta data-sly-call="${clientLib.all @ categories='designs.itc-poc.global'}" data-sly-unwrap />
+<meta data-sly-call="${clientLib.all @ categories='designs.itc-poc.global-head'}" data-sly-unwrap />
+<meta data-sly-call="${clientLib.all @ categories='designs.itc-poc.global-body'}" data-sly-unwrap />
+  
+
+    <!-- javascript head includes -->
+
+    <meta data-sly-call="${clientLib.js @ categories='apps.itc-poc.widgets.custom'}"  data-sly-unwrap  />
+    <meta data-sly-call="${clientLib.js @ categories='designs.itc-poc.utilities.author'}"  data-sly-unwrap  />
+
+  <meta data-sly-call="${clientLib.css @ categories='designs.itc-poc.utilities.author'}" data-sly-test="${!wcmmode.disabled && !wcmmode.preview && !wcmInit.isTouchAuthoring}" data-sly-unwrap />
+  <meta data-sly-call="${clientLib.js @ categories='designs.itc-poc.utilities.author'}" data-sly-test="${!wcmmode.disabled && !wcmmode.preview && !wcmInit.isTouchAuthoring}" data-sly-unwrap />
+
+  <style>
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  html, body {
+  overflow-x:hidden ;
+} }</style> 
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<!--/* end of head */--> 

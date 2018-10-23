@@ -17,16 +17,23 @@
 // Server-side JavaScript for the topnav logic
 use(function () {
     var items = [];
-    var root = currentPage.getAbsoluteParent(1);
+    var absParentPath = currentStyle.get("absParent");
+    var root = currentPage.getAbsoluteParent(currentStyle.get("absParent", 2));//2);
+    if(root == null){
+		root= currentPage.getAbsoluteParent(2);
+    }
     var currentNavPath = currentPage.getAbsoluteParent(2).getPath();
     var it = root.listChildren(new Packages.com.day.cq.wcm.api.PageFilter());
 
     while (it.hasNext()) {
-        var page = it.next();
-
+       // var page;
+        // var selected;
+        //if (it.next().getProperties('hideInNav') == false) {
+        	page = it.next();
+        	selected = (page.getPath() == currentNavPath);
+        //}
         // No strict comparison, because the types returned from the Java APIs
         // don't strictly match the JavaScript types
-        var selected = (page.getPath() == currentNavPath);
 
         items.push({
             page: page,

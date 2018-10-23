@@ -1,0 +1,8 @@
+#base=js
+
+DDPathField.js
+itcmultifieldpanel.js
+customMultiField.js
+navListItem.js
+html5-smart-image-multi-field.js
+linkListItem.js

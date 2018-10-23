@@ -1,0 +1,1 @@
+"use strict";use(function(){var a={};var d=this.text;var b=this.charLimit;var c=d.substr(0,b);c=c.substr(0,c.lastIndexOf(" "))+"...";a.firstPart=c;return a});

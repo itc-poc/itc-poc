@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Footer"
+    xtype="tabpanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <footer
+            jcr:primaryType="cq:Widget"
+            title="Footer Settings"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <accordionFlag
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="By default, all the accordion items are collapsible irrespective of others are expanded or collapsed. Enabling this would auto collapse the other accordions."
+                    fieldLabel="Enable auto collapse"
+                    name="./accordionFlag"
+                    type="checkbox"
+                    xtype="selection"/>
+            </items>
+        </footer>
+    </items>
+</jcr:root>

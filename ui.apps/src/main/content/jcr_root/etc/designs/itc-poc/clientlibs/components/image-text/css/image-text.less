@@ -1,0 +1,99 @@
+/* ------------ */
+/*  text styles */
+/* ------------ */
+
+.image-text-container {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+    .align-center {
+		margin: 0 auto;
+    }
+    .image-icon {
+        @media (min-width: 320px) and (max-width: 599px){
+            //display: table-cell;
+            vertical-align: middle;
+        }
+        img{
+            width:100%;
+        }
+    }
+    .image-text {
+        * {
+			margin: 10px 0 0 0 !important;
+        }
+        p {
+			margin-bottom: 0;
+           // margin-left: 10px !important;
+        }
+        @media (min-width: 320px) and (max-width: 599px){
+           // display: table-cell;
+            vertical-align: middle;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+    }
+    @media (min-width: 320px) and (max-width: 599px){
+        //display: table;
+        vertical-align: middle;
+        text-align: left;
+        border: 1px solid #fff;
+    }
+}
+.top-align-text {
+    display: table;
+    .align-center {
+		margin: 0 auto;
+    }
+    .image-icon {
+        display: table-footer-group;
+        @media (min-width: 320px) and (max-width: 599px){
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+    .image-text {
+        display: table-header-group;
+        * {
+			margin: 0 0 10px 0 !important;
+        }
+        @media (min-width: 320px) and (max-width: 599px){
+            display: table-cell;
+            vertical-align: middle;
+            * {
+                margin: 0 0 0 10px !important;
+            }
+        }
+    }
+    @media (min-width: 320px) and (max-width: 599px){
+        text-align: left;
+    }
+	img{width:100%;}
+}
+
+.right-align-text {
+    display: table;
+    text-align: left;
+    vertical-align: middle;
+    .image-icon, .image-text {
+        vertical-align: middle;
+        display: table-cell;
+    }
+	img{width:100%;}
+}
+
+.left-align-text {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    .image-icon {
+        order: 2;
+    }
+    .image-text {
+        order: 1;
+        * {
+			margin: 0 10px 0 0 !important;
+        }
+    }
+	img{width:100%;}
+}

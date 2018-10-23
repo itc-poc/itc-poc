@@ -1,0 +1,48 @@
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+    <meta data-sly-call="${clientLib.all @ categories='designs.itc.poc.components.articles.profilelist'}" data-sly-unwrap></meta>
+</div>
+
+<div data-sly-use.profileObject="${'com.adobe.itc.poc.core.models.ProfileList'}" data-sly-unwrap></div>
+<div data-sly-test.isNewWindow1="${properties.newWindow == 'true'}" data-sly-unwrap></div>
+<div data-sly-test.isNewWindow2="${properties.newWindow1 == 'true'}" data-sly-unwrap></div>
+
+<div data-sly-use.articles="${'com.adobe.itc.poc.core.utils.ArticleUtils' @ path=properties.profilesPath || '4', listType='profilelist', isArticlePage=properties.isProfilePage}" data-sly-unwrap>
+
+    <div class="profiles clearfix">
+        <div class="boxed-title" tabindex="0">${properties.title || 'More Profiles'}</div>
+
+    	<div data-sly-list.article="${articles.getArticleList}" data-sly-unwrap>
+            <div class="profile">
+                <div class="user-img">
+    				<img src="${article.imagePath}" alt="Profile Image" />
+                </div>
+                <div class="user-details">
+
+                        <div data-sly-test.isTarget="${isNewWindow1 == true || (isNewWindow1 == false && profileObject.target == true)}" data-sly-unwrap>
+                       		 <a href="${article.url}" target="_blank">${article.title}</a>
+                        </div>
+                        <div data-sly-test.isNotTarget="${isNewWindow1 == false && profileObject.target == false}" data-sly-unwrap>
+                        		<a href="${article.url}">${article.title}</a>
+                        </div>
+                    <a href="${article.url}">${article.title}</a>
+    				<p>Colleges ${article.collegeName}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<h4 class="heading-4">
+    <sly data-sly-use.urlGen="${'com.adobe.itc.poc.core.utils.ValidUrlGenerator' @ path=properties.allProfilesPagePath || '', type=''}">
+    <div class="all-articles">
+            <div data-sly-test.isTarget="${isNewWindow2 == true || (isNewWindow2 == false && profileObject.allProfileTarget == true)}" data-sly-unwrap>
+            	<a name="article_allarticles" href="${urlGen.getCompletePath}" target="_blank">See All Profiles ›</a>
+            </div>
+            <div data-sly-test.isNotTarget="${isNewWindow2 == false && profileObject.allProfileTarget == false}" data-sly-unwrap>
+            	<a name="article_allarticles" href="${urlGen.getCompletePath}">See All Profiles ›</a>
+            </div>
+
+    </div>
+    <sly>
+</h4>

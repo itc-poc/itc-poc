@@ -1,0 +1,45 @@
+#authenticationModal {
+
+	div.modal-dialog, div.modal-body, div.modal-content {
+		height: 440px;
+	}
+
+	div.modal-dialog {
+		width:auto;
+ 		max-width:762px;
+
+		div.authentication-popup-window {
+			padding: 15px; 
+			width: auto; 
+			height: auto;
+
+			div.authentication-popup-header button.close-btn {
+				position: absolute;
+				top: 35px;
+				right: 35px;
+				width: 75px;
+				z-index: 1000;
+			}
+
+			div.authenticationComponent {
+				width: auto; 
+				height: auto;
+
+				div.loginBox, div.registerBox, div.forgotPasswordBox, div.changePasswordBox, div.popupMessage {
+					height:auto;
+					width:auto;
+					min-height:100%;
+ 					overflow:visible;
+					padding-top: 15px;
+					padding-bottom: 30px;
+				}
+			}
+
+			@media(max-width: 320px) {
+			    .authenticationComponent .box-main .social-container .social-login .social-text{
+			    	padding-top: 1px;
+			    }
+			}
+		}
+	}
+}

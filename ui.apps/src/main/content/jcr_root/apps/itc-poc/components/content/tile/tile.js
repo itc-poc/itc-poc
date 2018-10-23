@@ -1,0 +1,1 @@
+"use strict";use(function(){var f=new Date();var a=Math.random().toString(36).substr(2,5);var c="";var e="";var d=currentNode.path.split("jcr:content");var b=d[1].split("/").slice(1);var g=b.join("_");g=g.replace(/ /g,"_");return{tileId:g,tileTitleId:"tileTitle"+a,tileCopyId:"tileCopy"+a}});

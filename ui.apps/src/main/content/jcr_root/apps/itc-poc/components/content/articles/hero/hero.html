@@ -1,0 +1,99 @@
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+  	<meta data-sly-call="${clientLib.css @ categories='designs.itc.poc.components.articles.hero'}" data-sly-unwrap></meta>
+</div>
+<!--/* Code for Image randition - START */-->
+<div data-sly-use.heroObject="${'com.adobe.itc.poc.core.models.Hero'}" data-sly-unwrap></div>
+<div data-sly-test.imageReferencePath="${properties.imageReference || properties.fileReference}" data-sly-unwrap></div>
+<div data-sly-test.imageReferenceMDPath="${properties.imageReferenceMD}" data-sly-unwrap></div>
+<div data-sly-test.imageReferenceSMPath="${properties.imageReferenceSM}" data-sly-unwrap></div>
+<div data-sly-test.imageReferenceXSPath="${properties.imageReferenceXS}" data-sly-unwrap></div>
+	
+<div data-sly-test.isBigDesktopImage="${!properties.isBigDesktopImage}" data-sly-unwrap>
+</div>
+<div data-sly-test.isDesktopImage="${!properties.isDesktopImage}" data-sly-unwrap>   
+</div>
+<div data-sly-test.isTabletImage="${!properties.isTabletImage}" data-sly-unwrap>
+</div>
+<div data-sly-test.isMobileImage="${!properties.isMobileImage}" data-sly-unwrap>   
+</div>
+<div data-sly-test.isNewWindow="${properties.newWindow == 'true'}" data-sly-unwrap></div>
+
+<div data-sly-test="${imageReferenceMDPath =='none' || imageReferenceMDPath == null || imageReferenceMDPath == ''}" data-sly-unwrap>
+	<div data-sly-test.imageReferenceMDPath = "${imageReferencePath}" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${imageReferenceSMPath =='none' || imageReferenceSMPath == null || imageReferenceSMPath == ''}" data-sly-unwrap>
+	<div data-sly-test.imageReferenceSMPath = "${imageReferenceMDPath}" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${imageReferenceXSPath =='none' || imageReferenceXSPath == null || imageReferenceXSPath == ''}" data-sly-unwrap>
+	<div data-sly-test.imageReferenceXSPath = "${imageReferenceSMPath}" data-sly-unwrap></div>
+</div>
+
+<!--/* Code for Image randition - END */-->
+<div data-sly-test.customClasses ="${properties.customClasses}" data-sly-unwrap></div>
+<div class="${customClasses}">
+	<div data-sly-test="${pageProperties.articlePageType == 'pressrelease' || pageProperties.articlePageType == 'listicle'}" data-sly-unwrap>
+		<div class="section row">
+			<div class="bg-hero-image">
+				<img src="${imageReferencePath  @ context='uri'}" hidden class="articleHeroImg hero-image"
+					 data-imageReferenceMDPath="${imageReferenceMDPath  @ context='uri'}"
+					 data-imageReferenceSMPath="${imageReferenceSMPath  @ context='uri'}"
+					 data-imageReferenceXSPath="${imageReferenceXSPath  @ context='uri'}"
+					 data-isBigDesktopImage="${isBigDesktopImage @ context='uri'}"
+					 data-isDesktopImage="${isDesktopImage @ context='uri'}"
+					 data-isTabletImage="${isTabletImage @ context='uri'}"
+					 data-isMobileImage="${isMobileImage @ context='uri'}"/>
+			</div>
+			<div hidden class="hero-section">
+				<div class="row">
+					<div class="hero-box col-xs-12 col-md-12 col-lg-12">
+						<h2 class="hero-section-title">${properties.title || "Please configure article title"}</h2>
+						<sly data-sly-test="${properties.postedBy}">
+							<span>${properties.byOption || 'By'} : ${properties.postedBy}</span>
+						</sly>
+						<sly data-sly-test="${properties.publishDate}">
+							<span><sly data-sly-use.date="${'com.adobe.itc.poc.core.utils.DateUtils' @ date=properties.publishDate}">| ${date.monthName} ${date.date}, ${date.year}</sly></span>
+						</sly>
+						<sly data-sly-test="${properties.desc}" >
+							${properties.desc @ context='html'}
+						</sly>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-sly-test="${pageProperties.articlePageType == 'profile'}" data-sly-unwrap>
+		<div class="section row">
+			<div class="profile-section col-xs-12">
+			<div data-sly-test="${properties.fileReference || imageReferencePath != null || imageReferenceMDPath != null || imageReferenceSMPath != null || imageReferenceXSPath != null}" data-sly-unwrap>
+				<div class="profile-image-section">
+					<img src="${imageReferencePath @ context='uri'}" hidden class="articleHeroImg" 
+						 data-imageReferenceMDPath="${imageReferenceMDPath  @ context='uri'}"
+						 data-imageReferenceSMPath="${imageReferenceSMPath  @ context='uri'}"
+						 data-imageReferenceXSPath="${imageReferenceXSPath  @ context='uri'}"
+						 data-isBigDesktopImage="${isBigDesktopImage @ context='uri'}"
+						 data-isDesktopImage="${isDesktopImage @ context='uri'}"
+						 data-isTabletImage="${isTabletImage @ context='uri'}"
+						 data-isMobileImage="${isMobileImage @ context='uri'}" />
+				</div>
+			</div>
+				<div class="profile-text-section ${properties.fileReference == null ? 'center-align' : ''}">
+					<h2 class="hero-section-title">${properties.profileTitle || 'Please configure faculty name'}</h2>
+					<sly data-sly-test="${properties.collegeName}">
+						<sly data-sly-use.urlGen="${'com.adobe.itc.poc.core.utils.ValidUrlGenerator' @ path=properties.collegeLink, type=''}">
+							<div data-sly-test.isTarget="${isNewWindow == true || (isNewWindow == false && heroObject.target == true)}" data-sly-unwrap>
+								<a href="${urlGen.getCompletePath}" target="_blank">ABC &nbsp;${properties.collegeName}</a>
+							</div>
+							<div data-sly-test.isNotTarget="${isNewWindow == false && heroObject.target == false}" data-sly-unwrap>
+								<a href="${urlGen.getCompletePath}">ABC &nbsp;${properties.collegeName}</a>
+							</div>
+						<sly>
+					</sly>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+  	<meta data-sly-call="${clientLib.js @ categories='designs.itc.poc.components.articles.hero'}" data-sly-unwrap></meta>
+</div>

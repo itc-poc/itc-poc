@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Accordion ITC"
+    xtype="tabpanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <tab1
+            jcr:primaryType="cq:Widget"
+            title="Accordion ITC Settings"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <multipleExpand
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="false"
+                    fieldDescription="Allow only one tab of the accordion to be open at a time"
+                    fieldLabel="Single tab only"
+                    name="./restrictSingle"
+                    type="checkbox"
+                    xtype="selection"/>
+                <accordionHeaderTag
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="h3"
+                    fieldLabel="Accordion Header Tag"
+                    name="./accordionHeaderTag"
+                    type="select"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <h1
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 1 (h1)"
+                            value="h1"/>
+                        <h2
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 2 (h2)"
+                            value="h2"/>
+                        <h3
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 3 (h3) - Default"
+                            value="h3"/>
+                        <h4
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 4 (h4)"
+                            value="h4"/>
+                        <h5
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 5 (h5)"
+                            value="h5"/>
+                        <h6
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 6 (h6)"
+                            value="h6"/>
+                        <p
+                            jcr:primaryType="nt:unstructured"
+                            text="Paragraph (p)"
+                            value="p"/>
+                    </options>
+                </accordionHeaderTag>
+                <expandOrCollapse
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="false"
+                    fieldDescription="Allow all tab of the accordion to be open or close at a time"
+                    fieldLabel="Show Expand and Collapse All links"
+                    name="./expandOrCollapse"
+                    type="checkbox"
+                    xtype="selection"/>
+                <expandText
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="default value is 'Expand All'"
+                    fieldLabel="Expand All Link Text"
+                    name="./expandAllLink"
+                    xtype="textfield"/>
+                <collapseText
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="default value is 'Collapse All'"
+                    fieldLabel="Collapse All Link Text"
+                    name="./collapseAllLink"
+                    xtype="textfield"/>
+            </items>
+        </tab1>
+    </items>
+</jcr:root>

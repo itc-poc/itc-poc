@@ -1,0 +1,63 @@
+
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+  <meta data-sly-call="${clientLib.css @ categories='designs.itc.poc.components.video-text'}" data-sly-unwrap></meta>
+</div>
+
+<!--/* fetching properties from dialog - START  */-->
+
+<div data-sly-test.videoPalcement="${properties.videoPalcement}" data-sly-unwrap></div>
+<div data-sly-test.bgColor="${properties.bgColor}" data-sly-unwrap></div>
+<div data-sly-test.fontColor="${properties.fontColor}" data-sly-unwrap></div>
+<div data-sly-test.text="${properties.text @context='unsafe'}" data-sly-unwrap></div>
+<div data-sly-test.videoURL="${properties.videoURL}" data-sly-unwrap></div>
+<div data-sly-test.videoTitle="${properties.videoTitle}" data-sly-unwrap></div>
+<div data-sly-test.videoCopy="${properties.videoCopy @context='unsafe'}" data-sly-unwrap></div>
+<div data-sly-test.videoTranscript="${properties.videoTranscript}" data-sly-unwrap></div>
+<div data-sly-test.imageReference="${properties.imageReference}" data-sly-unwrap></div>
+
+<div class="video-text-container row"  style="color: #${fontColor @ context='styleToken'}; background-color: #${bgColor @ context='styleToken'}">
+	<div class="video-container col-xs-12 col-sm-12 col-md-6 col-lg-6" style="float: ${videoPalcement @ context='styleToken'};">
+		<a href="${videoURL}" class="modal-video" role="button" tabindex="-1" onclick="return false;">			
+			<div class="thumb-block-lg">
+				<div class="video-img-rendition" style="background-image: url(${imageReference @ context='uri'})">
+				</div>	
+				<i class="fa fa-play-circle-o" aria-label="Play video" tabindex="0"></i>
+            </div>
+		</a>
+	</div>     
+    <div class="text-container section col-xs-12 col-sm-12 col-md-6 col-lg-6" >
+        <div class="text-containerdiv" style="color: #${fontColor @ context='styleToken'}; background-color: #${bgColor @ context='styleToken'}">
+			<div class="text-content">${properties.text @context='unsafe'}
+			</div>
+		</div>
+    </div>
+</div>
+<!-- modal video markup -->
+<div class="modal fade" id="mediaModal" tabindex="-1" role="dialog" aria-labelledby="mediaModalTitle" aria-hidden="true">
+	<div class="modal-dialog">
+    	<div class="modal-content">
+    		<div class="modal-body">
+    			<button class="modal-close"><i class="fa fa-close"></i>close</button>
+    			<!-- content dynamically inserted -->
+        	</div>
+        	<div class="modal-details" tabindex="0">
+          		<h3 class="modal-Title" id="mediaModalTitle" tabindex="0"><!-- content dynamically inserted --></h3>
+          		<div class="modal-Copy" tabindex="0"><!-- content dynamically inserted --></div>
+          		<div class="transcript-title" tabindex="0">Transcript:</div>
+          		<div class="modal-Transcript" tabindex="0">	<!-- content dynamically inserted --></div>
+        	</div>
+    	</div>
+    </div>
+</div> 
+<script>
+	var vidTxtDialogConfig = {}; 
+  	vidTxtDialogConfig.vidTxtTitle = "${properties.videoTitle @ context='scriptString'}";
+  	vidTxtDialogConfig.vidTxtCopy = "${properties.videoCopy @ context='scriptString'}";
+  	vidTxtDialogConfig.vidTxtTranscript = "${properties.videoTranscript @ context='scriptString'}";
+</script>
+
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+  <meta data-sly-call="${clientLib.js @ categories='designs.itc.poc.components.video-text'}" data-sly-unwrap></meta>
+</div>
+
+

@@ -1,0 +1,110 @@
+ <div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+        <meta data-sly-call="${clientLib.all @ categories='designs.itc-poc.components.imageText'}" data-sly-unwrap></meta>
+ </div>
+
+ 
+ <div data-sly-use.imageTextObj="${'com.adobe.itc.poc.core.models.ImageText'}" data-sly-unwrap></div>
+ <div data-sly-test.isNewWindow="${properties.newWindow == 'true'}" data-sly-unwrap></div>
+
+ 
+
+ <!--/* Code for Image randition starts here  */-->
+
+<div data-sly-test.imageReferencePath="${properties.fileReference}" data-sly-unwrap></div>
+<div data-sly-test.imageReferenceMDPath="${properties.imageReferenceMD}" data-sly-unwrap></div>
+<div data-sly-test.imageReferenceSMPath="${properties.imageReferenceSM}" data-sly-unwrap></div>
+<div data-sly-test.imageReferenceXSPath="${properties.imageReferenceXS}" data-sly-unwrap></div>
+
+<div data-sly-test.imgAlt="${properties.imgAlt}" data-sly-unwrap></div>
+
+<div data-sly-test.isBigDesktopImage="${!properties.isBigDesktopImage}" data-sly-unwrap>
+</div>
+<div data-sly-test.isDesktopImage="${!properties.isDesktopImage}" data-sly-unwrap>   
+</div>
+<div data-sly-test.isTabletImage="${!properties.isTabletImage}" data-sly-unwrap>
+</div>
+<div data-sly-test.isMobileImage="${!properties.isMobileImage}" data-sly-unwrap>   
+</div>
+
+
+<div data-sly-test="${imageReferenceMDPath =='none' || imageReferenceMDPath == null || imageReferenceMDPath == ''}" data-sly-unwrap>
+	<div data-sly-test.imageReferenceMDPath = "${imageReferencePath}" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${imageReferenceSMPath =='none' || imageReferenceSMPath == null || imageReferenceSMPath == ''}" data-sly-unwrap>
+	<div data-sly-test.imageReferenceSMPath = "${imageReferenceMDPath}" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${imageReferenceXSPath =='none' || imageReferenceXSPath == null || imageReferenceXSPath == ''}" data-sly-unwrap>
+	<div data-sly-test.imageReferenceXSPath = "${imageReferenceSMPath}" data-sly-unwrap></div>
+</div>
+<!--/* Code to take input from Dialog - ENDS  */-->
+ 
+ 
+ 
+<div class="image-text-container ${properties.alignment == 'top' ? 'top-align-text' : ''} ${properties.alignment == 'right' ? 'right-align-text' : ''} ${properties.alignment == 'left' ? 'left-align-text' : ''}" >
+    <div data-sly-test="${!properties.fileReference && (properties.showIcon == 'false' || properties.showIcon == null) }" data-sly-unwrap> 
+        <div class="cq-image-placeholder"></div>
+    </div>
+
+    
+    <div data-sly-test="${properties.linkURL && properties.linkURL != ''}" data-sly-unwrap>  
+        <div class="image-icon">
+	    <div data-sly-test.isTarget="${isNewWindow == true || (isNewWindow == false && imageTextObj.target == true)}" data-sly-unwrap>
+
+            <a class="align-center" href="${properties.linkURL || '#'}" target="_blank" style="width:${textImageObj.width  @ context='styleToken'}vw; height:${textImageObj.height  @ context='styleToken'}vw;line-height:${textImageObj.lineHeight  @ context='styleToken'}vw;color:#${properties.iconColor || 'ffffff' @ context='styleToken'};border-radius:${properties.radius || '5' @ context='styleToken'}vw;background-color:#${properties.bgColor || '09c'  @ context='styleToken'};font-size:${properties.iconSize || '5'  @ context='styleToken'}vw;text-align:center" data-sly-test="${properties.showIcon && properties.showIcon == 'true'}" > 
+        </div>
+		<div data-sly-test.isNotTarget="${isNewWindow == false && imageTextObj.target == false}" data-sly-unwrap>
+            <a class="align-center" href="${properties.linkURL || '#'}" style="width:${imageTextObj.width  @ context='styleToken'}vw; height:${textImageObj.height  @ context='styleToken'}vw;line-height:${textImageObj.lineHeight  @ context='styleToken'}vw;color:#${properties.iconColor || 'ffffff' @ context='styleToken'};border-radius:${properties.radius || '5' @ context='styleToken'}vw;background-color:#${properties.bgColor || '09c'  @ context='styleToken'};font-size:${properties.iconSize || '5'  @ context='styleToken'}vw;text-align:center" data-sly-test="${properties.showIcon && properties.showIcon == 'true'}" > 
+        </div>	
+                <div class="image-text-img" data-sly-use.textImageObj="${ 'text-image.js'}" data-sly-unwrap>
+                    <i class="fa ${properties.faIcon}" aria-hidden="true"></i>
+                </div>
+        
+                <div class="image-icon " data-sly-test="${!properties.showIcon || properties.showIcon == 'false'}" >
+                 <!--/* <img class="img-responsive" src="${properties.fileReference}" /> */-->
+					<img src="${imageReferencePath @ context='uri'}" class="tileImg img-responsive" alt="${imgAlt}" tabindex="0"
+						 data-imageReferenceMDPath="${imageReferenceMDPath @ context='uri'}"
+                         data-imageReferenceSMPath="${imageReferenceSMPath @ context='uri'}"
+                         data-imageReferenceXSPath="${imageReferenceXSPath @ context='uri'}"
+                         data-isBigDesktopImage="${isBigDesktopImage @ context='uri'}"
+                         data-isDesktopImage="${isDesktopImage @ context='uri'}"
+                         data-isTabletImage="${isTabletImage @ context='uri'}"
+                         data-isMobileImage="${isMobileImage @ context='uri'}"
+                    />
+                </div>
+            </a>
+		 </div>
+    </div>    
+
+    <div data-sly-test="${!properties.linkURL}"  class="image-icon" >
+        <div data-sly-use.textImageObj="${ 'text-image.js'}" data-sly-unwrap>
+            <div class="align-center" style="width:${textImageObj.width  @ context='styleToken'}vw; height:${textImageObj.height  @ context='styleToken'}vw;line-height:${textImageObj.lineHeight  @ context='styleToken'}vw;color:#${properties.iconColor || 'ffffff' @ context='styleToken'};border-radius:${properties.radius || '5' @ context='styleToken'}vw;background-color:#${properties.bgColor || '09c'  @ context='styleToken'};font-size:${properties.iconSize || '5'  @ context='styleToken'}vw;text-align:center" data-sly-test="${properties.showIcon && properties.showIcon == 'true'}" >
+                <i class="fa ${properties.faIcon}" aria-hidden="true"></i>
+            </div>
+        </div>
+
+        <div data-sly-test="${!properties.showIcon || properties.showIcon == 'false'}" >
+          <!--/* <img class="img-responsive" src="${properties.fileReference}" /> */-->
+			<img src="${imageReferencePath @ context='uri'}" class="tileImg img-responsive" alt="${imgAlt}" tabindex="0"
+						 data-imageReferenceMDPath="${imageReferenceMDPath @ context='uri'}"
+                         data-imageReferenceSMPath="${imageReferenceSMPath @ context='uri'}"
+                         data-imageReferenceXSPath="${imageReferenceXSPath @ context='uri'}"
+                         data-isBigDesktopImage="${isBigDesktopImage @ context='uri'}"
+                         data-isDesktopImage="${isDesktopImage @ context='uri'}"
+                         data-isTabletImage="${isTabletImage @ context='uri'}"
+                         data-isMobileImage="${isMobileImage @ context='uri'}"
+                    />
+			
+        </div>
+    </div>
+
+
+    <div class="image-text">
+        <div data-sly-test="${!properties.text}" data-sly-unwrap>
+            <div data-sly-test="${wcmmode.edit || wcmmode.design}">Edit to add some text</div>
+        </div>
+        <div data-sly-test="${properties.text}" class="image-text" data-sly-unwrap>
+               ${properties.text @ context='unsafe'}
+        </div>
+    </div>
+</div>
+

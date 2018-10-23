@@ -1,0 +1,12 @@
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='designs.itc.poc.components.imageRotate'}"/>
+
+<div data-sly-test.imageURL="${properties.imageURL}" data-sly-unwrap></div>
+<div data-sly-test.imageType="${properties.imageType}" data-sly-unwrap></div>
+<div data-sly-test.noofImages="${properties.noofImages}" data-sly-unwrap></div>
+
+<div>
+	<div id="myCar" data-imageurl="${imageURL}" data-imagetype="${imageType}" data-noofimages="${noofImages}"> </div>
+</div>
+

@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    activeTab="{Long}0"
+    helpPath="en/cq/current/wcm/default_components.html#Image"
+    xtype="tabpanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <generalSettings
+            jcr:primaryType="cq:Widget"
+            title="General"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <enableParallax
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Enable Parallax?"
+                    inputValue="false"
+                    name="./enableParallax"
+                    type="checkbox"
+                    xtype="selection"/>
+                <sectionTitle
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Section title"
+                    name="./sectionTitle"
+                    xtype="textfield"/>
+                <sectionTitleColor
+                    jcr:primaryType="cq:Widget"
+                    defaultValue=""
+                    fieldLabel="Section title color"
+                    name="./sectionTitleColor"
+                    type="select"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            text="Black (default)"
+                            value=""/>
+                        <brandBlue
+                            jcr:primaryType="nt:unstructured"
+                            text="Brand blue"
+                            value="brand-blue"/>
+                        <white
+                            jcr:primaryType="nt:unstructured"
+                            text="White"
+                            value="white"/>
+                    </options>
+                </sectionTitleColor>
+                <mainSectionHeading
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="h2"
+                    fieldDescription="Defaulted to H2. Please remember, only one H1 on a page."
+                    fieldLabel="What type of HTML element should this use?"
+                    name="./mainSectionHeading"
+                    type="select"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <h1
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 1 (h1)"
+                            value="h1"/>
+                        <h2
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 2 (h2) - Default"
+                            value="h2"/>
+                        <h3
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 3 (h3)"
+                            value="h3"/>
+                        <h4
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 4 (h4)"
+                            value="h4"/>
+                        <h5
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 5 (h5)"
+                            value="h5"/>
+                        <h6
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 6 (h6)"
+                            value="h6"/>
+                        <p
+                            jcr:primaryType="nt:unstructured"
+                            text="Paragraph (p)"
+                            value="p"/>
+                    </options>
+                </mainSectionHeading>
+                <mainSectionHeadingSize
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="heading-1"
+                    fieldLabel="What size font should this title be?"
+                    name="./mainSectionHeadingSize"
+                    type="select"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <xLargeHeading
+                            jcr:primaryType="nt:unstructured"
+                            text="X-Large (48px, semibold)"
+                            value="heading-1"/>
+                        <largeHeading
+                            jcr:primaryType="nt:unstructured"
+                            text="Large (36px, semibold)"
+                            value="heading-2"/>
+                    </options>
+                </mainSectionHeadingSize>
+                <sectionLeadCopy
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Section lead copy"
+                    name="./sectionLeadCopy"
+                    xtype="textfield"/>
+                <backgroundLogoImage
+                    jcr:primaryType="cq:Widget"
+                    defaultValue=""
+                    fieldLabel="Background logo use / position"
+                    name="./bgLogoPosition"
+                    type="select"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <noBackgroundLogo
+                            jcr:primaryType="nt:unstructured"
+                            text="No logo"
+                            value=""/>
+                        <bgPositionLeft
+                            jcr:primaryType="nt:unstructured"
+                            text="Show logo on left"
+                            value="bg-pos-left"/>
+                        <bgPositionRight
+                            jcr:primaryType="nt:unstructured"
+                            text="Show logo on right"
+                            value="bg-pos-right"/>
+                    </options>
+                </backgroundLogoImage>
+                <bgColor
+                    jcr:primaryType="cq:Widget"
+                    colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,EFEFEF,FFFFFF,6B90C5]"
+                    fieldDescription="Hex color can be provided in above background color field"
+                    fieldLabel="Background color"
+                    name="./bgColor"
+                    showHexValue="true"
+                    xtype="colorfield"/>
+                <opacity
+                    jcr:primaryType="cq:Widget"
+                    anchor="65%"
+                    fieldLabel="Opacity"
+                    name="./opacity"
+                    type="select"
+                    value=""
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <_x0031_00
+                            jcr:primaryType="nt:unstructured"
+                            text="100%"
+                            value="100"/>
+                        <_x0039_0
+                            jcr:primaryType="nt:unstructured"
+                            text="90%"
+                            value="90"/>
+                        <_x0038_5
+                            jcr:primaryType="nt:unstructured"
+                            text="85%"
+                            value="85"/>
+                        <_x0038_0
+                            jcr:primaryType="nt:unstructured"
+                            text="80%"
+                            value="80"/>
+                        <_x0037_0
+                            jcr:primaryType="nt:unstructured"
+                            text="70%"
+                            value="70"/>
+                        <_x0036_0
+                            jcr:primaryType="nt:unstructured"
+                            text="60%"
+                            value="60"/>
+                        <_x0035_0
+                            jcr:primaryType="nt:unstructured"
+                            text="50%"
+                            value="50"/>
+                        <_x0034_0
+                            jcr:primaryType="nt:unstructured"
+                            text="40%"
+                            value="40"/>
+                        <_x0033_0
+                            jcr:primaryType="nt:unstructured"
+                            text="30%"
+                            value="30"/>
+                        <_x0032_0
+                            jcr:primaryType="nt:unstructured"
+                            text="20%"
+                            value="20"/>
+                        <_x0031_0
+                            jcr:primaryType="nt:unstructured"
+                            text="10%"
+                            value="10"/>
+                        <_x0030_
+                            jcr:primaryType="nt:unstructured"
+                            text="0%"
+                            value="0"/>
+                        <_x0039_5
+                            jcr:primaryType="nt:unstructured"
+                            text="95%"
+                            value="95"/>
+                        <_x0037_5
+                            jcr:primaryType="nt:unstructured"
+                            text="75%"
+                            value="75"/>
+                        <_x0036_5
+                            jcr:primaryType="nt:unstructured"
+                            text="65%"
+                            value="65"/>
+                        <_x0035_5
+                            jcr:primaryType="nt:unstructured"
+                            text="55%"
+                            value="55"/>
+                        <_x0034_5
+                            jcr:primaryType="nt:unstructured"
+                            text="45%"
+                            value="45"/>
+                        <_x0033_5
+                            jcr:primaryType="nt:unstructured"
+                            text="35%"
+                            value="35"/>
+                        <_x0032_5
+                            jcr:primaryType="nt:unstructured"
+                            text="25%"
+                            value="25"/>
+                        <_x0031_5
+                            jcr:primaryType="nt:unstructured"
+                            text="15%"
+                            value="15"/>
+                        <_x0035_
+                            jcr:primaryType="nt:unstructured"
+                            text="5%"
+                            value="5"/>
+                    </options>
+                </opacity>
+                <sectionTitleMinimumHeight
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Section Minimum Height"
+                    name="./sectionTitleMinHeight"
+                    xtype="textfield"/>
+                <borderColor
+                    jcr:primaryType="cq:Widget"
+                    colors="[FFFFFF,000000,A3DBE8,B7CD00,D5D6D2,D3DEE4,D1DFD6,D7D3C7,6B90C5]"
+                    fieldDescription="Hex color can be provided in above border color field"
+                    fieldLabel="Border color"
+                    name="./borderColor"
+                    showHexValue="true"
+                    xtype="colorfield"/>
+                <hideBorder
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Hide the border on this section?"
+                    inputValue="false"
+                    name="./hideBorder"
+                    type="checkbox"
+                    xtype="selection"/>
+                <scrollAnchor
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="false"
+                    fieldDescription="Please only check this box on ONE section PER PAGE."
+                    fieldLabel="Do you want the scroll indicator to scroll to this section?"
+                    name="./scrollAnchor"
+                    type="checkbox"
+                    xtype="selection"/>
+                <noPadding
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Please check this box if you want to change padding to 1 rem"
+                    fieldLabel="No Padding?"
+                    inputValue="false"
+                    name="./noPadding"
+                    type="checkbox"
+                    xtype="selection"/>
+            </items>
+        </generalSettings>
+        <imagecollection
+            jcr:primaryType="cq:Widget"
+            title="Image Rendition"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <bigDesktopImage
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Drag image here from content finder"
+                    fieldLabel="Background Image LG"
+                    name="./imageReference"
+                    rootPath="/content/dam"
+                    title="Image"
+                    xtype="ddpathfield"/>
+                <isBigDesktopImage
+                    jcr:primaryType="nt:unstructured"
+                    fieldLabel="Don't display Background Image LG"
+                    name="./isBigDesktopImage"
+                    type="checkbox"
+                    xtype="selection"/>
+                <desktopImage
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Drag image here from content finder"
+                    fieldLabel="Background Image MD"
+                    name="./imageReferenceMD"
+                    rootPath="/content/dam"
+                    title="Image"
+                    xtype="ddpathfield"/>
+                <isDesktopImage
+                    jcr:primaryType="nt:unstructured"
+                    fieldLabel="Don't display Background Image MD"
+                    name="./isDesktopImage"
+                    type="checkbox"
+                    xtype="selection"/>
+                <tabletImage
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Drag image here from content finder"
+                    fieldLabel="Background Image SM"
+                    name="./imageReferenceSM"
+                    rootPath="/content/dam"
+                    title="Image"
+                    xtype="ddpathfield"/>
+                <isTabletImage
+                    jcr:primaryType="nt:unstructured"
+                    fieldLabel="Don't display Background Image SM"
+                    name="./isTabletImage"
+                    type="checkbox"
+                    xtype="selection"/>
+                <mobileImage
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Drag image here from content finder"
+                    fieldLabel="Background Image XS"
+                    name="./imageReferenceXS"
+                    rootPath="/content/dam"
+                    title="Image"
+                    xtype="ddpathfield"/>
+                <isMobileImage
+                    jcr:primaryType="nt:unstructured"
+                    fieldLabel="Don't display Background Image XS"
+                    name="./isMobileImage"
+                    type="checkbox"
+                    xtype="selection"/>
+            </items>
+        </imagecollection>
+        <widthSettings
+            jcr:primaryType="cq:Widget"
+            title="Breakpoint settings"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <xsRowMaxWidth
+                    jcr:primaryType="cq:Widget"
+                    defaultValue=""
+                    fieldDescription="Default is no, so max-width is determined by rest of site."
+                    fieldLabel="Do you want to set a max-width on this section's row for the XS breakpoint?"
+                    name="./xsRowMaxWidth"
+                    type="select"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            text="Default (determined by site)"
+                            value=""/>
+                        <oneThumbnailTiles
+                            jcr:primaryType="nt:unstructured"
+                            text="270px (One thumbnail-tile component)"
+                            value="xsOneThumbnailTile"/>
+                        <twoThumbnailTiles
+                            jcr:primaryType="nt:unstructured"
+                            text="570px (Two thumbnail-tile components)"
+                            value="xsTwoThumbnailTiles"/>
+                        <oneThumbnailTilesBig
+                            jcr:primaryType="nt:unstructured"
+                            text="510px (One thumbnail-tile component)"
+                            value="smOneThumbnailTileBig"/>
+                    </options>
+                </xsRowMaxWidth>
+                <smRowMaxWidth
+                    jcr:primaryType="cq:Widget"
+                    defaultValue=""
+                    fieldDescription="Default is no, so max-width is determined by rest of site."
+                    fieldLabel="Do you want to set a max-width on this section's row for the small breakpoint?"
+                    name="./smRowMaxWidth"
+                    type="select"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            text="Default (determined by site)"
+                            value=""/>
+                        <oneThumbnailTiles
+                            jcr:primaryType="nt:unstructured"
+                            text="270px (One thumbnail-tile component)"
+                            value="smOneThumbnailTile"/>
+                        <twoThumbnailTiles
+                            jcr:primaryType="nt:unstructured"
+                            text="570px (Two thumbnail-tile components)"
+                            value="smTwoThumbnailTiles"/>
+                        <oneThumbnailTilesBig
+                            jcr:primaryType="nt:unstructured"
+                            text="510px (One thumbnail-tile component)"
+                            value="smOneThumbnailTileBig"/>
+                        <twoThumbnailTilesBig
+                            jcr:primaryType="nt:unstructured"
+                            text="1020px (One thumbnail-tile component)"
+                            value="smTwoThumbnailTileBig"/>
+                    </options>
+                </smRowMaxWidth>
+                <mdRowMaxWidth
+                    jcr:primaryType="cq:Widget"
+                    defaultValue=""
+                    fieldDescription="Default is no, so max-width is determined by rest of site."
+                    fieldLabel="Do you want to set a max-width on this section's row for the medium breakpoint?"
+                    name="./mdRowMaxWidth"
+                    type="select"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            text="Default (determined by site)"
+                            value=""/>
+                        <oneThumbnailTiles
+                            jcr:primaryType="nt:unstructured"
+                            text="270px (One thumbnail-tile component)"
+                            value="mdOneThumbnailTile"/>
+                        <twoThumbnailTiles
+                            jcr:primaryType="nt:unstructured"
+                            text="570px (Two thumbnail-tile components)"
+                            value="mdTwoThumbnailTiles"/>
+                        <oneThumbnailTilesBig
+                            jcr:primaryType="nt:unstructured"
+                            text="510px (One thumbnail-tile component)"
+                            value="smOneThumbnailTileBig"/>
+                        <twoThumbnailTilesBig
+                            jcr:primaryType="nt:unstructured"
+                            text="1020px (One thumbnail-tile component)"
+                            value="smTwoThumbnailTileBig"/>
+                    </options>
+                </mdRowMaxWidth>
+                <lgRowMaxWidth
+                    jcr:primaryType="cq:Widget"
+                    defaultValue=""
+                    fieldDescription="Default is no, so max-width is determined by rest of site."
+                    fieldLabel="Do you want to set a max-width on this section's row for the large breakpoint?"
+                    name="./lgRowMaxWidth"
+                    type="select"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            text="Default (determined by site)"
+                            value=""/>
+                        <oneThumbnailTiles
+                            jcr:primaryType="nt:unstructured"
+                            text="270px (One thumbnail-tile component)"
+                            value="lgOneThumbnailTile"/>
+                        <twoThumbnailTiles
+                            jcr:primaryType="nt:unstructured"
+                            text="570px (Two thumbnail-tile components)"
+                            value="lgTwoThumbnailTiles"/>
+                        <oneThumbnailTilesBig
+                            jcr:primaryType="nt:unstructured"
+                            text="510px (One thumbnail-tile component)"
+                            value="smOneThumbnailTileBig"/>
+                        <twoThumbnailTilesBig
+                            jcr:primaryType="nt:unstructured"
+                            text="1020px (One thumbnail-tile component)"
+                            value="smTwoThumbnailTileBig"/>
+                    </options>
+                </lgRowMaxWidth>
+            </items>
+        </widthSettings>
+    </items>
+</jcr:root>

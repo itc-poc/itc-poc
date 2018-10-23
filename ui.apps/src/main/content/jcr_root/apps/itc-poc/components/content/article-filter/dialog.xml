@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Article Filter Configs">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <title
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title"
+                        name="./title"
+                        xtype="textfield"/>
+                    <headingStyle
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="h3"
+                        fieldDescription="Heading defaults to H3."
+                        fieldLabel="Heading Style"
+                        name="./headingStyle"
+                        type="select"
+                        value="h3"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <h1
+                                jcr:primaryType="nt:unstructured"
+                                text="Heading 1 (h1)"
+                                value="h1"/>
+                            <h2
+                                jcr:primaryType="nt:unstructured"
+                                text="Heading 2 (h2)"
+                                value="h2"/>
+                            <h3
+                                jcr:primaryType="nt:unstructured"
+                                text="Heading 3 (h3) - Default"
+                                value="h3"/>
+                            <h4
+                                jcr:primaryType="nt:unstructured"
+                                text="Heading 4 (h4)"
+                                value="h4"/>
+                            <h5
+                                jcr:primaryType="nt:unstructured"
+                                text="Heading 5 (h5)"
+                                value="h5"/>
+                            <h6
+                                jcr:primaryType="nt:unstructured"
+                                text="Heading 6 (h6)"
+                                value="h6"/>
+                        </options>
+                    </headingStyle>
+                    <desc
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Description"
+                        name="./desc"
+                        xtype="richtext"/>
+                    <filters
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Filters"
+                        name="./filters"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="nt:unstructured"
+                            optionsProvider="function() {&#xa;    var keywordsPath = '/etc/search/itc-poc/dimensions/keywords';&#xa;    var keywords = new Array();&#xa;    var url = CQ.HTTP.noCaching(keywordsPath + '.infinity.json');&#xa;    var keywordsList = CQ.HTTP.eval(url);&#xa;&#x9;if( keywordsList ) {&#xa;&#x9;&#x9;var values = keywordsList.values;&#xa;&#x9;&#x9;for(var value in values) {&#xa;&#x9;&#x9;&#x9;if(typeof values[value] != 'function') {&#xa;&#x9;&#x9;&#x9;&#x9;var trimmedVal = values[value].split('=')[0];&#xa;&#x9;&#x9;&#x9;&#x9;if( trimmedVal != '' ) {&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;var child = {};&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;child['text'] = trimmedVal;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;child['value'] = trimmedVal;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;keywords.push(child);&#xa;&#x9;&#x9;&#x9;&#x9;}&#xa;&#x9;&#x9;&#x9;}&#xa;&#x9;&#x9;}&#xa;&#x9;}&#xa;    return keywords;&#xa;}"
+                            type="select"
+                            xtype="selection">
+                            <options jcr:primaryType="cq:WidgetCollection">
+                                <new
+                                    jcr:primaryType="cq:Widget"
+                                    text="news"
+                                    value="news"/>
+                                <sports
+                                    jcr:primaryType="cq:Widget"
+                                    text="sports"
+                                    value="sports"/>
+                                <politics
+                                    jcr:primaryType="cq:Widget"
+                                    text="politics"
+                                    value="politics"/>
+                                <games
+                                    jcr:primaryType="cq:Widget"
+                                    text="games"
+                                    value="games"/>
+                            </options>
+                        </fieldConfig>
+                    </filters>
+                    <searchPath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Path to be Searched"
+                        name="./searchPath"
+                        xtype="browsefield"/>
+                    <filterProperty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Filter Property"
+                        name="./filterProperty"
+                        xtype="textfield"/>
+                    <backgroundColor
+                        jcr:primaryType="cq:Widget"
+                        colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF]"
+                        fieldDescription="Choose a color for the item list"
+                        fieldLabel="Funread Block Background Color"
+                        name="./backgroundColor"
+                        showHexValue="true"
+                        width="200"
+                        xtype="colorfield"/>
+                    <linkTextColor
+                        jcr:primaryType="cq:Widget"
+                        colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF]"
+                        fieldDescription="Choose a color for the item list"
+                        fieldLabel="Text Link Color"
+                        name="./linkTextColor"
+                        showHexValue="true"
+                        width="200"
+                        xtype="colorfield"/>
+                    <noOfArticles
+                        jcr:primaryType="cq:Widget"
+                        allowDecimals="{Boolean}false"
+                        emptyText="Enter No.Of Tiles, Ex. 6"
+                        fieldDescription="Default value : 6"
+                        fieldLabel="No. of Articles"
+                        minText="Please provide more than Zero"
+                        minValue="1"
+                        name="./noOfArticles"
+                        value="6"
+                        xtype="numberfield"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

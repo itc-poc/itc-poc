@@ -1,0 +1,17 @@
+
+<div data-sly-use.accordion="com.adobe.itc.poc.core.models.Accordion" data-sly-unwrap></div>
+<div data-sly-use.accordionsection="com.adobe.itc.poc.core.models.AccordionSection" data-sly-unwrap></div>
+<div class="panel panel-default">
+	<div class="panel-heading" role="tab" id="heading-${accordionsection.sectionId}">
+		<a class="${!(accordionsection.expanded || wcmmode.edit)? 'collapsed' : ''} itc-accordion-header noscroll" role="tab" aria-selected="false" data-toggle="collapse" data-parent="#accordion${accordionsection.id}" data-target="#${accordionsection.sectionId}" aria-expanded="${(accordionsection.expanded || wcmmode.edit) ? 'true' : 'false'}" aria-controls="${accordionsection.sectionId}" href="javascript:void(0)">
+			<h3 data-sly-element="${accordionsection.accordionHeader}" class="panel-title"><span class="accordionHeaderTitleText">${properties.sectionTitle || ''}</span><i class="fa fa-plus-square-o" alt="Click to expand accordion section"></i><i class="fa fa-minus-square-o" alt="Click to collapse accordion section"></i></h3>
+		</a>
+	</div>
+	<!-- <div id="${accordionsection.sectionId}" class="panel-collapse collapse ${(accordionsection.expanded || wcmmode.edit) ? 'in' : ''}" role="tabpanel" aria-hidden="${!(accordionsection.expanded || wcmmode.edit) ? 'true' : 'false'}" aria-labelledby="heading-${accordionsection.sectionId}"> -->
+	<div id="${accordionsection.sectionId}" class="panel-collapse collapse ${(accordionsection.expanded || wcmmode.edit) ? 'in' : ''}">
+		<div class="panel-body" tabindex="0"> 
+			<div data-sly-resource="${@path='./sectionContent',resourceType='foundation/components/parsys'}" data-sly-unwrap></div>
+		</div>
+	</div>
+</div>
+<div data-sly-test="${wcmmode.edit}" class="tab_display_end cq-tabs_display_end-placeholder">End of ITC-POC Accordion section</div>

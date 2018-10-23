@@ -1,0 +1,62 @@
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+  <meta data-sly-call="${clientLib.css @ categories='designs.itc-poc.components.accordion-custom'}" data-sly-unwrap></meta>
+</div>
+
+<div data-sly-use.accordionCustomObject="${'com.adobe.itc.poc.core.models.AccordionCustom'}" data-sly-unwrap></div>
+<div data-sly-list.accordionCustomConfCount="${accordionCustomObject.AccordionCustomConfigList}" data-sly-unwrap>
+    <div data-sly-test.accordionCustomCount="${accordionCustomConfCountList.count}" data-sly-unwrap></div>
+</div>
+
+
+<div data-sly-test.bgColor="${properties.bgColor}" data-sly-unwrap></div>
+<div data-sly-test.fontColor="${properties.fontColor}" data-sly-unwrap></div>
+<div data-sly-test.loadbfontColor="${properties.loadbfontColor}" data-sly-unwrap></div>
+<div data-sly-test.loadbColorbg="${properties.loadbColorbg}" data-sly-unwrap></div>
+<div data-sly-test.hoverloadbfontColor="${properties.hoverloadbfontColor}" data-sly-unwrap></div>
+<div data-sly-test.hoverloadbColorbg="${properties.hoverloadbColorbg}" data-sly-unwrap></div>
+<div data-sly-test.activefontColor="${properties.activefontColor}" data-sly-unwrap></div>
+<div data-sly-test.activeBgColor="${properties.activeBgColor}" data-sly-unwrap></div>
+
+
+<div data-sly-test.noOfItemsToDispaly="${properties.nooflist}" data-sly-unwrap></div>
+<div data-sly-test.isAccordion="${properties.isAccordion ? 'multiAccordion' : ''}"data-sly-unwrap></div>
+<div class="preShowAccordion">
+	<ul id="myList" data-limitLi="${noOfItemsToDispaly}" data-Li-total="${accordionCustomCount}" data-activeBg="${activeBgColor}" data-activeFont="${activefontColor}" data-Bg="${bgColor}" data-font="${fontColor}">
+		<div data-sly-list.accordionCustomConfigCount="${accordionCustomObject.AccordionCustomConfigList}" data-sly-unwrap>
+			<sly data-sly-use.urlGen="${'com.adobe.itc.poc.core.utils.ValidUrlGenerator' @ path=accordionCustomConfigCount.accordionCustomUrl}" />
+			<li class="${isAccordion}" style="background:#${bgColor @ context='styleToken'};"><a href="${urlGen.getCompletePath}" style="color:#${fontColor @ context='styleToken'};" target="_blank"><i class="fa ${accordionCustomConfigCount.accordionCustomIcon}"></i><span>${accordionCustomConfigCount.accordionCustomHeading}</span></a>
+			<div class="levelContainer">
+            	<div data-sly-resource="${@path=accordionCustomConfigCount.accordionCustomid , resourceType='wcm/foundation/components/parsys'}"></div>
+            </div>
+		</div>
+    </li>
+
+   	</ul>
+	<div id="Display" class="hideElement">
+  		<ul></ul>
+	</div>
+<div id="loadMore" class="more" data-hoverBg="${hoverloadbColorbg}" data-hoverFont="${hoverloadbfontColor}" data-btnBg="${loadbColorbg}" data-btnFont="${loadbfontColor}"style="background:#${loadbColorbg @ context='styleToken'};color:#${loadbfontColor @ context='styleToken'};"></div>
+</div>
+
+
+
+
+
+
+
+<!-- 	<div class="col-xs-12">
+        <div class="ppc-faicon" style="background:#${accordionCustomConfigCount.iconBackgroundColor @ context='styleToken'};"><i class="fa ${accordionCustomConfigCount.accordionCustomIcon}" aria-hidden="true" style="color:#${accordionCustomConfigCount.iconColor @ context='styleToken'};"></i></div>
+        <div class="ppc-header" >Heading: ${accordionCustomConfigCount.accordionCustomHeading}</div>
+		<sly data-sly-use.urlGen="${'com.adobe.itc.poc.core.utils.ValidUrlGenerator' @ path=accordionCustomConfigCount.accordionCustomUrl}" />
+		<div class="ppc-header" >URL: ${urlGen.getCompletePath}</div>
+		 <div class="ppc-header" >ID:  ${accordionCustomConfigCount.accordionCustomid}</div>
+		<br>--------------------------------------------------------------------------------------------------------------------<br>
+	</div>
+</div> -->
+
+
+
+
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+  <meta data-sly-call="${clientLib.js @ categories='designs.itc-poc.components.accordion-custom'}" data-sly-unwrap></meta>
+</div>

@@ -1,0 +1,27 @@
+ <div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+        <meta data-sly-call="${clientLib.all @ categories='designs.itc-poc.components.fontawesomeText'}" data-sly-unwrap></meta>
+ </div>
+<div data-sly-test.fontawesomecolor="#${properties.awesomefontColor}" data-sly-unwrap></div>
+<div class="col-md-6 demo-container" style="color: ${fontawesomecolor @ context='styleToken'};">
+	<div class="font-wrapper">
+		<div class="col-md-3">
+			<div class="font-thumbnail">
+				<span><i class="${properties.faIcon}" aria-hidden="true"></i></span>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="img-cation">
+				<div data-sly-test="${!properties.text}">
+    				<div data-sly-test="${wcmmode.edit || wcmmode.design}">Edit to add some text</div>
+				</div>
+				<div data-sly-test="${properties.text}" data-sly-unwrap>
+         			<div tabindex="0" class="tabindexClass"> ${properties.text @context='unsafe'}</div>
+    			</div>
+				<!--<p><b>Loyalty Programs</b></p>
+				<p>Personal loyalty membership influences search results, and our Loyalty Booster by CWT allows for opportunities to earn more.</p> -->
+			</div>
+		</div>
+	</div>
+		
+</div>
+

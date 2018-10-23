@@ -1,0 +1,4 @@
+#base=js
+handlebars-v1.3.0.js
+handlebarsHelpers.js
+template.js

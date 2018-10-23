@@ -1,0 +1,65 @@
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+    <meta data-sly-call="${clientLib.css @ categories='designs.itc.poc.components.content.funReads'}" data-sly-unwrap></meta>
+</div>
+
+<div class="row text-center mainDiv" >
+    <div class="container funDivHeaderTx">
+	 <div class="funreadTitle paddingLeft0 paddingRight0 marginBottom0 ">
+        <div tabindex="0" class="col-xs-12 col-md-6 col-sm-12 col-lg-8 text-left  marginBottom0 textAlign headergrp paddingLeft0 paddingRight0">
+
+                    <div data-sly-test="${properties.headingStyle == 'h1'}" data-sly-unwrap>
+                        <h1 class="heading-1">${properties.title  @ context='html'}</h1>
+                    </div>
+                    <div data-sly-test="${properties.headingStyle == 'h2'}" data-sly-unwrap>
+                        <h2 class="heading-2">${properties.title  @ context='html'}</h2>
+                    </div>
+                    <div  data-sly-test="${properties.headingStyle == 'h3'  || properties.headingStyle == null || properties.headingStyle == ''}" data-sly-unwrap>
+                         <h3 class="heading-3">${properties.title  @ context='html'}</h3>
+                    </div>
+                    <div data-sly-test="${properties.headingStyle == 'h4'}" data-sly-unwrap>
+                         <h4 class="heading-4">${properties.title  @ context='html'}</h4>
+                    </div>
+                    <div data-sly-test="${properties.headingStyle == 'h5'}" data-sly-unwrap>
+                         <h5 class="heading-5">${properties.title  @ context='html'}</h5>
+                    </div>
+                    <div data-sly-test="${properties.headingStyle == 'h6'}" data-sly-unwrap>
+                         <h6 class="heading-6">${properties.title  @ context='html'}</h6>
+                    </div>
+
+            <div class="col-lg-10 font14 paddingLeft0 paddingRight0 marginBottom0 funreadDesc">${properties.desc ||'' @ context='html'} </div>
+        </div>
+        <div class="col-xs-12 col-md-4 col-sm-12 col-lg-4 text-left pull-right filter_options marginBottom0 headergrp paddingLeft0 paddingRight0">
+            <div class="btn-group">
+                 <select aria-label="Filter" data-sly-list="${properties.filters}" class="form-control funReadDropdown">
+                 <option class="funReadFilterRecent">Most Recent</option>
+					 <option value="${item}">${item}</option>
+				</select>
+            </div>
+        </div>
+
+	</div>
+
+
+    </div>
+    <div id="fun-reads" class="container alignDiv cardsAlign">
+
+    </div>
+</div>
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+    <meta data-sly-call="${clientLib.js @ categories='itc-poc.handlebars'}" data-sly-unwrap></meta>
+</div> 
+
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+    <meta data-sly-call="${clientLib.js @ categories='designs.itc.poc.components.content.funReads'}" data-sly-unwrap></meta>
+</div>
+
+<script>
+	var articleFilter = {};
+	articleFilter.searchPath = "${properties.searchPath @ context='uri' || '/content/itc-poc/blog'}";
+    articleFilter.filterProperty = "${properties.filterProperty @ context='text' || 'category'}";
+ 	articleFilter.backgroundColor="#${properties.backgroundColor @ context='styleToken' || ''}";
+    articleFilter.linkTextcolor="#${properties.linkTextColor @ context='styleToken' || ''}";
+    articleFilter.noOfArticles="${properties.noOfArticles @ context='text' || '6'}";
+	$(".funReadFilterRecent:not(:first)").remove();
+
+</script>

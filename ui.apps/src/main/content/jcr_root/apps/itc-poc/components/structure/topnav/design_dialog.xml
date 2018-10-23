@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    helpPath="en/cq/current/wcm/default_components.html#Image"
+    title="Top Navigation Settings"
+    xtype="tabpanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <icon
+            jcr:primaryType="cq:Widget"
+            title="Logo"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <logoicon
+                    jcr:primaryType="nt:unstructured"
+                    fieldDescription="Logo Image"
+                    fieldLabel="Select Logo Image"
+                    name="./iconpath"
+                    rootPath="/content/dam"
+                    xtype="pathfield"/>
+                <logoURL
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="logo click will redirect to given path"
+                    fieldLabel="Logo URL"
+                    name="./iconpathlink"
+                    xtype="browsefield"/>
+            </items>
+        </icon>
+        <generalSettings
+            jcr:primaryType="cq:Widget"
+            title="General"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <staticMenuFromDialog
+                    jcr:primaryType="nt:unstructured"
+                    fieldDescription="Checked Means Menu Bar will be display from  Design dialog"
+                    fieldLabel="Static menu from design dialog"
+                    name="./staticMenu"
+                    type="checkbox"
+                    xtype="selection"/>
+                <absParent
+                    jcr:primaryType="nt:unstructured"
+                    fieldDescription="(eg: 1 for /content/site)"
+                    fieldLabel="Parent Level (absolute)"
+                    name="./absParent"
+                    xtype="textfield"/>
+                <hideinnav
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Hide site title"
+                    inputValue="true"
+                    name="./hideSiteTitle"
+                    type="checkbox"
+                    xtype="selection"/>
+                <topNavBgColor
+                    jcr:primaryType="cq:Widget"
+                    colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF]"
+                    fieldDescription="Choose a color for the item list"
+                    fieldLabel="Top Nav Background Color"
+                    name="./topNavBackgroundColor"
+                    showHexValue="true"
+                    xtype="colorfield"/>
+                <fontColor
+                    jcr:primaryType="cq:Widget"
+                    colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF]"
+                    fieldDescription="Choose a color for the item list"
+                    fieldLabel="Title Font Color"
+                    name="./topNavFontColor"
+                    showHexValue="true"
+                    xtype="colorfield"/>
+                <hoverFontColor
+                    jcr:primaryType="cq:Widget"
+                    colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF]"
+                    fieldDescription="Choose a color for the item list"
+                    fieldLabel="Title Hover Font Color"
+                    name="./topNavHoverFontColor"
+                    showHexValue="true"
+                    xtype="colorfield"/>
+                <topNavHoverColor
+                    jcr:primaryType="cq:Widget"
+                    colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF]"
+                    fieldDescription="Choose a color for the item list"
+                    fieldLabel="Top Nav Hover Color"
+                    name="./topNavHoverColor"
+                    showHexValue="true"
+                    xtype="colorfield"/>
+                <headingStyle
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="h2"
+                    fieldDescription="Heading defaults to H2."
+                    fieldLabel="Main Nav Heading Style"
+                    name="./topMainHeadingStyle"
+                    type="select"
+                    value="h2"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <h1
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 1 (h1)"
+                            value="h1"/>
+                        <h2
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 2 (h2) - Default"
+                            value="h2"/>
+                        <h3
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 3 (h3)"
+                            value="h3"/>
+                        <h4
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 4 (h4)"
+                            value="h4"/>
+                        <h5
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 5 (h5)"
+                            value="h5"/>
+                        <h6
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 6 (h6)"
+                            value="h6"/>
+                        <p
+                            jcr:primaryType="nt:unstructured"
+                            text="Paragraph (p)"
+                            value="p"/>
+                    </options>
+                </headingStyle>
+                <subMenuheadingStyle
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="h3"
+                    fieldDescription="Heading defaults to H3."
+                    fieldLabel="Sub Nav Heading Style"
+                    name="./topSubHeadingStyle"
+                    type="select"
+                    value="h3"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <h1
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 1 (h1)"
+                            value="h1"/>
+                        <h2
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 2 (h2)"
+                            value="h2"/>
+                        <h3
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 3 (h3) - Default"
+                            value="h3"/>
+                        <h4
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 4 (h4)"
+                            value="h4"/>
+                        <h5
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 5 (h5)"
+                            value="h5"/>
+                        <h6
+                            jcr:primaryType="nt:unstructured"
+                            text="Heading 6 (h6)"
+                            value="h6"/>
+                    </options>
+                </subMenuheadingStyle>
+            </items>
+        </generalSettings>
+        <generalSettingsConfig
+            jcr:primaryType="cq:Widget"
+            title="Main Nav Configurations"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <mainNavconfigurations
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Main Navigation Configurations"
+                    name="./mainNavConfig"
+                    xtype="multifield">
+                    <fieldConfig
+                        jcr:primaryType="cq:Widget"
+                        xtype="itcmultifieldpanel">
+                        <items jcr:primaryType="cq:WidgetCollection">
+                            <mainMenu
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                anchor="100%"
+                                fieldLabel="Main Menu"
+                                key="mainMenu"
+                                xtype="textfield"/>
+                            <mainNavHasDropdown
+                                jcr:primaryType="nt:unstructured"
+                                fieldDescription="Checked means main menu bar will have sub menu."
+                                fieldLabel="Does this nav item have a dropdown?"
+                                key="itemHasDropdown"
+                                type="checkbox"
+                                xtype="selection"/>
+                            <subMenuList
+                                jcr:primaryType="cq:Widget"
+                                anchor="100%"
+                                fieldDescription="Optional"
+                                fieldLabel="Sub Menu List:"
+                                key="subMenuList"
+                                xtype="richtext">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <links jcr:primaryType="nt:unstructured">
+                                        <linkDialogConfig
+                                            jcr:primaryType="nt:unstructured"
+                                            height="{Long}316">
+                                            <linkAttributes jcr:primaryType="cq:WidgetCollection">
+                                                <linkAdvanced
+                                                    jcr:primaryType="cq:Widget"
+                                                    collapsed="{Boolean}true"
+                                                    collapsible="{Boolean}true"
+                                                    inputValue="advanced"
+                                                    name="./linkdialog/cq:adhocLinkTrackingTab"
+                                                    title="Link tracking"
+                                                    xtype="dialogfieldset">
+                                                    <items jcr:primaryType="cq:WidgetCollection">
+                                                        <enable
+                                                            jcr:primaryType="nt:unstructured"
+                                                            attribute="enabletracking"
+                                                            fieldDescription="override analytics framework settings"
+                                                            fieldLabel="Custom link tracking"
+                                                            name="./linkdialog/cq:adhocLinkTrackingEnableTracking"
+                                                            xtype="checkbox">
+                                                            <listeners
+                                                                jcr:primaryType="nt:unstructured"
+                                                                check="function(component){var dlg=component.findParentByType('rtelinkdialog');dlg.enableSCFields(component.checked);}"/>
+                                                        </enable>
+                                                        <events
+                                                            jcr:primaryType="nt:unstructured"
+                                                            attribute="adhocevents"
+                                                            fieldDescription="e.g.: event2, event7"
+                                                            fieldLabel="Include SiteCatalyst events"
+                                                            name="./linkdialog/cq:adhocLinkTrackingEvents"
+                                                            xtype="textfield"/>
+                                                        <evars
+                                                            jcr:primaryType="nt:unstructured"
+                                                            attribute="adhocevars"
+                                                            fieldDescription="e.g.: eVar1: pagedata.url, prop4: 'const'"
+                                                            fieldLabel="Include SiteCatalyst variables"
+                                                            name="./linkdialog/cq:adhocLinkTrackingEvars"
+                                                            xtype="textfield"/>
+                                                    </items>
+                                                </linkAdvanced>
+                                            </linkAttributes>
+                                        </linkDialogConfig>
+                                    </links>
+                                    <findreplace
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <subsuperscript
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <edit
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <misctools
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <paraformat
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*">
+                                        <formats jcr:primaryType="cq:WidgetCollection">
+                                            <paragraph
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Paragraph"
+                                                tag="p"/>
+                                            <heading1
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 1"
+                                                tag="h1"/>
+                                            <heading2
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 2"
+                                                tag="h2"/>
+                                            <heading3
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 3"
+                                                tag="h3"/>
+                                            <heading4
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Heading 4"
+                                                tag="h4"/>
+                                            <strong
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Strong"
+                                                tag="strong"/>
+                                            <em
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Em"
+                                                tag="em"/>
+                                        </formats>
+                                    </paraformat>
+                                    <spellcheck
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <table
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <styles
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*">
+                                        <styles jcr:primaryType="cq:WidgetCollection">
+                                            <leadText
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="lead-text"
+                                                text="Lead text"/>
+                                            <smallText
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="small-text"
+                                                text="Small text"/>
+                                            <bigText
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="big-text"
+                                                text="Big text"/>
+                                            <programText
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="program-text"
+                                                text="Program para text"/>
+                                            <programLegalText
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="program-legal-text"
+                                                text="Program legal copy text"/>
+                                            <noBulletList
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="no-bullets"
+                                                text="Non-bulleted list"/>
+                                            <faRightIcon
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="fa fa-angle-right"
+                                                text="FA Right Arrow(Green)"/>
+                                            <noMargin
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="margin-top-10px"
+                                                text="10px top Margin"/>
+                                            <leftBorderedQuotes
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="left-bordered-quotes"
+                                                text="Left bordered quotes"/>
+                                        </styles>
+                                    </styles>
+                                </rtePlugins>
+                            </subMenuList>
+                            <mainMenuURL
+                                jcr:primaryType="cq:Widget"
+                                anchor="100%"
+                                fieldDescription="Optional field."
+                                fieldLabel="Enter Main Menu URL"
+                                key="mainMenuURL"
+                                xtype="browsefield"/>
+                        </items>
+                    </fieldConfig>
+                    <listeners
+                        jcr:primaryType="nt:unstructured"
+                        beforeadd="function(list, component, index) {&#xa;      var length = list.items.length;&#xa;      var addButton = list.items.items[length - 1];&#xa;      if (length == 7) {&#xa;        addButton.hide();&#xa;      }&#xa;    }"
+                        removeditem="&#x9;&#xa;&#x9;function(list) {&#xa;      var length = list.items.length;&#xa;        if (length &lt;= 7) {&#xa;          list.items.items[length - 1].show();&#xa;        }&#xa;    }"/>
+                </mainNavconfigurations>
+            </items>
+        </generalSettingsConfig>
+    </items>
+</jcr:root>

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Footer - Global Options"
+    xtype="dialog">
+    <listeners
+        jcr:primaryType="nt:unstructured"
+        loadContent="function(dialog) {       &#xa;        var designObj = CQ.WCM.getDesign(CQ.WCM.getPagePath());&#xa;        //alert(&quot;Hello&quot;+CQ.WCM.getPagePath());&#xa;        //alert(&quot;Hello1&quot;+designObj.getPath());&#xa;        var url = &quot;/etc/designs/default/jcr:content/siteconfig&quot; + CQ.Sling.SELECTOR_INFINITY + CQ.HTTP.EXTENSION_JSON;&#xa;        url = CQ.HTTP.noCaching(url);&#xa;        try{&#xa;            var res = CQ.HTTP.eval(CQ.HTTP.get(url));&#xa;            if(res){&#xa;                //Validate and Set module props&#xa;&#x9;&#x9;&#x9;&#x9;&#xa;                //General settings&#xa;&#xa;                if (res.logoURL){&#xa;                    if((res.logoURL) &amp;&amp; (dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/logoURL') != null)) {&#xa;                            dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/logoURL').setValue(res.logoURL);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;if (res.logoImage){&#xa;                    if((res.logoImage) &amp;&amp; (dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/logoImage') != null)) {&#xa;                            dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/logoImage').setValue(res.logoImage);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;if (res.logoAltText){&#xa;                    if((res.logoAltText) &amp;&amp; (dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/logoAltText') != null)) {&#xa;                            dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/logoAltText').setValue(res.logoAltText);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;if (res.footerFontcolor){&#xa;                    if((res.footerFontcolor) &amp;&amp; (dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/footerFontcolor') != null)) {&#xa;                            dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/footerFontcolor').setValue(res.footerFontcolor);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;if (res.footerBgColor){&#xa;                    if((res.footerBgColor) &amp;&amp; (dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/footerBgColor') != null)) {&#xa;                            dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/footerBgColor').setValue(res.footerBgColor);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;if (res.footerNavText){&#xa;                    if((res.footerNavText) &amp;&amp; (dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/footerNavText') != null)) {&#xa;                            dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/footerNavText').setValue(res.footerNavText);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;if (res.footerFontsize){&#xa;                    if((res.footerFontsize) &amp;&amp; (dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/footerFontsize') != null)) {&#xa;                            dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/footerFontsize').setValue(res.footerFontsize);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;if (res.linkText){&#xa;                    if((res.linkText) &amp;&amp; (dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/linkText') != null)) {&#xa;                            dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/linkText').setValue(res.linkText);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;if (res.policyLinkText){&#xa;                    if((res.policyLinkText) &amp;&amp; (dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/policyLinkText') != null)) {&#xa;                            dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/policyLinkText').setValue(res.policyLinkText);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;if (res.policyLinkURL){&#xa;                    if((res.policyLinkURL) &amp;&amp; (dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/policyLinkURL') != null)) {&#xa;                            dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/policyLinkURL').setValue(res.policyLinkURL);&#xa;                    }&#xa;                }&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;if (res.tncLinkText){&#xa;                    if((res.tncLinkText) &amp;&amp; (dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/tncLinkText') != null)) {&#xa;                            dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/tncLinkText').setValue(res.tncLinkText);&#xa;                    }&#xa;                }&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;if (res.tncLinkURL){&#xa;                    if((res.tncLinkURL) &amp;&amp; (dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/tncLinkURL') != null)) {&#xa;                            dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/tncLinkURL').setValue(res.tncLinkURL);&#xa;                    }&#xa;                }&#x9;&#x9;&#x9;&#x9;&#xa;&#x9;&#x9;&#x9;&#x9;if (res.copyRightText){&#xa;                    if((res.copyRightText) &amp;&amp; (dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/copyRightText') != null)) {&#xa;                            dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/copyRightText').setValue(res.copyRightText);&#xa;                    }&#xa;                }&#xa;&#x9;&#x9;&#x9;&#x9;if (res.classDefinationsGlobal){&#xa;                    if((res.classDefinationsGlobal) &amp;&amp; (dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/classDefinationsGlobal') != null)) {&#xa;                            dialog.form.findField('/etc/designs/default/jcr:content/siteconfig/classDefinationsGlobal').setValue(res.classDefinationsGlobal);&#xa;                    }&#xa;                }&#x9;&#x9;&#x9;&#x9;&#xa;            }&#xa;        }&#xa;        catch (e) {&#xa;        &#x9;CQ.Ext.MessageBox.alert(&quot;Error&quot;, e.message);&#xa;        }}"/>
+    <items
+        jcr:primaryType="cq:TabPanel"
+        xtype="tabpanel">
+        <items
+            jcr:primaryType="cq:WidgetCollection"
+            xtype="tabpanel">
+            <tab1
+                jcr:primaryType="cq:Widget"
+                title="General settings"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <itemicon
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Logo Image"
+                        name="/etc/designs/default/jcr:content/siteconfig/logoImage"
+                        rootPath="/content/dam"
+                        xtype="pathfield"/>
+                    <logoURL
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Footer logo click will redirect to given path"
+                        fieldLabel="Logo URL"
+                        name="/etc/designs/default/jcr:content/siteconfig/logoURL"
+                        xtype="browsefield"/>
+                    <logoAltText
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Logo Alt Text"
+                        name="/etc/designs/default/jcr:content/siteconfig/logoAltText"
+                        xtype="textfield"/>
+                    <fontColor
+                        jcr:primaryType="cq:Widget"
+                        colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF,000000]"
+                        fieldDescription="Choose a color for the item list"
+                        fieldLabel="Font Color"
+                        name="/etc/designs/default/jcr:content/siteconfig/footerFontcolor"
+                        xtype="colorfield"/>
+                    <bgColor
+                        jcr:primaryType="cq:Widget"
+                        colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF,000000]"
+                        fieldDescription="Choose a color for the item list"
+                        fieldLabel="Footer Background Color"
+                        name="/etc/designs/default/jcr:content/siteconfig/footerBgColor"
+                        xtype="colorfield"/>
+                    <footerNavText
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Footer Navigation Text"
+                        name="/etc/designs/default/jcr:content/siteconfig/footerNavText"
+                        xtype="textfield"/>
+                    <fontSize
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="values in px"
+                        fieldLabel="Font Size"
+                        name="/etc/designs/default/jcr:content/siteconfig/footerFontsize"
+                        type="select"
+                        value="14"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <_x008_
+                                jcr:primaryType="nt:unstructured"
+                                text="8"
+                                value="font-size-8"/>
+                            <_x009_
+                                jcr:primaryType="nt:unstructured"
+                                text="9"
+                                value="font-size-9"/>
+                            <_x010_
+                                jcr:primaryType="nt:unstructured"
+                                text="10"
+                                value="font-size-10"/>
+                            <_x011_
+                                jcr:primaryType="nt:unstructured"
+                                text="11"
+                                value="font-size-11"/>
+                            <_x012_
+                                jcr:primaryType="nt:unstructured"
+                                text="12"
+                                value="font-size-12"/>
+                            <_x013_
+                                jcr:primaryType="nt:unstructured"
+                                text="13"
+                                value="font-size-13"/>
+                            <_x014_
+                                jcr:primaryType="nt:unstructured"
+                                text="14"
+                                value="font-size-14"/>
+                            <_x015_
+                                jcr:primaryType="nt:unstructured"
+                                text="15"
+                                value="font-size-15"/>
+                            <_x016_
+                                jcr:primaryType="nt:unstructured"
+                                text="16"
+                                value="font-size-16"/>
+                            <_x017_
+                                jcr:primaryType="nt:unstructured"
+                                text="17"
+                                value="font-size-17"/>
+                            <_x018_
+                                jcr:primaryType="nt:unstructured"
+                                text="18"
+                                value="font-size-18"/>
+                            <_x019_
+                                jcr:primaryType="nt:unstructured"
+                                text="19"
+                                value="font-size-19"/>
+                            <_x020_
+                                jcr:primaryType="nt:unstructured"
+                                text="20"
+                                value="font-size-20"/>
+                            <_x021_
+                                jcr:primaryType="nt:unstructured"
+                                text="21"
+                                value="font-size-21"/>
+                            <_x022_
+                                jcr:primaryType="nt:unstructured"
+                                text="22"
+                                value="font-size-22"/>
+                            <_x023_
+                                jcr:primaryType="nt:unstructured"
+                                text="23"
+                                value="font-size-23"/>
+                            <_x024_
+                                jcr:primaryType="nt:unstructured"
+                                text="24"
+                                value="font-size-24"/>
+                            <_x025_
+                                jcr:primaryType="nt:unstructured"
+                                text="25"
+                                value="font-size-25"/>
+                            <_x026_
+                                jcr:primaryType="nt:unstructured"
+                                text="26"
+                                value="font-size-26"/>
+                            <_x027_
+                                jcr:primaryType="nt:unstructured"
+                                text="27"
+                                value="font-size-27"/>
+                            <_x028_
+                                jcr:primaryType="nt:unstructured"
+                                text="28"
+                                value="font-size-28"/>
+                            <_x029_
+                                jcr:primaryType="nt:unstructured"
+                                text="29"
+                                value="font-size-29"/>
+                            <_x030_
+                                jcr:primaryType="nt:unstructured"
+                                text="30"
+                                value="font-size-30"/>
+                            <_x031_
+                                jcr:primaryType="nt:unstructured"
+                                text="31"
+                                value="font-size-31"/>
+                            <_x032_
+                                jcr:primaryType="nt:unstructured"
+                                text="32"
+                                value="font-size-32"/>
+                            <_x033_
+                                jcr:primaryType="nt:unstructured"
+                                text="33"
+                                value="font-size-33"/>
+                            <_x034_
+                                jcr:primaryType="nt:unstructured"
+                                text="34"
+                                value="font-size-34"/>
+                            <_x035_
+                                jcr:primaryType="nt:unstructured"
+                                text="35"
+                                value="font-size-35"/>
+                            <_x036_
+                                jcr:primaryType="nt:unstructured"
+                                text="36"
+                                value="font-size-36"/>
+                        </options>
+                    </fontSize>
+                </items>
+            </tab1>
+            <tab2
+                jcr:primaryType="cq:Widget"
+                title="TnC &amp; CopyRights setting"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <policyLinkText
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Policy Link Text"
+                        name="/etc/designs/default/jcr:content/siteconfig/policyLinkText"
+                        xtype="textfield"/>
+                    <policyLinkURL
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Policy Link "
+                        name="/etc/designs/default/jcr:content/siteconfig/policyLinkURL"
+                        xtype="pathfield"/>
+                    <tncLinkText
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Terms and Conditions Text"
+                        name="/etc/designs/default/jcr:content/siteconfig/tncLinkText"
+                        xtype="textfield"/>
+                    <tncLinkURL
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Terms and Conditions Link"
+                        name="/etc/designs/default/jcr:content/siteconfig/tncLinkURL"
+                        xtype="pathfield"/>
+                    <copyRightText
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Copyright Text"
+                        name="/etc/designs/default/jcr:content/siteconfig/copyRightText"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <links jcr:primaryType="nt:unstructured">
+                                <linkDialogConfig
+                                    jcr:primaryType="nt:unstructured"
+                                    height="{Long}316">
+                                    <linkAttributes jcr:primaryType="cq:WidgetCollection">
+                                        <linkAdvanced
+                                            jcr:primaryType="cq:Widget"
+                                            collapsed="{Boolean}true"
+                                            collapsible="{Boolean}true"
+                                            inputValue="advanced"
+                                            name="./linkdialog/cq:adhocLinkTrackingTab"
+                                            title="Link tracking"
+                                            xtype="dialogfieldset">
+                                            <items jcr:primaryType="cq:WidgetCollection">
+                                                <enable
+                                                    jcr:primaryType="nt:unstructured"
+                                                    attribute="enabletracking"
+                                                    fieldDescription="override analytics framework settings"
+                                                    fieldLabel="Custom link tracking"
+                                                    name="./linkdialog/cq:adhocLinkTrackingEnableTracking"
+                                                    xtype="checkbox">
+                                                    <listeners
+                                                        jcr:primaryType="nt:unstructured"
+                                                        check="function(component){var dlg=component.findParentByType('rtelinkdialog');dlg.enableSCFields(component.checked);}"/>
+                                                </enable>
+                                                <events
+                                                    jcr:primaryType="nt:unstructured"
+                                                    attribute="adhocevents"
+                                                    fieldDescription="e.g.: event2, event7"
+                                                    fieldLabel="Include SiteCatalyst events"
+                                                    name="./linkdialog/cq:adhocLinkTrackingEvents"
+                                                    xtype="textfield"/>
+                                                <evars
+                                                    jcr:primaryType="nt:unstructured"
+                                                    attribute="adhocevars"
+                                                    fieldDescription="e.g.: eVar1: pagedata.url, prop4: 'const'"
+                                                    fieldLabel="Include SiteCatalyst variables"
+                                                    name="./linkdialog/cq:adhocLinkTrackingEvars"
+                                                    xtype="textfield"/>
+                                            </items>
+                                        </linkAdvanced>
+                                    </linkAttributes>
+                                </linkDialogConfig>
+                            </links>
+                            <findreplace
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <format
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <justify
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <edit
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*">
+                                <formats jcr:primaryType="cq:WidgetCollection">
+                                    <paragraph
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Paragraph"
+                                        tag="p"/>
+                                    <heading1
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 1"
+                                        tag="h1"/>
+                                    <heading2
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 2"
+                                        tag="h2"/>
+                                    <heading3
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 3"
+                                        tag="h3"/>
+                                    <heading4
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 4"
+                                        tag="h4"/>
+                                    <strong
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Strong"
+                                        tag="strong"/>
+                                    <em
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Em"
+                                        tag="em"/>
+                                </formats>
+                            </paraformat>
+                            <spellcheck
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <table
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                features="*">
+                                <styles jcr:primaryType="cq:WidgetCollection">
+                                    <leadText
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="lead-text"
+                                        text="Lead text"/>
+                                    <smallText
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="small-text"
+                                        text="Small text"/>
+                                    <bigText
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="big-text"
+                                        text="Big text"/>
+                                    <programText
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="program-text"
+                                        text="Program para text"/>
+                                    <programLegalText
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="program-legal-text"
+                                        text="Program legal copy text"/>
+                                    <noBulletList
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="no-bullets"
+                                        text="Non-bulleted list"/>
+                                    <faRightIcon
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="fa fa-angle-right"
+                                        text="FA Right Arrow(Green)"/>
+                                    <noMargin
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="margin-top-10px"
+                                        text="10px top Margin"/>
+                                    <leftBorderedQuotes
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="left-bordered-quotes"
+                                        text="Left bordered quotes"/>
+                                </styles>
+                            </styles>
+                        </rtePlugins>
+                    </copyRightText>
+                </items>
+            </tab2>
+        </items>
+    </items>
+</jcr:root>

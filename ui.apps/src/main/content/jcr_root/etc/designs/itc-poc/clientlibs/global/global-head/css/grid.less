@@ -1,0 +1,271 @@
+@import (reference) "/etc/designs/itc-poc/clientlibs/global/global-head/css/site-variables.less";
+@import (reference) "/etc/designs/itc-poc/clientlibs/global/global-head/css/colors.less";
+
+.section > .section-styles {
+ // border: 10px solid @color-brand-mintgreen;
+  /*padding: 5rem 1rem;*/
+  padding:2.5rem;
+}
+/*Parallax effect*/
+.sectionParallax.section-styles{
+    background-attachment:fixed;
+    background-position:50%;
+}
+/*Parallax effect end*/
+  .section > .section-styles.no-border {
+    border-color: transparent !important;
+  }
+  .section > .section-styles.no-padding {
+   padding:1rem;
+  }
+  .section > .section-styles.bg-pos-left {
+    background-image: url(/content/dam/itc-poc/download.jpg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: contain !important;
+  }
+
+  .section > .section-styles.bg-pos-right {
+    background-image: url(/content/dam/itc-poc/download.jpg);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: contain !important;
+  }
+
+.section > .section-styles > [class*="col-"] {
+  float: none;
+  margin: 0 auto;  
+  max-width: @site-content-width;
+  padding: 0;
+}
+
+.section > .section-styles [class*="col-"]{
+  margin-bottom: 0.2rem;
+}
+.section > .section-styles.no-padding [class*="col-"]{
+    margin-bottom: 0;
+  }
+.section > .section-styles > .row.gridbase {
+  /*margin: 0 auto 3rem;*/
+  margin: 0 auto;
+  max-width: @site-content-width;
+}
+
+.section > .section-styles > .column {
+  text-align: center;
+}
+
+.section > .section-styles > .section-title {
+  margin-bottom: 2.4rem;
+  text-align: center;
+  z-index:1;
+}
+
+  .section > .section-styles > .section-title.brand-blue {
+    color: @color-brand-blue;
+  }
+
+  .section > .section-styles > .section-title.white {
+    color: #fff;
+  }
+
+.section > .section-styles > .section-lead-copy {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 3rem;
+  margin-bottom: 1.5rem;
+  max-width: 775px;
+  text-align: center;
+}
+
+.section > .section-styles > .column.gridbase > .buttons {
+  text-align: center;
+}
+
+/*.section > .section-styles > .column.gridbase > .row.gridbase ~ * {
+  margin-top: 2.4rem;
+}*/
+
+/* custom xxs breakpoint *//*below code is commented due to ISEX-15443 ticket*/
+/*@media(max-width:480px) {
+  .section > .section-styles {
+    background-image: none !important;
+  }
+}*/
+
+/* xs breakpoint */
+@media(max-width:767px) {
+
+  .section > .section-styles.xsOneThumbnailTile > .row.gridbase {
+    margin-bottom: 0;
+    max-width: 270px;
+  }
+
+  .section > .section-styles.xsTwoThumbnailTiles > .row.gridbase {
+    margin-bottom: 0;
+    max-width: 570px;
+  }
+  .section > .section-styles.xsOneThumbnailTileBig > .row.gridbase {
+    margin-bottom: 0;
+    max-width: 510px;
+  }  
+  .section > .section-styles{
+	padding:1.5625rem;
+  }
+    .section{
+        
+        .section-styles{
+            .row{
+                .column.gridbase{
+                    padding-bottom: 20px;
+                }
+            }
+        }
+        
+    }
+
+  .column.xsRightBorder {
+    border-right: 1px solid gray;
+  }
+
+}
+
+/* sm breakpoint */
+@media(min-width:768px) and (max-width:991px) {
+
+  .section > .section-styles.smOneThumbnailTile > .row.gridbase {
+    margin-bottom: 0;
+    max-width: 270px;
+  }
+
+  .section > .section-styles.smTwoThumbnailTiles > .row.gridbase {
+    margin-bottom: 0;
+    max-width: 570px;
+  }
+
+  .section > .section-styles.smOneThumbnailTileBig > .row.gridbase {
+    margin-bottom: 0;
+    max-width: 510px;
+  }
+  .section > .section-styles.smTwoThumbnailTilesBig > .row.gridbase {
+    margin-bottom: 0;
+    max-width: 1020px;
+  }
+
+  .column.smallRightBorder {
+    border-right: 1px solid gray;
+  }
+
+}
+
+/* md breakpoint */
+@media(min-width:992px) and (max-width:1199px) {
+
+  .section > .section-styles.mdOneThumbnailTile > .row.gridbase {
+    margin-bottom: 0;
+    max-width: 270px;
+  }
+
+  .section > .section-styles.mdTwoThumbnailTiles > .row.gridbase {
+    margin-bottom: 0;
+    max-width: 570px;
+  }
+   .section > .section-styles.mdOneThumbnailTileBig > .row.gridbase {
+    margin-bottom: 0;
+    max-width: 510px;
+  }
+
+  .section > .section-styles.mdTwoThumbnailTilesBig > .row.gridbase {
+    margin-bottom: 0;
+    max-width: 1020px;
+  }	
+  .column.medRightBorder {
+    border-right: 1px solid gray;
+  }
+
+}
+
+/* lg breakpoint */
+@media(min-width:1200px) {
+
+  .section > .section-styles.lgOneThumbnailTile > .row.gridbase {
+    margin-bottom: 0;
+    max-width: 270px;
+  }
+
+  .section > .section-styles.lgTwoThumbnailTiles > .row.gridbase {
+    margin-bottom: 0;
+    max-width: 570px;
+  }
+   .section > .section-styles.lgOneThumbnailTileBig > .row.gridbase {
+    margin-bottom: 0;
+    max-width: 510px;
+  }
+
+  .section > .section-styles.lgTwoThumbnailTilesBig > .row.gridbase {
+    margin-bottom: 0;
+    max-width: 1020px;
+  }	
+  .column.largeRightBorder {
+    border-right: 1px solid gray;
+  }
+
+}
+
+/* custom xxl breakpoint */
+@media(min-width:1400px) {
+
+  .section > .section-styles.bg-pos-left {
+    background-position: calc(50% ~"-" @site-content-width / 2) top;
+  }
+
+  .section > .section-styles.bg-pos-right {
+    background-position: calc(50% ~"-" -@site-content-width / 2) top; /* double negative is on purpose here. see: https://github.com/yui/yuicompressor/issues/59 */
+  }
+  
+}
+
+
+/* ----------------------- */
+/* Border color combos */
+/* ----------------------- */
+.section{
+    .brd-color-brand-lightblue{
+		border-color: rgba(163, 219, 232, 0.3);
+    }
+    .brd-color-brand-lightgreen{
+		border-color: rgba(183, 205, 0, 0.3);
+    }
+    .brd-color-brand-coolgray2{
+		border-color: rgba(213, 214, 210, 0.3);
+    }
+    .brd-color-brand-skyblue{
+		border-color: rgba(211, 222, 228, 0.3);
+    }
+    .brd-color-brand-mintgreen{
+		border-color: rgba(209, 223, 214, 0.3);
+    }
+    .brd-color-brand-khaki{
+		border-color: rgba(215, 211, 199, 0.3);
+    }
+    .brd-color-black{
+		border-color: rgba(0, 0, 0, 0.05);
+    }
+    .brd-color-white{
+		border-color: rgba(255, 255, 255, 0.3);
+    }
+
+}
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.column {
+    margin-left: 0px;
+}
+@media (max-width:767px){
+.row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+	}
+}

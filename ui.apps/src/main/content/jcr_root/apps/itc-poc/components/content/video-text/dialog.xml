@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    cls="cq-dialog-content-box"
+    title="Hero"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        manageFields="function(field) {&#xa;&#x9;//Get the panel of the tab our drop down menu on&#xa;&#x9;var panel = field.findParentByType('panel');&#xa;&#x9;// Our text fields are stored in widgets of type dialogfieldset&#xa;&#x9;// and we get their reference &#xa;&#x9;var fieldSets = panel.findByType('dialogfieldset');&#xa;&#xa;&#x9; // Get value of selected option in out select box&#xa;&#x9;var fieldValue = field.getValue();&#xa;&#x9;if (fieldValue === fieldSets[0].getItemId() &amp;&amp; fieldValue=='fs1' ){&#xa;&#x9;        fieldSets[0].show();&#xa;&#x9;        fieldSets[1].hide();       &#xa;&#x9;    }&#xa;&#x9;else if (fieldValue === fieldSets[1].getItemId() &amp;&amp; fieldValue=='fs2' ){&#xa;&#x9;&#x9;&#x9;fieldSets[0].show(); &#xa;&#x9;        fieldSets[1].show();        &#xa;&#x9;    } &#xa;&#x9;else {&#xa;&#x9;        fieldSets[0].hide();&#xa;&#x9;        fieldSets[1].hide();&#xa;&#x9;    }&#xa;}"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <generalSettings
+                jcr:primaryType="cq:Panel"
+                title="General">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <videoPosition
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="left"
+                        fieldLabel="Video placement"
+                        id="imagePalcement"
+                        name="./videoPalcement"
+                        type="select"
+                        value="left"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <left
+                                jcr:primaryType="nt:unstructured"
+                                text="Left"
+                                value="left"/>
+                            <right
+                                jcr:primaryType="nt:unstructured"
+                                text="Right"
+                                value="right"/>
+                        </options>
+                    </videoPosition>
+                    <bgColor
+                        jcr:primaryType="cq:Widget"
+                        colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF,DDD3C7]"
+                        fieldLabel="Background color"
+                        name="./bgColor"
+                        showHexValue="true"
+                        xtype="colorfield"/>
+                    <fontColor
+                        jcr:primaryType="cq:Widget"
+                        colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF,000000]"
+                        fieldLabel="Text Color "
+                        name="./fontColor"
+                        showHexValue="true"
+                        xtype="colorfield"/>
+                    <image
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Drag image here from content finder"
+                        fieldLabel="Background Image"
+                        name="./imageReference"
+                        rootPath="/content/dam"
+                        title="Image"
+                        xtype="ddpathfield"/>
+                    <text
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Enter Text"
+                        name="./text"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <links jcr:primaryType="nt:unstructured">
+                                <linkDialogConfig
+                                    jcr:primaryType="nt:unstructured"
+                                    height="{Long}316">
+                                    <linkAttributes jcr:primaryType="cq:WidgetCollection">
+                                        <linkAdvanced
+                                            jcr:primaryType="cq:Widget"
+                                            collapsed="{Boolean}true"
+                                            collapsible="{Boolean}true"
+                                            inputValue="advanced"
+                                            name="./linkdialog/cq:adhocLinkTrackingTab"
+                                            title="Link tracking"
+                                            xtype="dialogfieldset">
+                                            <items jcr:primaryType="cq:WidgetCollection">
+                                                <enable
+                                                    jcr:primaryType="nt:unstructured"
+                                                    attribute="enabletracking"
+                                                    fieldDescription="override analytics framework settings"
+                                                    fieldLabel="Custom link tracking"
+                                                    name="./linkdialog/cq:adhocLinkTrackingEnableTracking"
+                                                    xtype="checkbox">
+                                                    <listeners
+                                                        jcr:primaryType="nt:unstructured"
+                                                        check="function(component){var dlg=component.findParentByType('rtelinkdialog');dlg.enableSCFields(component.checked);}"/>
+                                                </enable>
+                                                <events
+                                                    jcr:primaryType="nt:unstructured"
+                                                    attribute="adhocevents"
+                                                    fieldDescription="e.g.: event2, event7"
+                                                    fieldLabel="Include SiteCatalyst events"
+                                                    name="./linkdialog/cq:adhocLinkTrackingEvents"
+                                                    xtype="textfield"/>
+                                                <evars
+                                                    jcr:primaryType="nt:unstructured"
+                                                    attribute="adhocevars"
+                                                    fieldDescription="e.g.: eVar1: pagedata.url, prop4: 'const'"
+                                                    fieldLabel="Include SiteCatalyst variables"
+                                                    name="./linkdialog/cq:adhocLinkTrackingEvars"
+                                                    xtype="textfield"/>
+                                            </items>
+                                        </linkAdvanced>
+                                    </linkAttributes>
+                                </linkDialogConfig>
+                            </links>
+                            <findreplace
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <format
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <justify
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <edit
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*">
+                                <formats jcr:primaryType="cq:WidgetCollection">
+                                    <paragraph
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Paragraph"
+                                        tag="p"/>
+                                    <heading1
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 1"
+                                        tag="h1"/>
+                                    <heading2
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 2"
+                                        tag="h2"/>
+                                    <heading3
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 3"
+                                        tag="h3"/>
+                                    <heading4
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 4"
+                                        tag="h4"/>
+                                    <strong
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Strong"
+                                        tag="strong"/>
+                                    <em
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Em"
+                                        tag="em"/>
+                                </formats>
+                            </paraformat>
+                            <spellcheck
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <table
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                features="*">
+                                <styles jcr:primaryType="cq:WidgetCollection">
+                                    <leadText
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="lead-text"
+                                        text="Lead text"/>
+                                    <smallText
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="small-text"
+                                        text="Small text"/>
+                                    <bigText
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="big-text"
+                                        text="Big text"/>
+                                    <programText
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="program-text"
+                                        text="Program para text"/>
+                                    <programLegalText
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="program-legal-text"
+                                        text="Program legal copy text"/>
+                                    <noBulletList
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="no-bullets"
+                                        text="Non-bulleted list"/>
+                                    <faRightIcon
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="fa fa-angle-right"
+                                        text="FA Right Arrow(Green)"/>
+                                    <noMargin
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="margin-top-10px"
+                                        text="10px top Margin"/>
+                                    <leftBorderedQuotes
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="left-bordered-quotes"
+                                        text="Left bordered quotes"/>
+                                </styles>
+                            </styles>
+                        </rtePlugins>
+                    </text>
+                </items>
+            </generalSettings>
+            <videoSettings
+                jcr:primaryType="cq:Panel"
+                title="Video">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <videoURL
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="URL of YouTube video"
+                        name="./videoURL"
+                        xtype="textfield"/>
+                    <videoTitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title of video"
+                        name="./videoTitle"
+                        xtype="textfield"/>
+                    <videoCopy
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Copy under modal video"
+                        name="./videoCopy"
+                        xtype="richtext"/>
+                    <videoTranscript
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Video transcript"
+                        name="./videoTranscript"
+                        xtype="textarea"/>
+                </items>
+            </videoSettings>
+        </items>
+    </items>
+</jcr:root>

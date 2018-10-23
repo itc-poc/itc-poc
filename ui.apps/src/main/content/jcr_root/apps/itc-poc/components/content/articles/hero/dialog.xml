@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Hero Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Press Release/Listicle Configs">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <title
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title"
+                        name="./title"
+                        xtype="textfield"/>
+                    <byline
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Byline option"
+                        name="./byOption"
+                        type="radio"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <by
+                                jcr:primaryType="nt:unstructured"
+                                text="By"
+                                value="By"/>
+                            <featuring
+                                jcr:primaryType="nt:unstructured"
+                                text="Featuring"
+                                value="Featuring"/>
+                        </options>
+                    </byline>
+                    <postedBy
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Posted By"
+                        name="./postedBy"
+                        xtype="textfield"/>
+                    <publishDate
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Publish Date"
+                        name="./publishDate"
+                        xtype="datefield"/>
+                    <description
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Description"
+                        name="./desc"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <links jcr:primaryType="nt:unstructured">
+                                <linkDialogConfig
+                                    jcr:primaryType="nt:unstructured"
+                                    height="{Long}316">
+                                    <linkAttributes jcr:primaryType="cq:WidgetCollection">
+                                        <linkAdvanced
+                                            jcr:primaryType="cq:Widget"
+                                            collapsed="{Boolean}true"
+                                            collapsible="{Boolean}true"
+                                            inputValue="advanced"
+                                            name="./linkdialog/cq:adhocLinkTrackingTab"
+                                            title="Link tracking"
+                                            xtype="dialogfieldset">
+                                            <items jcr:primaryType="cq:WidgetCollection">
+                                                <enable
+                                                    jcr:primaryType="nt:unstructured"
+                                                    attribute="enabletracking"
+                                                    fieldDescription="override analytics framework settings"
+                                                    fieldLabel="Custom link tracking"
+                                                    name="./linkdialog/cq:adhocLinkTrackingEnableTracking"
+                                                    xtype="checkbox">
+                                                    <listeners
+                                                        jcr:primaryType="nt:unstructured"
+                                                        check="function(component){var dlg=component.findParentByType('rtelinkdialog');dlg.enableSCFields(component.checked);}"/>
+                                                </enable>
+                                                <events
+                                                    jcr:primaryType="nt:unstructured"
+                                                    attribute="adhocevents"
+                                                    fieldDescription="e.g.: event2, event7"
+                                                    fieldLabel="Include SiteCatalyst events"
+                                                    name="./linkdialog/cq:adhocLinkTrackingEvents"
+                                                    xtype="textfield"/>
+                                                <evars
+                                                    jcr:primaryType="nt:unstructured"
+                                                    attribute="adhocevars"
+                                                    fieldDescription="e.g.: eVar1: pagedata.url, prop4: 'const'"
+                                                    fieldLabel="Include SiteCatalyst variables"
+                                                    name="./linkdialog/cq:adhocLinkTrackingEvars"
+                                                    xtype="textfield"/>
+                                            </items>
+                                        </linkAdvanced>
+                                    </linkAttributes>
+                                </linkDialogConfig>
+                            </links>
+                            <findreplace
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <format
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <justify
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <edit
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*">
+                                <formats jcr:primaryType="cq:WidgetCollection">
+                                    <paragraph
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Paragraph"
+                                        tag="p"/>
+                                    <heading1
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 1"
+                                        tag="h1"/>
+                                    <heading2
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 2"
+                                        tag="h2"/>
+                                    <heading3
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 3"
+                                        tag="h3"/>
+                                    <heading4
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 4"
+                                        tag="h4"/>
+                                    <strong
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Strong"
+                                        tag="strong"/>
+                                    <em
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Em"
+                                        tag="em"/>
+                                </formats>
+                            </paraformat>
+                            <spellcheck
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <table
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                features="*">
+                                <styles jcr:primaryType="cq:WidgetCollection">
+                                    <leadText
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="lead-text"
+                                        text="Lead text"/>
+                                    <smallText
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="small-text"
+                                        text="Small text"/>
+                                    <bigText
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="big-text"
+                                        text="Big text"/>
+                                    <noBulletList
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="no-bullets"
+                                        text="Non-bulleted list"/>
+                                    <rightArrow
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="fa fa-angle-right"
+                                        text="Right Arrow Icon"/>
+                                </styles>
+                            </styles>
+                        </rtePlugins>
+                    </description>
+                </items>
+            </tab1>
+            <tab2
+                jcr:primaryType="cq:Panel"
+                title="Profile Configs">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <title
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title"
+                        name="./profileTitle"
+                        xtype="textfield"/>
+                    <newWindow
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Default internal link behavior opens link in same window."
+                        fieldLabel="Open link in a new window?"
+                        name="./newWindow"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab2>
+            <imagecollection
+                jcr:primaryType="cq:Widget"
+                title="Image Rendition"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <bigDesktopImage
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Drag image here from content finder"
+                        fieldLabel="Background Image LG"
+                        name="./imageReference"
+                        rootPath="/content/dam"
+                        title="Image"
+                        xtype="ddpathfield"/>
+                    <isBigDesktopImage
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Don't display Background Image LG"
+                        name="./isBigDesktopImage"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <desktopImage
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Drag image here from content finder"
+                        fieldLabel="Background Image MD"
+                        name="./imageReferenceMD"
+                        rootPath="/content/dam"
+                        title="Image"
+                        xtype="ddpathfield"/>
+                    <isDesktopImage
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Don't display Background Image MD"
+                        name="./isDesktopImage"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <tabletImage
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Drag image here from content finder"
+                        fieldLabel="Background Image SM"
+                        name="./imageReferenceSM"
+                        rootPath="/content/dam"
+                        title="Image"
+                        xtype="ddpathfield"/>
+                    <isTabletImage
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Don't display Background Image SM"
+                        name="./isTabletImage"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <mobileImage
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Drag image here from content finder"
+                        fieldLabel="Background Image XS"
+                        name="./imageReferenceXS"
+                        rootPath="/content/dam"
+                        title="Image"
+                        xtype="ddpathfield"/>
+                    <isMobileImage
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Don't display Background Image XS"
+                        name="./isMobileImage"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <funReadImage
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Drag Thumbnail image here to be display in funread article suggestion section"
+                        fieldLabel="Fun Read Article Thumbnail"
+                        name="./funReadHeroImage"
+                        rootPath="/content/dam"
+                        title="Image"
+                        xtype="ddpathfield"/>
+                </items>
+            </imagecollection>
+        </items>
+    </items>
+</jcr:root>

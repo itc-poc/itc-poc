@@ -1,0 +1,24 @@
+
+<!-- Start of accordion -->
+<!--/*<div data-sly-use.accordion="com.adobe.itc.poc.core.models.Accordion" data-sly-unwrap></div>*/-->
+<div data-sly-use.clientlibIncludeVar="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap></div>
+<output data-sly-call="${clientlibIncludeVar.css @ categories='designs.itc-poc.components.accordion'}" data-sly-unwrap></output>
+<output data-sly-call="${clientlibIncludeVar.css @ categories='designs.itc-poc.components.accordionbootstrap'}" data-sly-unwrap></output>
+
+<div class="expand-collapse" data-sly-test="${properties.expandOrCollapse}">
+    <span class="expandAll hide" tabindex="0">${properties.expandAllLink || "Expand aIl"}</span>
+    <span class="collapseAll hide" tabindex="0">${properties.collapseAllLink || "Collapse all"}</span>
+</div>
+
+<div class="panel-group itc-accordion${accordion.singleRestricted}" id="accordion${accordion.id}" role="tablist" aria-multiselectable="true">
+	<div data-sly-resource="${@path='./accordionsection',resourceType='foundation/components/parsys'}" data-sly-unwrap></div>
+</div>
+
+<div data-sly-test="${wcmmode.edit}" class="tab_display_end cq-tabs_display_end-placeholder">End of ITC-POC Accordion component</div>
+<output data-sly-call="${clientlibIncludeVar.js @ categories='designs.itc-poc.components.accordion'}" data-sly-unwrap></output>
+<output data-sly-call="${clientlibIncludeVar.js @ categories='designs.itc-poc.components.accordionbootstrap'}" data-sly-unwrap></output>
+<!-- End of accordion -->
+<!-- End of accordion1 blank checkin1 -->
+
+
+  

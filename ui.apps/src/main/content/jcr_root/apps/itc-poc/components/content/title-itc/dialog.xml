@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Title - options"
+    xtype="tabpanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <tab1
+            jcr:primaryType="cq:Widget"
+            title="Title Options"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <title
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Leave empty to use the page title."
+                    fieldLabel="Title"
+                    name="./jcr:title"
+                    xtype="textfield"/>
+                <titleFontColor
+                    jcr:primaryType="cq:Widget"
+                    colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF]"
+                    fieldDescription="Choose a color for the item list"
+                    fieldLabel="Title Font Color"
+                    name="./titleFontColor"
+                    showHexValue="true"
+                    xtype="colorfield"/>
+                <type
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="h4"
+                    fieldLabel="Type"
+                    name="./type"
+                    type="select"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <h1
+                            jcr:primaryType="nt:unstructured"
+                            text="H1"
+                            value="h1"/>
+                        <h2
+                            jcr:primaryType="nt:unstructured"
+                            text="H2"
+                            value="h2"/>
+                        <h3
+                            jcr:primaryType="nt:unstructured"
+                            text="H3"
+                            value="h3"/>
+                        <h4
+                            jcr:primaryType="nt:unstructured"
+                            text="H4"
+                            value="h4"/>
+                    </options>
+                </type>
+                <titleSize
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="heading-4"
+                    fieldLabel="What size font should this title be?"
+                    name="./titleSize"
+                    type="select"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <xLargeHeading
+                            jcr:primaryType="nt:unstructured"
+                            text="X-Large (36px, semibold)"
+                            value="heading-1"/>
+                        <largeHeading
+                            jcr:primaryType="nt:unstructured"
+                            text="Large (30px, semibold)"
+                            value="heading-2"/>
+                        <xMediumHeading
+                            jcr:primaryType="nt:unstructured"
+                            text="X-Medium (24px, semibold)"
+                            value="heading-3"/>
+                        <mediumHeading
+                            jcr:primaryType="nt:unstructured"
+                            text="Medium (18px, semibold)"
+                            value="heading-4"/>
+                        <xSmallHeading
+                            jcr:primaryType="nt:unstructured"
+                            text="X-Small(16px, semibold)"
+                            value="heading-5"/>
+                        <smallHeading
+                            jcr:primaryType="nt:unstructured"
+                            text="Small (14px, semibold)"
+                            value="heading-6"/>
+                    </options>
+                </titleSize>
+                <backgroundColor
+                    jcr:primaryType="cq:Widget"
+                    colors="[990000,666666,CBC3B7,FF6600,D7234A,851782,0099CC,A3DBE8,4FAC1C,B7CD00,8B4E21,A50052,4A0259,006697,36849F,464B18,8D8035,FFB119,D5D6D2,D3DEE4,D1DFD6,D7D3C7,F1F5F3,FFFFFF]"
+                    fieldDescription="Choose a color for the item list"
+                    fieldLabel="Background Color"
+                    name="./backgroundColor"
+                    showHexValue="true"
+                    xtype="colorfield"/>
+            </items>
+        </tab1>
+    </items>
+</jcr:root>
